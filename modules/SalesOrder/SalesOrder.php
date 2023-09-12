@@ -238,7 +238,8 @@ function createRecurringInvoiceFromSO(){
 			'discount_amount' => 'hdnDiscountAmount',
 			's_h_amount' => 'hdnS_H_Amount',
 			'region_id' => 'region_id',
-			's_h_percent' => 'hdnS_H_Percent'
+			's_h_percent' => 'hdnS_H_Percent',
+			'stc'=>'stc'
 			
 		);
 	$updatecols = array();

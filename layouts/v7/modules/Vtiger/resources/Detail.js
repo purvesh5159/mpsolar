@@ -1066,7 +1066,7 @@ Vtiger.Class("Vtiger_Detail_Js",{
 	saveFieldValues : function (fieldDetailList) {
 		var recordId = this.getRecordId();
 		let moduleNameOFCust  = app.getModuleName();
-		if (fieldDetailList['field'] == "sostatus" && fieldDetailList['value'] == "Approved") {
+		if (fieldDetailList['field'] == "sostatus" && fieldDetailList['value'] != "Created") {
 			 jQuery('[data-block="Installer Details"]').removeClass('hide'); 
 		}
 		if (fieldDetailList['field'] == "sostatus" && fieldDetailList['value'] == "Delivered") {
@@ -1139,6 +1139,47 @@ Vtiger.Class("Vtiger_Detail_Js",{
 				},
 				function (error, err) {
 					var aDeferred = jQuery.Deferred();
+					var recordId = self.getRecordId();
+					var data = {};
+					if (typeof fieldDetailList != 'undefined') {
+						data = fieldDetailList;
+					}
+					data['record'] = recordId;
+					data['module'] = app.getModuleName();
+					data['action'] = 'SaveAjax';
+					AppConnector.request(data).then(
+						function (reponseData) {
+							aDeferred.resolve(reponseData);
+						}
+					);
+					return aDeferred.promise();
+				}
+			);
+		}
+        else if (moduleNameOFCust == "SalesOrder"  && fieldDetailList['field'] == "sostatus" && fieldDetailList['value'] == "Delivered") {
+			let message = "Installer Inventory added to Account";
+			app.helper.showConfirmationBox({ 'message': message }).then(
+				function (e) {
+					var module = app.getModuleName();
+					var aDeferred1 = jQuery.Deferred();
+					var data = {};
+					if (typeof fieldDetailList != 'undefined') {
+						data = fieldDetailList;
+					}
+					data['record'] = recordId;
+					data['module'] = app.getModuleName();
+					data['action'] = 'GenerateInstallerInventory';
+					AppConnector.request(data).then(
+						function (reponseData) {
+							aDeferred1.resolve(reponseData);
+						},
+						function(error,err){
+						}
+					);
+					aDeferred1.promise();
+				},
+				function (error, err) {
+					var aDeferred = jQuery.Deferred();
 					var recordId = this.getRecordId();
 					var data = {};
 					if (typeof fieldDetailList != 'undefined') {
@@ -1156,7 +1197,47 @@ Vtiger.Class("Vtiger_Detail_Js",{
 				}
 			);
 		}
-
+		else if (moduleNameOFCust == "SalesOrder"  && fieldDetailList['field'] == "sostatus" && fieldDetailList['value'] == "Completed") {
+			let message = "Update Installer Inventory";
+			app.helper.showConfirmationBox({ 'message': message }).then(
+				function (e) {
+					var module = app.getModuleName();
+					var aDeferred1 = jQuery.Deferred();
+					var data = {};
+					if (typeof fieldDetailList != 'undefined') {
+						data = fieldDetailList;
+					}
+					data['record'] = recordId;
+					data['module'] = app.getModuleName();
+					data['action'] = 'UpdateInstallerInventory';
+					AppConnector.request(data).then(
+						function (reponseData) {
+							aDeferred1.resolve(reponseData);
+						},
+						function(error,err){
+						}
+					);
+					aDeferred1.promise();
+				},
+				function (error, err) {
+					var aDeferred = jQuery.Deferred();
+					var recordId = this.getRecordId();
+					var data = {};
+					if (typeof fieldDetailList != 'undefined') {
+						data = fieldDetailList;
+					}
+					data['record'] = recordId;
+					data['module'] = app.getModuleName();
+					data['action'] = 'SaveAjax';
+					AppConnector.request(data).then(
+						function (reponseData) {
+							aDeferred.resolve(reponseData);
+						}
+					);
+					return aDeferred.promise();
+				}
+			);
+		}
 		var aDeferred = jQuery.Deferred();
 		var data = {};
 		if(typeof fieldDetailList != 'undefined'){

@@ -46,13 +46,9 @@ function getConvertQuotesToProjectInvoice($focus,$so_focus,$soid)
 		else
 			$so_focus->column_fields[$xyz[$i]] = '';
 	}
-	if($focus == 'Invoice')
-	{
-  	//$focus->column_fields['salesorder_id'] = $soid;
-    }
 	$focus->column_fields['subject'] = $so_focus->column_fields['subject'];
 	$focus->column_fields['customerno'] = $so_focus->column_fields['customerno'];
-	$focus->column_fields['duedate'] = $so_focus->column_fields['duedate'];
+	$focus->column_fields['duedate'] = $so_focus->column_fields['validtill'];
 	$focus->column_fields['contact_id'] = $so_focus->column_fields['contact_id'];//to include contact name in Invoice
 	$focus->column_fields['account_id'] = $so_focus->column_fields['account_id'];
 	$focus->column_fields['exciseduty'] = $so_focus->column_fields['exciseduty'];
@@ -71,6 +67,7 @@ function getConvertQuotesToProjectInvoice($focus,$so_focus,$soid)
 	$focus->column_fields['bill_pobox'] = $so_focus->column_fields['bill_pobox'];
 	$focus->column_fields['ship_pobox'] = $so_focus->column_fields['ship_pobox'];
 	$focus->column_fields['description'] = $so_focus->column_fields['description'];
+	$focus->column_fields['modeofpayment'] = $so_focus->column_fields['modeofpayment'];
 	$focus->column_fields['terms_conditions'] = $so_focus->column_fields['terms_conditions'];
     $focus->column_fields['currency_id'] = $so_focus->column_fields['currency_id'];
     $focus->column_fields['conversion_rate'] = $so_focus->column_fields['conversion_rate'];
@@ -88,6 +85,7 @@ function getConvertQuotesToProjectInvoice($focus,$so_focus,$soid)
 	$focus->column_fields['offpeakmeterno'] = $so_focus->column_fields['offpeakmeterno'];
 	$focus->column_fields['peakmeterno'] = $so_focus->column_fields['peakmeterno'];
 	$focus->column_fields['stc'] = $so_focus->column_fields['stc'];
+	$focus->column_fields['stcincentive'] = $so_focus->column_fields['stc'];
 	$focus->column_fields['noofstc'] = $so_focus->column_fields['noofstc'];
 	$log->debug("Exiting getConvertSoToInvoice method ...");
 	return $focus;
@@ -130,6 +128,7 @@ function getConvertSalesOrderToMaintance($focus,$so_focus,$soid)
 	$focus->column_fields['bill_pobox'] = $so_focus->column_fields['bill_pobox'];
 	$focus->column_fields['ship_pobox'] = $so_focus->column_fields['ship_pobox'];
 	$focus->column_fields['maintenance_tks_description'] = $so_focus->column_fields['description'];
+	$focus->column_fields['modeofpayment'] = $so_focus->column_fields['modeofpayment'];
 	$focus->column_fields['maintenance_tks_termscondition'] = $so_focus->column_fields['terms_conditions'];
     $focus->column_fields['currency_id'] = $so_focus->column_fields['currency_id'];
     $focus->column_fields['conversion_rate'] = $so_focus->column_fields['conversion_rate'];
@@ -185,7 +184,8 @@ function getConvertSoToInvoice($focus,$so_focus,$soid)
     $focus->column_fields['currency_id'] = $so_focus->column_fields['currency_id'];
     $focus->column_fields['conversion_rate'] = $so_focus->column_fields['conversion_rate'];
     $focus->column_fields['pre_tax_total'] = $so_focus->column_fields['pre_tax_total'];
-    $focus->column_fields['stcincentive'] = $so_focus->column_fields['stcincentive'];
+    $focus->column_fields['stc'] = $so_focus->column_fields['stc'];
+    $focus->column_fields['stcincentive'] = $so_focus->column_fields['stc'];
     $focus->column_fields['noofstc'] = $so_focus->column_fields['noofstc'];
 	$log->debug("Exiting getConvertSoToInvoice method ...");
 	return $focus;

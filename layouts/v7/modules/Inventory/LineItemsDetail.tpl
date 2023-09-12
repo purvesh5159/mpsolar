@@ -362,7 +362,7 @@
         </td>
         <td>
             <span class="pull-right">
-            {$FINAL_DETAILS["stc"]}
+            {if $FINAL_DETAILS["stc"]}{$FINAL_DETAILS["stc"]}{elseif $stc}{abs($stc)}{else}0{/if}
             </span>
         </td>
         </tr>

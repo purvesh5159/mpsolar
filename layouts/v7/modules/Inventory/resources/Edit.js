@@ -563,21 +563,21 @@ Vtiger_Edit_Js("Inventory_Edit_Js", {
 		return this;
 	},
 
-	/*getNetTotal : function() {
+	getNetTotal : function() {
 		var netTotal = this.netTotalEle.text();
         if(netTotal)
             return parseFloat(netTotal);
         return 0;
-	},*/
+	},
 
-	getNetTotal : function() {
+	/*getNetTotal : function() {
 		var netTotal = this.netTotalEle.text();
 		var stcTotal = this.stcTotalEle.val();
 		var totalfix = parseFloat(netTotal) + parseFloat(stcTotal);
         if(totalfix)
             return parseFloat(totalfix);
         return 0;
-	},
+	},*/
 
 	/**
 	 * Function to set the final discount total
@@ -602,7 +602,7 @@ Vtiger_Edit_Js("Inventory_Edit_Js", {
 		var groupTax = this.finalTaxEle.text();
         if(groupTax)
             return parseFloat(groupTax);
-        return 0
+        return 0;
 	},
     
     getChargesTotal : function() {
@@ -612,13 +612,18 @@ Vtiger_Edit_Js("Inventory_Edit_Js", {
 		}
 		return parseFloat(chargesElement.val());
 	},
+
+	setSTCTotal : function(stcTotalValue) {
+		this.stcTotalEle.text(stcTotalValue);
+		return this;
+	},
     
     getSTCTotal : function() {
 		var stcElement = this.stcTotalEle;
 		if (stcElement.length <= 0) {
 			return 0;
 		}
-		return parseFloat(stcElement.val());
+		return parseFloat(stcElement.text());
 	},
 
     getChargeTaxesTotal : function() {
@@ -648,11 +653,22 @@ Vtiger_Edit_Js("Inventory_Edit_Js", {
     /**
 	 * Function to get the pre tax total
 	 */
-	getPreTaxTotal : function() {
+	/*getPreTaxTotal : function() {
 		if(this.preTaxTotalEle.length > 0){
             return parseFloat(this.preTaxTotalEle.text())
         }
+	},*/
+
+	getPreTaxTotal : function() {
+		if(this.preTaxTotalEle.length > 0){
+		var preTaxTotal = this.preTaxTotalEle.text();
+		var stcTotal = this.stcTotalEle.text();
+		var totalfix = parseFloat(preTaxTotal) + parseFloat(stcTotal);
+        if(totalfix)
+            return parseFloat(totalfix);
+        }
 	},
+
     
     /**
 	 * Function which will set the margin
@@ -784,6 +800,13 @@ Vtiger_Edit_Js("Inventory_Edit_Js", {
 	 */
 	savePreTaxTotalValue : function() {
 		jQuery('#pre_tax_total').val(this.getPreTaxTotal());
+	},
+
+	/**
+	 * Function to save the stc value
+	 */
+	saveSTCTotalValue : function() {
+		jQuery('#stcTotal').val(this.getSTCTotal());
 	},
     
     updateRowNumberForRow : function(lineItemRow, expectedSequenceNumber, currentSequenceNumber){
@@ -1147,6 +1170,7 @@ Vtiger_Edit_Js("Inventory_Edit_Js", {
 		this.overAllDiscountEle.text(overallDiscount);
 		this.setFinalDiscountTotal(discountValue);
 		this.calculatePreTaxTotal();
+		this.saveSTCTotalValue();
     },
     
     /**
@@ -1168,9 +1192,11 @@ Vtiger_Edit_Js("Inventory_Edit_Js", {
 		var chargesTotal = this.getChargesTotal();
 		var stc = this.getSTCTotal();
 		var finalDiscountValue = this.getFinalDiscountTotal();
-		var preTaxTotal = netTotal + chargesTotal - finalDiscountValue;
+		var preTaxTotal = netTotal + stc + chargesTotal - finalDiscountValue;
 		var preTaxTotalValue = parseFloat(preTaxTotal).toFixed(numberOfDecimal);
+		var stcTotalValue = parseFloat(stc).toFixed(numberOfDecimal);
 		this.setPreTaxTotal(preTaxTotalValue);
+		this.setSTCTotal(stcTotalValue);
 	},
     
     calculateCharges : function() {
@@ -1264,13 +1290,18 @@ Vtiger_Edit_Js("Inventory_Edit_Js", {
 	},
     
     calculateGrandTotal : function(){
+    	var numberOfDecimal = this.numOfCurrencyDecimals;
         var netTotal = this.getNetTotal();
 		var discountTotal = this.getFinalDiscountTotal();
 		var shippingHandlingCharge = this.getChargesTotal();
 		var shippingHandlingTax = this.getChargeTaxesTotal();
 		var deductedTaxesAmount = this.getDeductTaxesTotal();
 		var adjustment = this.getAdjustmentValue();
-		var grandTotal = parseFloat(netTotal) - parseFloat(discountTotal) + parseFloat(shippingHandlingCharge) + parseFloat(shippingHandlingTax) - parseFloat(deductedTaxesAmount);
+		var stc = this.getSTCTotal();
+		var grandTotal = parseFloat(netTotal) + parseFloat(stc) - parseFloat(discountTotal) + parseFloat(shippingHandlingCharge) + parseFloat(shippingHandlingTax) - parseFloat(deductedTaxesAmount);
+        
+        var stcTotalValue = parseFloat(stc).toFixed(numberOfDecimal);
+		this.setSTCTotal(stcTotalValue);
 
 		if(this.isGroupTaxMode()){
 			grandTotal +=  this.getGroupTaxTotal();
@@ -1752,6 +1783,7 @@ Vtiger_Edit_Js("Inventory_Edit_Js", {
 				
 				$("input[name='noofstc']").val(noofstc);
 				$("input[name='stc']").val(STCValue);
+				$("#stcTotal").text(STCValue);
 			}
                         if(self.formValidatorInstance == false){
                             self.quantityChangeActions(lineItemRow);
@@ -2614,6 +2646,7 @@ Vtiger_Edit_Js("Inventory_Edit_Js", {
 			self.saveSubTotalValue();
 			self.saveTotalValue();
 			self.savePreTaxTotalValue();
+			self.saveSTCTotalValue();
 			return true;
 		});
 	},
@@ -2929,6 +2962,10 @@ Vtiger_Edit_Js("Inventory_Edit_Js", {
     registerBasicEvents: function(container){
     	jQuery('#Quotes_editView_fieldName_existingsystemdetails').addClass('hide');
         jQuery('#existingsystemdetails').addClass('hide');
+        jQuery('#Quotes_editView_fieldName_noofstc').attr('readonly', true);
+        jQuery('#SalesOrder_editView_fieldName_noofstc').attr('readonly', true);
+        jQuery('#Invoice_editView_fieldName_noofstc').attr('readonly', true);
+        jQuery('input[name="stcincentive"]').attr('readonly',true);
         this._super(container);
         this.registerAddProductService();
         this.registerProductAndServiceSelector();

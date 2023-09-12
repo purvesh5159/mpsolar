@@ -148,9 +148,9 @@ class Invoice extends CRMEntity {
 			}
 		}
 		// Update the currency id and the conversion rate for the invoice
-		$update_query = "update vtiger_invoice set currency_id=?, conversion_rate=? where invoiceid=?";
+		$update_query = "update vtiger_invoice set currency_id=?, stc=?, conversion_rate=? where invoiceid=?";
 
-		$update_params = array($this->column_fields['currency_id'], $this->column_fields['conversion_rate'], $this->id);
+		$update_params = array($this->column_fields['currency_id'], $this->column_fields['stc'], $this->column_fields['conversion_rate'], $this->id);
 		$this->db->pquery($update_query, $update_params);
 	}
 

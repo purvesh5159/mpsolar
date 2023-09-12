@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2023-08-17 13:20:47
+/* Smarty version 3.1.39, created on 2023-09-12 05:14:25
   from 'D:\wamp\www\mpsolar\layouts\v7\modules\Inventory\partials\LineItemsEdit.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_64de1eaf35a1c2_92194522',
+  'unifunc' => 'content_64fff3b13be944_76536043',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'ae1b017fe0b7cf3cdd42941b0cda2fcbadbecf88' => 
     array (
       0 => 'D:\\wamp\\www\\mpsolar\\layouts\\v7\\modules\\Inventory\\partials\\LineItemsEdit.tpl',
-      1 => 1692278446,
+      1 => 1694495661,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_64de1eaf35a1c2_92194522 (Smarty_Internal_Template $_smarty_tpl) {
+function content_64fff3b13be944_76536043 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_assignInScope('LINEITEM_FIELDS', $_smarty_tpl->tpl_vars['RECORD_STRUCTURE']->value['LBL_ITEM_DETAILS']);
 $_smarty_tpl->_assignInScope('COL_SPAN1', 1);
 $_smarty_tpl->_assignInScope('COL_SPAN2', 2);
@@ -242,11 +242,15 @@ echo $_smarty_tpl->tpl_vars['FINAL']->value['shipping_handling_charge'];
 echo $_smarty_tpl->tpl_vars['FINAL']->value['shipping_handling_charge'];
 } else { ?>0<?php }?></span></td></tr><?php }
 if ($_smarty_tpl->tpl_vars['MODULE']->value == 'Quotes' || $_smarty_tpl->tpl_vars['MODULE']->value == 'SalesOrder' || $_smarty_tpl->tpl_vars['MODULE']->value == 'Maintenance' || $_smarty_tpl->tpl_vars['MODULE']->value == 'Invoice') {?><tr valign="top"><td width="83%" ><div class="pull-right"><b><?php echo vtranslate('LBL_STC',$_smarty_tpl->tpl_vars['MODULE']->value);?>
-&nbsp;&nbsp;</b> </div></td><td><span class="pull-right"><input readonly id="stcTotal" name="stc" type="text" data-validation-engine="validate[funcCall[Vtiger_PositiveNumber_Validator_Js.invokeValidation]]" class="lineItemInputBox" value="<?php if ($_smarty_tpl->tpl_vars['FINAL']->value['stc'] < 0) {
-echo abs($_smarty_tpl->tpl_vars['FINAL']->value['stc']);
-} elseif ($_smarty_tpl->tpl_vars['FINAL']->value['stc']) {
-echo $_smarty_tpl->tpl_vars['FINAL']->value['stc'];
-} else { ?>0<?php }?>"></span></td></tr><?php }?><tr><td width="83%"><span class="pull-right"><strong><?php echo vtranslate('LBL_PRE_TAX_TOTAL',$_smarty_tpl->tpl_vars['MODULE']->value);?>
+&nbsp;&nbsp;</b> </div></td><td><?php $_smarty_tpl->_assignInScope('finalstc', $_smarty_tpl->tpl_vars['FINAL']->value['stc']);?><span class="pull-right" id="stcTotal"><?php if ($_smarty_tpl->tpl_vars['finalstc']->value) {
+echo $_smarty_tpl->tpl_vars['finalstc']->value;
+} elseif ($_smarty_tpl->tpl_vars['stc']->value) {
+echo abs($_smarty_tpl->tpl_vars['stc']->value);
+} else { ?>0<?php }?></span><input type="hidden" id="stcTotal" name="stc" value="<?php if ($_smarty_tpl->tpl_vars['finalstc']->value) {
+echo $_smarty_tpl->tpl_vars['finalstc']->value;
+} elseif ($_smarty_tpl->tpl_vars['stc']->value) {
+echo abs($_smarty_tpl->tpl_vars['stc']->value);
+} else { ?>0<?php }?>"/></td></tr><?php }?><tr><td width="83%"><span class="pull-right"><strong><?php echo vtranslate('LBL_PRE_TAX_TOTAL',$_smarty_tpl->tpl_vars['MODULE']->value);?>
  </strong></span></td><td><?php $_smarty_tpl->_assignInScope('PRE_TAX_TOTAL', $_smarty_tpl->tpl_vars['FINAL']->value['preTaxTotal']);?><span class="pull-right" id="preTaxTotal"><?php if ($_smarty_tpl->tpl_vars['PRE_TAX_TOTAL']->value) {
 echo $_smarty_tpl->tpl_vars['PRE_TAX_TOTAL']->value;
 } else { ?>0<?php }?></span><input type="hidden" id="pre_tax_total" name="pre_tax_total" value="<?php if ($_smarty_tpl->tpl_vars['PRE_TAX_TOTAL']->value) {

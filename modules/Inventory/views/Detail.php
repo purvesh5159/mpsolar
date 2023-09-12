@@ -193,6 +193,14 @@ class Inventory_Detail_View extends Vtiger_Detail_View {
 		$viewer->assign('SELECTED_CHARGES_AND_ITS_TAXES', $selectedChargesList);
 		$viewer->assign('RECORD', $recordModel);
 		$viewer->assign('MODULE_NAME',$moduleName);
+		
+		$gid = $recordModel->get('quote_id');
+		global $adb;
+		$result = $adb->pquery('select stc from vtiger_quotes where quoteid= ? ', array($gid));
+    	if ($adb->num_rows($result) > 0) {
+    		$stc = $adb->query_result($result, 0, 'stc');
+    	}
+    	$viewer->assign('stc', $stc);
 
 //		$viewer->view('LineItemsDetail.tpl', 'Inventory');
 	}

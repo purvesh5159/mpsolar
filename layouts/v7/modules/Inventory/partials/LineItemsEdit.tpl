@@ -387,9 +387,13 @@
 		            <td width="83%" >
 		                <div class="pull-right"><b>{vtranslate('LBL_STC',$MODULE)}&nbsp;&nbsp;</b> </div>
 		            </td>
-		            <td>
-		                <span class="pull-right"><input readonly id="stcTotal" name="stc" type="text" data-validation-engine="validate[funcCall[Vtiger_PositiveNumber_Validator_Js.invokeValidation]]" class="lineItemInputBox" value="{if $FINAL.stc lt 0}{abs($FINAL.stc)}{elseif $FINAL.stc}{$FINAL.stc}{else}0{/if}"></span>
+		            
+		           <td>
+		                {assign var=finalstc value=$FINAL.stc}
+						<span class="pull-right" id="stcTotal">{if $finalstc}{$finalstc}{elseif $stc}{abs($stc)}{else}0{/if}</span>
+						<input type="hidden" id="stcTotal" name="stc" value="{if $finalstc}{$finalstc}{elseif $stc}{abs($stc)}{else}0{/if}"/>
 		            </td>
+
 		        </tr>
                {/if}
 				<tr>

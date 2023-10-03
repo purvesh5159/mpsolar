@@ -39,6 +39,7 @@ class Vtiger_GenerateInstallerInventory_Action extends Vtiger_IndexAjax_View
 
 		$focus = new Installerinventory();
 		$installername =  $so_focus->column_fields['installername'];
+		$projectid =  $salesorder_id;
 
 
 		$result = $adb->pquery("select vtiger_inventoryproductrel.productid,vtiger_inventoryproductrel.sequence_no,vtiger_inventoryproductrel.quantity,vtiger_inventoryproductrel.assignqty,vtiger_inventoryproductrel.lineitem_id,vtiger_inventoryproductrel.description,vtiger_products.productcode,vtiger_products.productcategory,vtiger_products.manufacturer,vtiger_products.series,vtiger_products.model,vtiger_products.size from vtiger_inventoryproductrel INNER JOIN vtiger_products on vtiger_products.productid=vtiger_inventoryproductrel.productid where vtiger_inventoryproductrel.id = ? ", array($salesorder_id));
@@ -47,13 +48,13 @@ class Vtiger_GenerateInstallerInventory_Action extends Vtiger_IndexAjax_View
 			$productid = $row['productid'];
 			$quantity = $row['quantity'];
 			$vres = $adb->pquery("select * from vtiger_installerinventory INNER JOIN
-			 	vtiger_crmentity on vtiger_installerinventory.installerinventoryid=vtiger_crmentity.crmid where vtiger_installerinventory.installerid = ? and vtiger_installerinventory.productname = ? and vtiger_crmentity.deleted=? ", array($installername,$productid,0));
+			 	vtiger_crmentity on vtiger_installerinventory.installerinventoryid=vtiger_crmentity.crmid where vtiger_installerinventory.installerid = ? and vtiger_installerinventory.projectno = ? and vtiger_installerinventory.productname = ? and vtiger_crmentity.deleted=? ", array($installername,$salesorder_id,$productid,0));
 
-				 if ($adb->num_rows($vres) >= 0) {
+				 if ($adb->num_rows($vres) > 0) {
 				 	$usedqty = $adb->query_result($vres, 0, 'qty');
 			        $invid = $adb->query_result($vres, 0, 'installerinventoryid');
 			        $qty = $quantity + $usedqty; 
-					$update_query = "update vtiger_installerinventory set qty= ? where installerinventoryid = ? ";
+					$update_query = "update vtiger_installerinventory set qty= ? where installerinventoryid = ?";
 					$update_params = array($qty,$invid);
 					$adb->pquery($update_query, $update_params);
 				 }
@@ -67,6 +68,7 @@ class Vtiger_GenerateInstallerInventory_Action extends Vtiger_IndexAjax_View
 					$focus->column_fields['size'] = $row['size'];
 					$focus->column_fields['model'] = $row['model'];
 					$focus->column_fields['installerid'] = $installername;
+					$focus->column_fields['projectno'] = $projectid;
 				}
 				
             $focus->id = '';

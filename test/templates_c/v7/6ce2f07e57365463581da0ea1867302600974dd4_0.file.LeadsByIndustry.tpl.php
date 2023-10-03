@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.39, created on 2023-08-16 05:20:26
+/* Smarty version 3.1.39, created on 2023-10-03 07:45:17
   from 'D:\wamp\www\mpsolar\layouts\v7\modules\Leads\dashboards\LeadsByIndustry.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_64dc5c9aec6d31_59439690',
+  'unifunc' => 'content_651bc68dbbcf06_15405697',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_64dc5c9aec6d31_59439690 (Smarty_Internal_Template $_smarty_tpl) {
+function content_651bc68dbbcf06_15405697 (Smarty_Internal_Template $_smarty_tpl) {
 echo '<script'; ?>
  type="text/javascript">
 	Vtiger_Barchat_Widget_Js('Vtiger_LeadsByIndustry_Widget_Js',{},{});

@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.39, created on 2023-08-09 08:56:12
+/* Smarty version 3.1.39, created on 2023-10-03 07:53:43
   from 'D:\wamp\www\mpsolar\layouts\v7\modules\Vtiger\SummaryWidgets.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_64d354ace1d1e5_23171838',
+  'unifunc' => 'content_651bc887b49805_42245687',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_64d354ace1d1e5_23171838 (Smarty_Internal_Template $_smarty_tpl) {
+function content_651bc887b49805_42245687 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <input type="hidden" name="page" value="<?php echo $_smarty_tpl->tpl_vars['PAGING_MODEL']->value->get('page');?>
 " /><input type="hidden" name="pageLimit" value="<?php echo $_smarty_tpl->tpl_vars['PAGING_MODEL']->value->get('limit');?>

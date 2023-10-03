@@ -49,14 +49,14 @@ class Vtiger_UpdateInstallerInventory_Action extends Vtiger_IndexAjax_View
 			$assignqty = $row['assignqty'];
 			$balanceqty = $quantity - $assignqty;
 			$vres = $adb->pquery("select * from vtiger_installerinventory INNER JOIN
-			 	vtiger_crmentity on vtiger_installerinventory.installerinventoryid=vtiger_crmentity.crmid where vtiger_installerinventory.installerid = ? and vtiger_installerinventory.productname = ? and vtiger_crmentity.deleted=? ", array($installername,$productid,0));
+			 	vtiger_crmentity on vtiger_installerinventory.installerinventoryid=vtiger_crmentity.crmid where vtiger_installerinventory.installerid = ? and vtiger_installerinventory.projectno = ? and vtiger_installerinventory.productname = ? and vtiger_crmentity.deleted=? ", array($installername,$salesorder_id,$productid,0));
 
-				 if ($adb->num_rows($vres) >= 0) {
+				 if ($adb->num_rows($vres) > 0) {
 				 	$usedqty = $adb->query_result($vres, 0, 'qty');
 			        $invid = $adb->query_result($vres, 0, 'installerinventoryid');
 			        $qty = $usedqty - $balanceqty; 
 					$update_query = "update vtiger_installerinventory set qty= ? where installerinventoryid = ? ";
-					$update_params = array($qty,$invid);
+					$update_params = array($qty, $invid);
 					$adb->pquery($update_query, $update_params);
 				 }
 				 

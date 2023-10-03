@@ -1238,6 +1238,47 @@ Vtiger.Class("Vtiger_Detail_Js",{
 				}
 			);
 		}
+		else if (moduleNameOFCust == "SalesOrder"  && fieldDetailList['field'] == "sostatus" && fieldDetailList['value'] == "Booked") {
+			let message = "Do you want to send joblist to Installer ?";
+			app.helper.showConfirmationBox({ 'message': message }).then(
+				function (e) {
+					var module = app.getModuleName();
+					var aDeferred1 = jQuery.Deferred();
+					var data = {};
+					if (typeof fieldDetailList != 'undefined') {
+						data = fieldDetailList;
+					}
+					data['record'] = recordId;
+					data['module'] = app.getModuleName();
+					data['action'] = 'GenerateStocknotifytoInstaller';
+					AppConnector.request(data).then(
+						function (reponseData) {
+							aDeferred1.resolve(reponseData);
+						},
+						function(error,err){
+						}
+					);
+					aDeferred1.promise();
+				},
+				function (error, err) {
+					var aDeferred = jQuery.Deferred();
+					var recordId = this.getRecordId();
+					var data = {};
+					if (typeof fieldDetailList != 'undefined') {
+						data = fieldDetailList;
+					}
+					data['record'] = recordId;
+					data['module'] = app.getModuleName();
+					data['action'] = 'SaveAjax';
+					AppConnector.request(data).then(
+						function (reponseData) {
+							aDeferred.resolve(reponseData);
+						}
+					);
+					return aDeferred.promise();
+				}
+			);
+		}
 		var aDeferred = jQuery.Deferred();
 		var data = {};
 		if(typeof fieldDetailList != 'undefined'){

@@ -2775,3 +2775,181 @@ if ($blockInstance) {
 } else {
     echo "Block Does not exits -- LBL_CONTACT_INFORMATION in Contacts -- <br>";
 }
+
+$moduleInstance = null;
+$blockInstance = null;
+$fieldInstance = null;
+$moduleInstance = Vtiger_Module::getInstance('SalesOrder');
+$blockInstance = Vtiger_Block::getInstance('Installer Details', $moduleInstance);
+if ($blockInstance) {
+    $fieldInstance = Vtiger_Field::getInstance('notifyinstaller', $moduleInstance);
+    if (!$fieldInstance) {
+        $field = new Vtiger_Field();
+        $field->name = 'notifyinstaller';
+        $field->column = 'notifyinstaller';
+        $field->table = $moduleInstance->basetable;
+        $field->label = 'Notify Installer to Collect Products';
+        $field->uitype = 56;
+        $field->columntype = 'INT(1) DEFAULT 0';
+        $field->typeofdata = 'I~O';
+        $field->displaytype = 1;
+        $blockInstance->addField($field);
+    } else {
+        echo "field is present -- notifyinstaller salerorder --- <br>";
+    }
+} else {
+    echo "Block Does not exits -- installer Details in SalesOrder -- <br>";
+}
+
+$moduleInstance = null;
+$blockInstance = null;
+$fieldInstance = null;
+$moduleInstance = Vtiger_Module::getInstance('SalesOrder');
+$blockInstance = Vtiger_Block::getInstance('Installer Details', $moduleInstance);
+if ($blockInstance) {
+    $fieldInstance = Vtiger_Field::getInstance('installerinvoiceno', $moduleInstance);
+    if (!$fieldInstance) {
+        $field = new Vtiger_Field();
+        $field->name = 'installerinvoiceno';
+        $field->column = 'installerinvoiceno';
+        $field->uitype = 2;
+        $field->table = $moduleInstance->basetable;
+        $field->label = 'Installer Invoice No';
+        $field->summaryfield = 1;
+        $field->readonly = 1;
+        $field->presence = 2;
+        $field->typeofdata = 'V~O';
+        $field->columntype = 'VARCHAR(32)';
+        $field->quickcreate = 3;
+        $field->displaytype = 1;
+        $field->masseditable = 1;
+        $field->defaultvalue = 0;
+        $blockInstance->addField($field);
+    } else {
+        echo "field is already Present --- INVOICENO in SalesOrder Module --- <br>";
+    }
+} else {
+    echo " block does not exits --- LBL_LEAD_INFORMATION -- <br>";
+}
+
+$moduleInstance = null;
+$blockInstance = null;
+$fieldInstance = null;
+$moduleInstance = Vtiger_Module::getInstance('SalesOrder');
+$blockInstance = Vtiger_Block::getInstance('Installer Details', $moduleInstance);
+if ($blockInstance) {
+    $fieldInstance = Vtiger_Field::getInstance('installerinvoicestatus', $moduleInstance);
+    if (!$fieldInstance) {
+        $fieldInstance = new Vtiger_Field();
+        $fieldInstance->name = 'installerinvoicestatus';
+        $fieldInstance->label = 'Installer Invoice Status';
+        $fieldInstance->table = $moduleInstance->basetable;
+        $fieldInstance->column = 'installerinvoicestatus';
+        $fieldInstance->uitype = '16';
+        $fieldInstance->presence = '0';
+        $fieldInstance->typeofdata = 'V~O';
+        $fieldInstance->columntype = 'VARCHAR(100)';
+        $fieldInstance->defaultvalue = NULL;
+        $blockInstance->addField($fieldInstance);
+        $fieldInstance->setPicklistValues(array("Received","Paid"));
+    } else {
+        echo "field is already Present --- status in SalesOrder Module --- <br>";
+    }
+} else {
+    echo " block does not exits --- LBL_ADDRESS_INFORMATION -- <br>";
+}
+
+$moduleInstance = null;
+$blockInstance = null;
+$fieldInstance = null;
+$moduleInstance = Vtiger_Module::getInstance('SalesOrder');
+$blockInstance = Vtiger_Block::getInstance('Gross Profit Details', $moduleInstance);
+if ($blockInstance) {
+    $fieldInstance = Vtiger_Field::getInstance('inventoryamount', $moduleInstance);
+    if (!$fieldInstance) {
+        $field = new Vtiger_Field();
+        $field->name = 'inventoryamount';
+        $field->column = 'inventoryamount';
+        $field->uitype = 72;
+        $field->table = $moduleInstance->basetable;
+        $field->label = 'Inventory Amount';
+        $field->summaryfield = 1;
+        $field->readonly = 1;
+        $field->presence = 2;
+        $field->typeofdata = 'V~O';
+        $field->columntype = 'VARCHAR(32)';
+        $field->quickcreate = 3;
+        $field->displaytype = 1;
+        $field->masseditable = 1;
+        $field->defaultvalue = 0;
+        $blockInstance->addField($field);
+    } else {
+        echo "field is present -- inventoryamount SalesOrder --- <br>";
+    }
+} else {
+    echo "Block Does not exits -- LBL_CONTACT_INFORMATION in SalesOrder -- <br>";
+}
+
+
+$moduleInstance = null;
+$blockInstance = null;
+$fieldInstance = null;
+$moduleInstance = Vtiger_Module::getInstance('SalesOrder');
+$blockInstance = Vtiger_Block::getInstance('Gross Profit Details', $moduleInstance);
+if ($blockInstance) {
+    $fieldInstance = Vtiger_Field::getInstance('installerinvoiceamount', $moduleInstance);
+    if (!$fieldInstance) {
+        $field = new Vtiger_Field();
+        $field->name = 'installerinvoiceamount';
+        $field->column = 'installerinvoiceamount';
+        $field->uitype = 72;
+        $field->table = $moduleInstance->basetable;
+        $field->label = 'Installer Invoice Amount';
+        $field->summaryfield = 1;
+        $field->readonly = 1;
+        $field->presence = 2;
+        $field->typeofdata = 'V~O';
+        $field->columntype = 'VARCHAR(32)';
+        $field->quickcreate = 3;
+        $field->displaytype = 1;
+        $field->masseditable = 1;
+        $field->defaultvalue = 0;
+        $blockInstance->addField($field);
+    } else {
+        echo "field is present -- installerinvoiceamount SalesOrder --- <br>";
+    }
+} else {
+    echo "Block Does not exits -- LBL_CONTACT_INFORMATION in SalesOrder -- <br>";
+}
+
+
+$moduleInstance = null;
+$blockInstance = null;
+$fieldInstance = null;
+$moduleInstance = Vtiger_Module::getInstance('SalesOrder');
+$blockInstance = Vtiger_Block::getInstance('Gross Profit Details', $moduleInstance);
+if ($blockInstance) {
+    $fieldInstance = Vtiger_Field::getInstance('netprofit', $moduleInstance);
+    if (!$fieldInstance) {
+        $field = new Vtiger_Field();
+        $field->name = 'netprofit';
+        $field->column = 'netprofit';
+        $field->uitype = 72;
+        $field->table = $moduleInstance->basetable;
+        $field->label = 'Net Profit Amount';
+        $field->summaryfield = 1;
+        $field->readonly = 1;
+        $field->presence = 2;
+        $field->typeofdata = 'V~O';
+        $field->columntype = 'VARCHAR(32)';
+        $field->quickcreate = 3;
+        $field->displaytype = 1;
+        $field->masseditable = 1;
+        $field->defaultvalue = 0;
+        $blockInstance->addField($field);
+    } else {
+        echo "field is present -- netprofit SalesOrder --- <br>";
+    }
+} else {
+    echo "Block Does not exits -- LBL_CONTACT_INFORMATION in SalesOrder -- <br>";
+}

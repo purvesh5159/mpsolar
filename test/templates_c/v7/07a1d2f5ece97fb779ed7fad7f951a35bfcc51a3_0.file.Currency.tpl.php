@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.39, created on 2023-08-09 07:05:11
+/* Smarty version 3.1.39, created on 2023-10-03 07:28:21
   from 'D:\wamp\www\mpsolar\layouts\v7\modules\Vtiger\uitypes\Currency.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_64d33aa719fac6_48471468',
+  'unifunc' => 'content_651bc2953388e3_43091018',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_64d33aa719fac6_48471468 (Smarty_Internal_Template $_smarty_tpl) {
+function content_651bc2953388e3_43091018 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_assignInScope('FIELD_INFO', $_smarty_tpl->tpl_vars['FIELD_MODEL']->value->getFieldInfo());
 $_smarty_tpl->_assignInScope('SPECIAL_VALIDATOR', $_smarty_tpl->tpl_vars['FIELD_MODEL']->value->getValidator());
 if ((!$_smarty_tpl->tpl_vars['FIELD_NAME']->value)) {

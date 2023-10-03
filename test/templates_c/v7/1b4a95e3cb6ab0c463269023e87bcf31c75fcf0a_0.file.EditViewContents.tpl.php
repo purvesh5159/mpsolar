@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2023-08-10 06:27:56
+/* Smarty version 3.1.39, created on 2023-10-03 07:43:36
   from 'D:\wamp\www\mpsolar\layouts\v7\modules\Inventory\partials\EditViewContents.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_64d4836ca57bf6_26011496',
+  'unifunc' => 'content_651bc62858baf6_36158056',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '1b4a95e3cb6ab0c463269023e87bcf31c75fcf0a' => 
     array (
       0 => 'D:\\wamp\\www\\mpsolar\\layouts\\v7\\modules\\Inventory\\partials\\EditViewContents.tpl',
-      1 => 1691648762,
+      1 => 1696319012,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_64d4836ca57bf6_26011496 (Smarty_Internal_Template $_smarty_tpl) {
+function content_651bc62858baf6_36158056 (Smarty_Internal_Template $_smarty_tpl) {
 if (!empty($_smarty_tpl->tpl_vars['PICKIST_DEPENDENCY_DATASOURCE']->value)) {?><input type="hidden" name="picklistDependency" value='<?php echo Vtiger_Util_Helper::toSafeHTML($_smarty_tpl->tpl_vars['PICKIST_DEPENDENCY_DATASOURCE']->value);?>
 ' /><?php }?><div name='editContent'><?php if ($_smarty_tpl->tpl_vars['DUPLICATE_RECORDS']->value) {?><div class="fieldBlockContainer duplicationMessageContainer"><div class="duplicationMessageHeader"><b><?php echo vtranslate('LBL_DUPLICATES_DETECTED',$_smarty_tpl->tpl_vars['MODULE']->value);?>
 </b></div><div><?php echo getDuplicatesPreventionMessage($_smarty_tpl->tpl_vars['MODULE']->value,$_smarty_tpl->tpl_vars['DUPLICATE_RECORDS']->value);?>
@@ -33,7 +33,13 @@ $_smarty_tpl->tpl_vars['BLOCK_FIELDS']->do_else = false;
 if ($_smarty_tpl->tpl_vars['BLOCK_LABEL']->value == 'LBL_ITEM_DETAILS') {
 continue 1;
 }
-if (count($_smarty_tpl->tpl_vars['BLOCK_FIELDS']->value) > 0) {?><div class='fieldBlockContainer' data-block="<?php echo $_smarty_tpl->tpl_vars['BLOCK_LABEL']->value;?>
+if ($_smarty_tpl->tpl_vars['USER_MODEL']->value->get('roleid') != 'H5' && $_smarty_tpl->tpl_vars['IS_ADMIN']->value != '1') {
+if ($_smarty_tpl->tpl_vars['BLOCK_LABEL']->value == 'Gross Profit Details') {
+continue 1;
+}
+}
+if (count($_smarty_tpl->tpl_vars['BLOCK_FIELDS']->value) > 0) {?><div class='fieldBlockContainer' data-block="<?php echo $_smarty_tpl->tpl_vars['BLOCK_LABEL']->value;
+echo $_smarty_tpl->tpl_vars['IS_ADMIN']->value;?>
 "><h4 class='fieldBlockHeader'><?php echo vtranslate($_smarty_tpl->tpl_vars['BLOCK_LABEL']->value,$_smarty_tpl->tpl_vars['MODULE']->value);?>
 </h4><hr><table class="table table-borderless <?php if ($_smarty_tpl->tpl_vars['BLOCK_LABEL']->value == 'LBL_ADDRESS_INFORMATION') {?> addressBlock<?php }?>"><?php if (($_smarty_tpl->tpl_vars['BLOCK_LABEL']->value == 'LBL_ADDRESS_INFORMATION') && ($_smarty_tpl->tpl_vars['MODULE']->value != 'PurchaseOrder')) {?><tr class="hide"><td class="fieldLabel " name="copyHeader1"><label name="togglingHeader"><?php echo vtranslate('LBL_BILLING_ADDRESS_FROM',$_smarty_tpl->tpl_vars['MODULE']->value);?>
 </label></td><td class="fieldValue" name="copyAddress1"><div class="radio"><label><input type="radio" name="copyAddressFromRight" class="accountAddress" data-copy-address="billing" checked="checked">&nbsp;<?php echo vtranslate('SINGLE_Accounts',$_smarty_tpl->tpl_vars['MODULE']->value);?>

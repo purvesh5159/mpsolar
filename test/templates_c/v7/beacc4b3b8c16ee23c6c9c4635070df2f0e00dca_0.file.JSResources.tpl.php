@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.39, created on 2023-08-09 07:05:11
+/* Smarty version 3.1.39, created on 2023-10-03 07:25:23
   from 'D:\wamp\www\mpsolar\layouts\v7\modules\Vtiger\JSResources.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_64d33aa775e9f9_83293515',
+  'unifunc' => 'content_651bc1e3d5d0b1_12123261',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_64d33aa775e9f9_83293515 (Smarty_Internal_Template $_smarty_tpl) {
+function content_651bc1e3d5d0b1_12123261 (Smarty_Internal_Template $_smarty_tpl) {
 echo '<script'; ?>
  type="text/javascript" src="<?php echo vresource_url('layouts/v7/lib/jquery/purl.js');?>
 "><?php echo '</script'; ?>

@@ -15,8 +15,12 @@
 	{/if}
 
 	{foreach key=BLOCK_LABEL_KEY item=FIELD_MODEL_LIST from=$RECORD_STRUCTURE}
-		{assign var=BLOCK value=$BLOCK_LIST[$BLOCK_LABEL_KEY]}
-		{if $BLOCK eq null or $FIELD_MODEL_LIST|@count lte 0}{continue}{/if}
+	{assign var=BLOCK value=$BLOCK_LIST[$BLOCK_LABEL_KEY]}
+	{if $BLOCK eq null or $FIELD_MODEL_LIST|@count lte 0}{continue}{/if}
+	{if $USER_MODEL->get('roleid') neq 'H5' && $IS_ADMIN neq '1'}
+         {if $BLOCK_LABEL_KEY eq 'Gross Profit Details'}{continue}{/if}
+    {/if}
+		
 		<div class="block block_{$BLOCK_LABEL_KEY} {if $BLOCK_LABEL_KEY eq 'Installer Details'} hide {/if}" data-block="{$BLOCK_LABEL_KEY}" data-blockid="{$BLOCK_LIST[$BLOCK_LABEL_KEY]->get('id')}">
 			{assign var=IS_HIDDEN value=$BLOCK->isHidden()}
 			{assign var=WIDTHTYPE value=$USER_MODEL->get('rowheight')}
@@ -122,7 +126,10 @@
 													<input type="hidden" class="fieldBasicData" data-name='{$FIELD_MODEL->get('name')}' data-type="{$fieldDataType}" data-displayvalue='{$FIELD_DISPLAY_VALUE}' data-value="{$FIELD_VALUE}" />
 												{/if}
 											</span>
+											{if $FIELD_MODEL->get('name') neq 'notifyinstaller' and $FIELD_MODEL->get('name') neq 'inventoryamount' and $FIELD_MODEL->get('name') neq 'installerinvoiceamount' and $FIELD_MODEL->get('name') neq 'netprofit' and
+											$FIELD_MODEL->get('name') neq 'noofstc'}
 											<span class="action pull-right"><a href="#" onclick="return false;" class="editAction fa fa-pencil"></a></span>
+											{/if}
 										{/if}
 									</td>
 								{/if}

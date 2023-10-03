@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.39, created on 2023-08-17 05:46:15
+/* Smarty version 3.1.39, created on 2023-10-03 07:25:50
   from 'D:\wamp\www\mpsolar\layouts\v7\modules\PDFMaker\GetPDFButtons.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_64ddb42784c9d5_62314037',
+  'unifunc' => 'content_651bc1fe5358e9_42348809',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_64ddb42784c9d5_62314037 (Smarty_Internal_Template $_smarty_tpl) {
+function content_651bc1fe5358e9_42348809 (Smarty_Internal_Template $_smarty_tpl) {
 if ($_smarty_tpl->tpl_vars['ENABLE_PDFMAKER']->value == 'true') {?>
 
      <div class="col-sm-4 pull-right" id="PDFMakerContentDiv">

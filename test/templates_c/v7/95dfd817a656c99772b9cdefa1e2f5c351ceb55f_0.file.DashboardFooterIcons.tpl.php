@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.39, created on 2023-08-16 05:20:26
+/* Smarty version 3.1.39, created on 2023-10-03 07:45:17
   from 'D:\wamp\www\mpsolar\layouts\v7\modules\Vtiger\dashboards\DashboardFooterIcons.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_64dc5c9a98d869_45035632',
+  'unifunc' => 'content_651bc68dc7d703_94987335',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_64dc5c9a98d869_45035632 (Smarty_Internal_Template $_smarty_tpl) {
+function content_651bc68dc7d703_94987335 (Smarty_Internal_Template $_smarty_tpl) {
 if ($_smarty_tpl->tpl_vars['SETTING_EXIST']->value) {?>
 <a name="dfilter">
 	<i class='fa fa-cog' border='0' align="absmiddle" title="<?php echo vtranslate('LBL_FILTER');?>

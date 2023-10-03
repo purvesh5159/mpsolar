@@ -2965,7 +2965,12 @@ Vtiger_Edit_Js("Inventory_Edit_Js", {
         jQuery('#Quotes_editView_fieldName_noofstc').attr('readonly', true);
         jQuery('#SalesOrder_editView_fieldName_noofstc').attr('readonly', true);
         jQuery('#Invoice_editView_fieldName_noofstc').attr('readonly', true);
+        jQuery('#EditView').find('[name="stcincentive"]').css('background-color' , '#DEDEDE');
         jQuery('input[name="stcincentive"]').attr('readonly',true);
+        jQuery('#EditView').find('[name="notifyinstaller"]').parent().css('pointer-events', 'none');
+        jQuery('#EditView').find('[name="notifyinstaller"]').css('background-color' , '#DEDEDE');
+        jQuery('#EditView').find('[name="netprofit"]').parent().css('pointer-events', 'none');
+        jQuery('#EditView').find('[name="netprofit"]').css('background-color' , '#DEDEDE');
         this._super(container);
         this.registerAddProductService();
         this.registerProductAndServiceSelector();

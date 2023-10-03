@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.39, created on 2023-08-09 07:08:23
+/* Smarty version 3.1.39, created on 2023-10-03 07:39:11
   from 'D:\wamp\www\mpsolar\layouts\v7\modules\Vtiger\ModalFooter.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_64d33b671807b3_37240967',
+  'unifunc' => 'content_651bc51f48ff99_46620814',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_64d33b671807b3_37240967 (Smarty_Internal_Template $_smarty_tpl) {
+function content_651bc51f48ff99_46620814 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="modal-footer "><center><?php if ($_smarty_tpl->tpl_vars['BUTTON_NAME']->value != null) {
 $_smarty_tpl->_assignInScope('BUTTON_LABEL', $_smarty_tpl->tpl_vars['BUTTON_NAME']->value);
 } else {

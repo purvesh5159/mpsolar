@@ -161,6 +161,7 @@ Class Inventory_Edit_View extends Vtiger_Edit_View {
 		$picklistDependencyDatasource = Vtiger_DependencyPicklist::getPicklistDependencyDatasource($moduleName);
 
 		$recordStructure = $recordStructureInstance->getStructure();
+		$current_user =Users_Record_Model::getCurrentUserModel();
 
 		$viewer->assign('PICKIST_DEPENDENCY_DATASOURCE',Vtiger_Functions::jsonEncode($picklistDependencyDatasource));
 		$viewer->assign('RECORD',$recordModel);
@@ -169,6 +170,9 @@ Class Inventory_Edit_View extends Vtiger_Edit_View {
 		$viewer->assign('MODULE', $moduleName);
 		$viewer->assign('CURRENTDATE', date('Y-n-j'));
 		$viewer->assign('USER_MODEL', Users_Record_Model::getCurrentUserModel());
+		if ($current_user->isAdminUser()) {
+               $viewer->assign('IS_ADMIN', '1');
+        }
 
 		$taxRegions = $recordModel->getRegionsList();
 		$defaultRegionInfo = $taxRegions[0];

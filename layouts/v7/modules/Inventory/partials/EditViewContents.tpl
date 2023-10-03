@@ -22,8 +22,11 @@
 	{/if}
     {foreach key=BLOCK_LABEL item=BLOCK_FIELDS from=$RECORD_STRUCTURE name=blockIterator}
         {if $BLOCK_LABEL eq 'LBL_ITEM_DETAILS'}{continue}{/if}
+         {if $USER_MODEL->get('roleid') neq 'H5' && $IS_ADMIN neq '1'}
+         {if $BLOCK_LABEL eq 'Gross Profit Details'}{continue}{/if}
+         {/if}
          {if $BLOCK_FIELDS|@count gt 0}
-             <div class='fieldBlockContainer' data-block="{$BLOCK_LABEL}">
+             <div class='fieldBlockContainer' data-block="{$BLOCK_LABEL}{$IS_ADMIN}">
                      <h4 class='fieldBlockHeader'>{vtranslate($BLOCK_LABEL, $MODULE)}</h4>
                  <hr>
                  <table class="table table-borderless {if $BLOCK_LABEL eq 'LBL_ADDRESS_INFORMATION'} addressBlock{/if}">

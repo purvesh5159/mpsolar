@@ -187,12 +187,18 @@ class Inventory_Detail_View extends Vtiger_Detail_View {
 
 			$selectedChargesList[$chargeId] = $chargeInfo;
 		}
+		$current_user =Users_Record_Model::getCurrentUserModel();
 
 		$viewer = $this->getViewer($request);
 		$viewer->assign('RELATED_PRODUCTS', $relatedProducts);
 		$viewer->assign('SELECTED_CHARGES_AND_ITS_TAXES', $selectedChargesList);
 		$viewer->assign('RECORD', $recordModel);
 		$viewer->assign('MODULE_NAME',$moduleName);
+		$viewer->assign('USER_MODEL', Users_Record_Model::getCurrentUserModel());
+		
+		if ($current_user->isAdminUser()) {
+               $viewer->assign('IS_ADMIN', '1');
+        }
 		
 		$gid = $recordModel->get('quote_id');
 		global $adb;

@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.39, created on 2023-08-09 08:56:09
+/* Smarty version 3.1.39, created on 2023-10-03 07:53:42
   from 'D:\wamp\www\mpsolar\layouts\v7\modules\Vtiger\DetailViewPostProcess.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_64d354a9dc2237_17182917',
+  'unifunc' => 'content_651bc88685c256_21060125',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_64d354a9dc2237_17182917 (Smarty_Internal_Template $_smarty_tpl) {
+function content_651bc88685c256_21060125 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
                 </div>
             </div>

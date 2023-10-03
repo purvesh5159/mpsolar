@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.39, created on 2023-08-09 07:20:19
+/* Smarty version 3.1.39, created on 2023-10-03 07:53:35
   from 'D:\wamp\www\mpsolar\layouts\v7\modules\Vtiger\PopupNavigation.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_64d33e336ecd45_25618631',
+  'unifunc' => 'content_651bc87f540f59_07944725',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_64d33e336ecd45_25618631 (Smarty_Internal_Template $_smarty_tpl) {
+function content_651bc87f540f59_07944725 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <div class="col-md-2"><?php if ($_smarty_tpl->tpl_vars['MULTI_SELECT']->value) {
 if (!empty($_smarty_tpl->tpl_vars['LISTVIEW_ENTRIES']->value)) {?><button class="select btn btn-default" disabled="disabled"><strong><?php echo vtranslate('LBL_ADD',$_smarty_tpl->tpl_vars['MODULE']->value);?>

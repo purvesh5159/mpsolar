@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2023-08-09 08:56:32
+/* Smarty version 3.1.39, created on 2023-10-03 08:04:43
   from 'D:\wamp\www\mpsolar\layouts\v7\modules\Vtiger\DetailViewBlockView.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_64d354c0d8f7f9_70257780',
+  'unifunc' => 'content_651bcb1b81fa48_64978575',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e1e5e636abebc5c4e0515ba8dbfa3849d5ba4759' => 
     array (
       0 => 'D:\\wamp\\www\\mpsolar\\layouts\\v7\\modules\\Vtiger\\DetailViewBlockView.tpl',
-      1 => 1688974812,
+      1 => 1696320281,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_64d354c0d8f7f9_70257780 (Smarty_Internal_Template $_smarty_tpl) {
+function content_651bcb1b81fa48_64978575 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <input type="hidden" name="assingeid" id="assingeid" class="assingeid" value='<?php echo $_smarty_tpl->tpl_vars['ASSIGNEDID']->value;?>
 ' /><input type="hidden" name="currentedid" id="currentedid" class="currentedid" value='<?php echo $_smarty_tpl->tpl_vars['CURRENTID']->value;?>
@@ -33,6 +33,11 @@ $_smarty_tpl->tpl_vars['FIELD_MODEL_LIST']->do_else = false;
 $_smarty_tpl->_assignInScope('BLOCK', $_smarty_tpl->tpl_vars['BLOCK_LIST']->value[$_smarty_tpl->tpl_vars['BLOCK_LABEL_KEY']->value]);
 if ($_smarty_tpl->tpl_vars['BLOCK']->value == null || count($_smarty_tpl->tpl_vars['FIELD_MODEL_LIST']->value) <= 0) {
 continue 1;
+}
+if ($_smarty_tpl->tpl_vars['USER_MODEL']->value->get('roleid') != 'H5' && $_smarty_tpl->tpl_vars['IS_ADMIN']->value != '1') {
+if ($_smarty_tpl->tpl_vars['BLOCK_LABEL_KEY']->value == 'Gross Profit Details') {
+continue 1;
+}
 }?><div class="block block_<?php echo $_smarty_tpl->tpl_vars['BLOCK_LABEL_KEY']->value;?>
  <?php if ($_smarty_tpl->tpl_vars['BLOCK_LABEL_KEY']->value == 'Installer Details') {?> hide <?php }?>" data-block="<?php echo $_smarty_tpl->tpl_vars['BLOCK_LABEL_KEY']->value;?>
 " data-blockid="<?php echo $_smarty_tpl->tpl_vars['BLOCK_LIST']->value[$_smarty_tpl->tpl_vars['BLOCK_LABEL_KEY']->value]->get('id');?>
@@ -147,7 +152,8 @@ $_smarty_tpl->_assignInScope('FIELD_DISPLAY_VALUE', Vtiger_Util_Helper::toSafeHT
 ' data-type="<?php echo $_smarty_tpl->tpl_vars['fieldDataType']->value;?>
 " data-displayvalue='<?php echo $_smarty_tpl->tpl_vars['FIELD_DISPLAY_VALUE']->value;?>
 ' data-value="<?php echo $_smarty_tpl->tpl_vars['FIELD_VALUE']->value;?>
-" /><?php }?></span><span class="action pull-right"><a href="#" onclick="return false;" class="editAction fa fa-pencil"></a></span><?php }?></td><?php }
+" /><?php }?></span><?php if ($_smarty_tpl->tpl_vars['FIELD_MODEL']->value->get('name') != 'notifyinstaller' && $_smarty_tpl->tpl_vars['FIELD_MODEL']->value->get('name') != 'inventoryamount' && $_smarty_tpl->tpl_vars['FIELD_MODEL']->value->get('name') != 'installerinvoiceamount' && $_smarty_tpl->tpl_vars['FIELD_MODEL']->value->get('name') != 'netprofit' && $_smarty_tpl->tpl_vars['FIELD_MODEL']->value->get('name') != 'noofstc') {?><span class="action pull-right"><a href="#" onclick="return false;" class="editAction fa fa-pencil"></a></span><?php }
+}?></td><?php }
 if (count($_smarty_tpl->tpl_vars['FIELD_MODEL_LIST']->value) == 1 && $_smarty_tpl->tpl_vars['FIELD_MODEL']->value->get('uitype') != "19" && $_smarty_tpl->tpl_vars['FIELD_MODEL']->value->get('uitype') != "20" && $_smarty_tpl->tpl_vars['FIELD_MODEL']->value->get('uitype') != "30" && $_smarty_tpl->tpl_vars['FIELD_MODEL']->value->get('name') != "recurringtype" && $_smarty_tpl->tpl_vars['FIELD_MODEL']->value->get('uitype') != "69" && $_smarty_tpl->tpl_vars['FIELD_MODEL']->value->get('uitype') != "105") {?><td class="fieldLabel <?php echo $_smarty_tpl->tpl_vars['WIDTHTYPE']->value;?>
 "></td><td class="<?php echo $_smarty_tpl->tpl_vars['WIDTHTYPE']->value;?>
 "></td><?php }

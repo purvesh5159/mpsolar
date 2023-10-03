@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.39, created on 2023-08-09 07:14:01
+/* Smarty version 3.1.39, created on 2023-10-03 07:39:05
   from 'D:\wamp\www\mpsolar\layouts\v7\modules\Vtiger\dashboards\DashBoardHeader.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_64d33cb913b830_38974236',
+  'unifunc' => 'content_651bc51977dc84_77948928',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_64d33cb913b830_38974236 (Smarty_Internal_Template $_smarty_tpl) {
+function content_651bc51977dc84_77948928 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <div class='dashboardHeading container-fluid'>
 	<div class="buttonGroups pull-right">

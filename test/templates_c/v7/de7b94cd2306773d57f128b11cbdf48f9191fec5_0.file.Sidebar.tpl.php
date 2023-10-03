@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.39, created on 2023-08-09 09:25:25
+/* Smarty version 3.1.39, created on 2023-10-03 07:38:21
   from 'D:\wamp\www\mpsolar\layouts\v7\modules\Settings\Vtiger\Sidebar.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_64d35b85a3c037_70222719',
+  'unifunc' => 'content_651bc4ed2d27c6_05644222',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:modules/Users/UsersSidebar.tpl' => 1,
   ),
 ),false)) {
-function content_64d35b85a3c037_70222719 (Smarty_Internal_Template $_smarty_tpl) {
+function content_651bc4ed2d27c6_05644222 (Smarty_Internal_Template $_smarty_tpl) {
 if ($_smarty_tpl->tpl_vars['USER_MODEL']->value->isAdminUser()) {
 $_smarty_tpl->_assignInScope('SETTINGS_MODULE_MODEL', Settings_Vtiger_Module_Model::getInstance());
 $_smarty_tpl->_assignInScope('SETTINGS_MENUS', $_smarty_tpl->tpl_vars['SETTINGS_MODULE_MODEL']->value->getMenus());?><div class="settingsgroup"><div><input type="text" placeholder="<?php echo vtranslate('LBL_SEARCH_FOR_SETTINGS',$_smarty_tpl->tpl_vars['QUALIFIED_MODULE']->value);?>

@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.39, created on 2023-08-09 07:05:10
+/* Smarty version 3.1.39, created on 2023-10-03 07:25:22
   from 'D:\wamp\www\mpsolar\layouts\v7\modules\Vtiger\partials\SidebarAppMenu.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_64d33aa6b2aee3_05425122',
+  'unifunc' => 'content_651bc1e2bff9b8_14270133',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_64d33aa6b2aee3_05425122 (Smarty_Internal_Template $_smarty_tpl) {
+function content_651bc1e2bff9b8_14270133 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <div class="app-menu hide" id="app-menu">
 	<div class="container-fluid">

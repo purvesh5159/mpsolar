@@ -958,7 +958,7 @@ class QueryGenerator {
 		$db = PearDatabase::getInstance();
 
 		if(is_string($value) && $this->ignoreComma == false) {
-			$commaSeparatedFieldTypes = array('picklist', 'multipicklist', 'owner', 'date', 'datetime', 'time');
+			$commaSeparatedFieldTypes = array('picklist', 'multipicklist', 'owner', 'date', 'datetime', 'time','string');
 			if(in_array($operator, array('s', 'ew', 'c', 'k')) || in_array($field->getFieldDataType(), $commaSeparatedFieldTypes) || ($field->getFieldName() == 'salutationtype') || ($field->getFieldDataType()=='reference' && in_array('Users', $field->getReferenceList()))) {
 			$valueArray = explode(',' , $value);
 			if ($field->getFieldDataType() == 'multipicklist' && in_array($operator, array('e', 'n'))) {
@@ -976,6 +976,11 @@ class QueryGenerator {
 			$valueArray = array($value);
 		}
 		$sql = array();
+		if ($field->getFieldName() == 'bill_code'){
+		$sql[] = "BETWEEN ".$db->quote($valueArray[0])." AND ".
+							$db->quote($valueArray[1]);
+		}
+
 		if($operator == 'between' || $operator == 'bw' || $operator == 'notequal') {
 			if($field->getFieldName() == 'birthday') {
 				$valueArray[0] = getValidDBInsertDateTimeValue($valueArray[0]);

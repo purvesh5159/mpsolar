@@ -147,8 +147,8 @@ class SalesOrder extends CRMEntity {
 	}
 
 		// Update the currency id and the conversion rate for the sales order
-	$update_query = "update vtiger_salesorder set currency_id=?, conversion_rate=?, region_id=?, adjustment=?, subtotal=?, total=?, taxtype=?, discount_percent=?, discount_amount=?, s_h_amount=?, s_h_percent=? where salesorderid=?";
-	$update_params = array($this->column_fields['currency_id'], $this->column_fields['conversion_rate'], $this->column_fields['region_id'], $this->column_fields['txtAdjustment'], $this->column_fields['hdnSubTotal'], $this->column_fields['hdnGrandTotal'], $this->column_fields['hdnTaxType'], $this->column_fields['hdnDiscountPercent'], $this->column_fields['hdnDiscountAmount'], $this->column_fields['hdnS_H_Amount'], $this->column_fields['hdnS_H_Percent'], $this->id);
+	$update_query = "update vtiger_salesorder set currency_id=?, conversion_rate=?, region_id=?, adjustment=?, subtotal=?,stc=?, total=?, taxtype=?, discount_percent=?, discount_amount=?, s_h_amount=?, s_h_percent=? where salesorderid=?";
+	$update_params = array($this->column_fields['currency_id'], $this->column_fields['conversion_rate'], $this->column_fields['region_id'], $this->column_fields['txtAdjustment'], $this->column_fields['hdnSubTotal'], $this->column_fields['stc'],  $this->column_fields['hdnGrandTotal'], $this->column_fields['hdnTaxType'], $this->column_fields['hdnDiscountPercent'], $this->column_fields['hdnDiscountAmount'], $this->column_fields['hdnS_H_Amount'], $this->column_fields['hdnS_H_Percent'], $this->id);
 	$this->db->pquery($update_query, $update_params);
 }
 

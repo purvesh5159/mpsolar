@@ -33,12 +33,11 @@ class Maintenance extends CRMEntity {
 	 */
 	var $customFieldTable = Array('vtiger_maintenancecf', 'maintenanceid');
 	var $entity_table = "vtiger_crmentity";
-
 	var $billadr_table = "vtiger_mpobillads";
 
 	var $column_fields = Array();
 
-	var $sortby_fields = Array('subject','tracking_no','smownerid','lastname');
+	var $sortby_fields = Array('subject','quotename','smownerid','lastname');
 
 	// This is used to retrieve related vtiger_fields from form posts.
 	var $additional_column_fields = Array('assigned_user_name', 'smownerid', 'opportunity_id', 'case_id', 'contact_id', 'task_id', 'note_id', 'meeting_id', 'call_id', 'email_id', 'parent_name', 'member_id' );
@@ -47,40 +46,41 @@ class Maintenance extends CRMEntity {
 	var $list_fields = Array(
 				//  Module Sequence Numbering
 				//'Order No'=>Array('crmentity'=>'crmid'),
-				'Order No'=>Array('maintenance'=>'maintenance_no'),
+		'Maintenance No'=>Array('maintenance'=>'maintenance_no'),
 				// END
-				'Subject'=>Array('maintenance'=>'subject'),
-				'Vendor Name'=>Array('maintenance'=>'vendorid'),
-				'Tracking Number'=>Array('maintenance'=> 'tracking_no'),
-				'Total'=>Array('maintenance'=>'total'),
-				'Assigned To'=>Array('crmentity'=>'smownerid')
-				);
+		'Project No'=>Array('maintenance'=>'subject'),
+		'Quote Name'=>Array('maintenance'=>'quotename'),
+		'Project Date'=>Array('maintenance'=> 'projectdate'),
+		'Total'=>Array('maintenance'=>'total'),
+		'Assigned To'=>Array('crmentity'=>'smownerid')
+	);
 
 	var $list_fields_name = Array(
-				        'Order No'=>'maintenance_no',
-				        'Subject'=>'subject',
-				        'Vendor Name'=>'vendor_id',
-					'Tracking Number'=>'tracking_no',
-					'Total'=>'hdnGrandTotal',
-				        'Assigned To'=>'assigned_user_id'
-				      );
+		'Maintenance No'=>'maintenance_no',
+		'Project No'=>'subject',
+		'quotename Name'=>'quotename',
+		'Project Date'=>'projectdate',
+		'Total'=>'hdnGrandTotal',
+		'Assigned To'=>'assigned_user_id'
+	);
+
 	var $list_link_field= 'subject';
 
 	var $search_fields = Array(
-				'Order No'=>Array('maintenance'=>'maintenance_no'),
-				'Subject'=>Array('maintenance'=>'subject'),
-				);
+		'Maintenance No'=>Array('maintenance'=>'maintenance_no'),
+		'Project No'=>Array('maintenance'=>'subject'),
+	);
 
 	var $search_fields_name = Array(
-				        'Order No'=>'maintenance_no',
-				        'Subject'=>'subject',
-				      );
+		'Order No'=>'maintenance_no',
+		'Project No'=>'subject',
+	);
 	// Used when enabling/disabling the mandatory fields for the module.
 	// Refers to vtiger_field.fieldname values.
-	var $mandatory_fields = Array('subject', 'vendor_id','createdtime' ,'modifiedtime', 'assigned_user_id', 'quantity', 'listprice', 'productid');
+	var $mandatory_fields = Array('subject', 'quotename','createdtime' ,'modifiedtime', 'assigned_user_id', 'quantity', 'listprice', 'productid');
 
 	// This is the list of vtiger_fields that are required.
-	var $required_fields =  array("accountname"=>1);
+	var $required_fields =  array("subject"=>1);
 
 	//Added these variables which are used as default order by and sortorder in ListView
 	var $default_order_by = 'subject';
@@ -97,13 +97,13 @@ class Maintenance extends CRMEntity {
 	 *  This function creates an instance of LoggerManager class using getLogger method
 	 *  creates an instance for PearDatabase class and get values for column_fields array of Order class.
 	 */
-        function __construct() {
-            $this->log =Logger::getLogger('Maintenance');
-            $this->db = PearDatabase::getInstance();
-            $this->column_fields = getColumnFields('Maintenance');
-        }
+	function __construct() {
+		$this->log =Logger::getLogger('Maintenance');
+		$this->db = PearDatabase::getInstance();
+		$this->column_fields = getColumnFields('Maintenance');
+	}
 	function Maintenance() {
-            self::__construct();
+		self::__construct();
 	}
 
 	function save_module($module)
@@ -162,7 +162,7 @@ class Maintenance extends CRMEntity {
 					}
 				}
 			}
-				
+
 			if ($statusValue === 'Cancelled') {
 				$itemQuantitiesList = $quantitiesList;
 			} else {
@@ -254,20 +254,20 @@ class Maintenance extends CRMEntity {
 
 		} else if(isset($_REQUEST)) {
 		//in ajax save we should not call this function, because this will delete all the existing product values
-		if($_REQUEST['action'] != 'MaintenanceAjax' && $_REQUEST['ajxaction'] != 'DETAILVIEW'
+			if($_REQUEST['action'] != 'MaintenanceAjax' && $_REQUEST['ajxaction'] != 'DETAILVIEW'
 				&& $_REQUEST['action'] != 'MassEditSave' && $_REQUEST['action'] != 'ProcessDuplicates'
 				&& $_REQUEST['action'] != 'SaveAjax' && $this->isLineItemUpdate != false && $_REQUEST['action'] != 'FROM_WS') {
 
 			//Based on the total Number of rows we will save the product relationship with this entity
-			saveInventoryProductDetails($this, 'Maintenance');
+				saveInventoryProductDetails($this, 'Maintenance');
 		}
-	 }
+	}
 
 		// Update the currency id and the conversion rate for the purchase order
-		$update_query = "update vtiger_maintenance set currency_id=?, conversion_rate=? where maintenanceid=?";
-		$update_params = array($this->column_fields['currency_id'], $this->column_fields['conversion_rate'], $this->id);
-		$adb->pquery($update_query, $update_params);
-	}
+	$update_query = "update vtiger_maintenance set currency_id=?, conversion_rate=? where maintenanceid=?";
+	$update_params = array($this->column_fields['currency_id'], $this->column_fields['conversion_rate'], $this->id);
+	$adb->pquery($update_query, $update_params);
+}
 
 	/** Function to get subproducts quantity for given product
 	 *  This function accepts the productId as arguments and returns array of subproduct qty for given productId
@@ -302,10 +302,10 @@ class Maintenance extends CRMEntity {
 		$log->debug("Entering get_activities(".$id.") method ...");
 		$this_module = $currentModule;
 
-        $related_module = vtlib_getModuleNameById($rel_tab_id);
+		$related_module = vtlib_getModuleNameById($rel_tab_id);
 		require_once("modules/$related_module/Activity.php");
 		$other = new Activity();
-        vtlib_setup_modulevars($related_module, $other);
+		vtlib_setup_modulevars($related_module, $other);
 		$singular_modname = vtlib_toSingular($related_module);
 
 		$parenttab = getParentTab();
@@ -324,14 +324,14 @@ class Maintenance extends CRMEntity {
 			if(in_array('ADD', $actions) && isPermitted($related_module,1, '') == 'yes') {
 				if(getFieldVisibilityPermission('Calendar',$current_user->id,'parent_id', 'readwrite') == '0') {
 					$button .= "<input title='".getTranslatedString('LBL_NEW'). " ". getTranslatedString('LBL_TODO', $related_module) ."' class='crmbutton small create'" .
-						" onclick='this.form.action.value=\"EditView\";this.form.module.value=\"$related_module\";this.form.return_module.value=\"$this_module\";this.form.activity_mode.value=\"Task\";' type='submit' name='button'" .
-						" value='". getTranslatedString('LBL_ADD_NEW'). " " . getTranslatedString('LBL_TODO', $related_module) ."'>&nbsp;";
+					" onclick='this.form.action.value=\"EditView\";this.form.module.value=\"$related_module\";this.form.return_module.value=\"$this_module\";this.form.activity_mode.value=\"Task\";' type='submit' name='button'" .
+					" value='". getTranslatedString('LBL_ADD_NEW'). " " . getTranslatedString('LBL_TODO', $related_module) ."'>&nbsp;";
 				}
 			}
 		}
 
 		$userNameSql = getSqlForNameInDisplayFormat(array('first_name'=>
-							'vtiger_users.first_name', 'last_name' => 'vtiger_users.last_name'), 'Users');
+			'vtiger_users.first_name', 'last_name' => 'vtiger_users.last_name'), 'Users');
 		$query = "SELECT case when (vtiger_users.user_name not like '') then $userNameSql else vtiger_groups.groupname end as user_name,vtiger_contactdetails.lastname, vtiger_contactdetails.firstname, vtiger_contactdetails.contactid,vtiger_activity.*,vtiger_seactivityrel.crmid as parent_id,vtiger_crmentity.crmid, vtiger_crmentity.smownerid, vtiger_crmentity.modifiedtime from vtiger_activity inner join vtiger_seactivityrel on vtiger_seactivityrel.activityid=vtiger_activity.activityid inner join vtiger_crmentity on vtiger_crmentity.crmid=vtiger_activity.activityid left join vtiger_cntactivityrel on vtiger_cntactivityrel.activityid= vtiger_activity.activityid left join vtiger_contactdetails on vtiger_contactdetails.contactid = vtiger_cntactivityrel.contactid left join vtiger_users on vtiger_users.id=vtiger_crmentity.smownerid left join vtiger_groups on vtiger_groups.groupid=vtiger_crmentity.smownerid where vtiger_seactivityrel.crmid=".$id." and activitytype='Task' and vtiger_crmentity.deleted=0 and (vtiger_activity.status is not NULL && vtiger_activity.status != 'Completed') and (vtiger_activity.status is not NULL and vtiger_activity.status != 'Deferred') ";
 
 		$return_value = GetRelatedList($this_module, $related_module, $other, $query, $button, $returnset);
@@ -352,26 +352,26 @@ class Maintenance extends CRMEntity {
 		global $log;
 		$log->debug("Entering get_history(".$id.") method ...");
 		$userNameSql = getSqlForNameInDisplayFormat(array('first_name'=>
-							'vtiger_users.first_name', 'last_name' => 'vtiger_users.last_name'), 'Users');
+			'vtiger_users.first_name', 'last_name' => 'vtiger_users.last_name'), 'Users');
 		$query = "SELECT vtiger_contactdetails.lastname, vtiger_contactdetails.firstname,
-			vtiger_contactdetails.contactid,vtiger_activity.* ,vtiger_seactivityrel.*,
-			vtiger_crmentity.crmid, vtiger_crmentity.smownerid, vtiger_crmentity.modifiedtime,
-			vtiger_crmentity.createdtime, vtiger_crmentity.description,case when
-			(vtiger_users.user_name not like '') then $userNameSql else vtiger_groups.groupname end
-			as user_name from vtiger_activity
-				inner join vtiger_seactivityrel on vtiger_seactivityrel.activityid=vtiger_activity.activityid
-				inner join vtiger_crmentity on vtiger_crmentity.crmid=vtiger_activity.activityid
-				left join vtiger_cntactivityrel on vtiger_cntactivityrel.activityid= vtiger_activity.activityid
-				left join vtiger_contactdetails on vtiger_contactdetails.contactid = vtiger_cntactivityrel.contactid
-                                left join vtiger_groups on vtiger_groups.groupid=vtiger_crmentity.smownerid
-				left join vtiger_users on vtiger_users.id=vtiger_crmentity.smownerid
-			where vtiger_activity.activitytype='Task'
-				and (vtiger_activity.status = 'Completed' or vtiger_activity.status = 'Deferred')
-				and vtiger_seactivityrel.crmid=".$id."
-                                and vtiger_crmentity.deleted = 0";
+		vtiger_contactdetails.contactid,vtiger_activity.* ,vtiger_seactivityrel.*,
+		vtiger_crmentity.crmid, vtiger_crmentity.smownerid, vtiger_crmentity.modifiedtime,
+		vtiger_crmentity.createdtime, vtiger_crmentity.description,case when
+		(vtiger_users.user_name not like '') then $userNameSql else vtiger_groups.groupname end
+		as user_name from vtiger_activity
+		inner join vtiger_seactivityrel on vtiger_seactivityrel.activityid=vtiger_activity.activityid
+		inner join vtiger_crmentity on vtiger_crmentity.crmid=vtiger_activity.activityid
+		left join vtiger_cntactivityrel on vtiger_cntactivityrel.activityid= vtiger_activity.activityid
+		left join vtiger_contactdetails on vtiger_contactdetails.contactid = vtiger_cntactivityrel.contactid
+		left join vtiger_groups on vtiger_groups.groupid=vtiger_crmentity.smownerid
+		left join vtiger_users on vtiger_users.id=vtiger_crmentity.smownerid
+		where vtiger_activity.activitytype='Task'
+		and (vtiger_activity.status = 'Completed' or vtiger_activity.status = 'Deferred')
+		and vtiger_seactivityrel.crmid=".$id."
+		and vtiger_crmentity.deleted = 0";
 		//Don't add order by, because, for security, one more condition will be added with this query in include/RelatedListView.php
 
-        $returnValue = getHistory('Maintenance',$query,$id);
+		$returnValue = getHistory('Maintenance',$query,$id);
 		$log->debug("Exiting get_history method ...");
 		return $returnValue;
 	}
@@ -390,7 +390,7 @@ class Maintenance extends CRMEntity {
 		global $mod_strings;
 		global $app_strings;
 
-		$query = 'select vtiger_postatushistory.*, vtiger_maintenance.maintenance_no from vtiger_postatushistory inner join vtiger_maintenance on vtiger_maintenance.maintenanceid = vtiger_postatushistory.maintenanceid inner join vtiger_crmentity on vtiger_crmentity.crmid = vtiger_maintenance.maintenanceid where vtiger_crmentity.deleted = 0 and vtiger_maintenance.maintenanceid = ?';
+		$query = 'select vtiger_maintenance.maintenance_no from vtiger_maintenance inner join vtiger_crmentity on vtiger_crmentity.crmid = vtiger_maintenance.maintenanceid where vtiger_crmentity.deleted = 0 and vtiger_maintenance.maintenanceid = ?';
 		$result=$adb->pquery($query, array($id));
 		$noofrows = $adb->num_rows($result);
 
@@ -405,10 +405,10 @@ class Maintenance extends CRMEntity {
 		global $current_user;
 
 		//If field is accessible then getFieldVisibilityPermission function will return 0 else return 1
-		$postatus_access = (getFieldVisibilityPermission('Maintenance', $current_user->id, 'maintenance_tks_status') != '0')? 1 : 0;
+		$postatus_access = (getFieldVisibilityPermission('Maintenance', $current_user->id, 'status') != '0')? 1 : 0;
 		$picklistarray = getAccessPickListValues('Maintenance');
 
-		$postatus_array = ($postatus_access != 1)? $picklistarray['	maintenance_tks_status']: array();
+		$postatus_array = ($postatus_access != 1)? $picklistarray['status']: array();
 		//- ==> picklist field is not permitted in profile
 		//Not Accessible - picklist is permitted in profile but picklist value is not permitted
 		$error_msg = ($postatus_access != 1)? 'Not Accessible': '-';
@@ -421,9 +421,9 @@ class Maintenance extends CRMEntity {
 			//$entries[] = $row['maintenanceid'];
 			$entries[] = $row['maintenance_no'];
 			// END
-			$entries[] = $row['vendorname'];
+			$entries[] = $row['subject'];
 			$entries[] = $row['total'];
-			$entries[] = (in_array($row['postatus'], $postatus_array))? $row['postatus']: $error_msg;
+			$entries[] = (in_array($row['status'], $postatus_array))? $row['status']: $error_msg;
 			$date = new DateTimeField($row['lastmodified']);
 			$entries[] = $date->getDisplayDateTimeValue();
 
@@ -432,7 +432,7 @@ class Maintenance extends CRMEntity {
 
 		$return_data = Array('header'=>$header,'entries'=>$entries_list);
 
-	 	$log->debug("Exiting get_postatushistory method ...");
+		$log->debug("Exiting get_postatushistory method ...");
 
 		return $return_data;
 	}
@@ -451,9 +451,9 @@ class Maintenance extends CRMEntity {
 		if (!$queryPlanner->requireTable('vtiger_maintenance', $matrix)) {
 			return '';
 		}
-        $matrix->setDependency('vtiger_maintenance',array('vtiger_crmentityMaintenance', "vtiger_currency_info$secmodule",
-				'vtiger_maintenancecf', 'vtiger_vendorRelMaintenance', 'vtiger_mpobillads',
-				'vtiger_mposhipads', 'vtiger_inventoryproductrelMaintenance', 'vtiger_contactdetailsMaintenance'));
+		$matrix->setDependency('vtiger_maintenance',array('vtiger_crmentityMaintenance', "vtiger_currency_info$secmodule",
+			'vtiger_maintenancecf', 'vtiger_vendorRelMaintenance', 'vtiger_mpobillads',
+			'vtiger_mposhipads', 'vtiger_inventoryproductrelMaintenance', 'vtiger_contactdetailsMaintenance'));
 
 		$query = $this->getRelationQuery($module,$secmodule,"vtiger_maintenance","maintenanceid",$queryPlanner);
 		if ($queryPlanner->requireTable("vtiger_crmentityMaintenance", $matrix)){
@@ -494,12 +494,12 @@ class Maintenance extends CRMEntity {
 		if ($queryPlanner->requireTable("vtiger_lastModifiedByMaintenance")){
 			$query .= " left join vtiger_users as vtiger_lastModifiedByMaintenance on vtiger_lastModifiedByMaintenance.id = vtiger_crmentityMaintenance.modifiedby ";
 		}
-        if ($queryPlanner->requireTable("vtiger_createdbyMaintenance")){
+		if ($queryPlanner->requireTable("vtiger_createdbyMaintenance")){
 			$query .= " left join vtiger_users as vtiger_createdbyMaintenance on vtiger_createdbyMaintenance.id = vtiger_crmentityMaintenance.smcreatorid ";
 		}
 
 		//if secondary modules custom reference field is selected
-        $query .= parent::getReportsUiType10Query($secmodule, $queryPlanner);
+		$query .= parent::getReportsUiType10Query($secmodule, $queryPlanner);
 
 		return $query;
 	}
@@ -511,9 +511,11 @@ class Maintenance extends CRMEntity {
 	 */
 	function setRelationTables($secmodule){
 		$rel_tables = array (
+			"SalesOrder" =>array("vtiger_salesorder"=>array("maintenaceid","salesorderid"),"vtiger_maintenance"=>"maintenaceid"),
 			"Calendar" =>array("vtiger_seactivityrel"=>array("crmid","activityid"),"vtiger_maintenance"=>"maintenanceid"),
 			"Documents" => array("vtiger_senotesrel"=>array("crmid","notesid"),"vtiger_maintenance"=>"maintenanceid"),
 			"Contacts" => array("vtiger_maintenance"=>array("maintenanceid","contactid")),
+			
 		);
 		return $rel_tables[$secmodule];
 	}
@@ -530,8 +532,8 @@ class Maintenance extends CRMEntity {
 			$sql_req ='UPDATE vtiger_maintenance SET contactid=? WHERE maintenanceid = ?';
 			$this->db->pquery($sql_req, array(null, $id));
 		} elseif($return_module == 'Documents') {
-            $sql = 'DELETE FROM vtiger_senotesrel WHERE crmid=? AND notesid=?';
-            $this->db->pquery($sql, array($id, $return_id));
+			$sql = 'DELETE FROM vtiger_senotesrel WHERE crmid=? AND notesid=?';
+			$this->db->pquery($sql, array($id, $return_id));
 		} elseif($return_module == 'Accounts') {
 			$sql ='UPDATE vtiger_maintenance SET accountid=? WHERE maintenanceid=?';
 			$this->db->pquery($sql, array(null, $id));
@@ -581,7 +583,7 @@ class Maintenance extends CRMEntity {
 			$row = $adb->query_result_rowdata($res, $j);
 			$col_value = array();
 			for($k=0; $k<php7_count($fieldsList); $k++) {
-					$col_value[$fieldsList[$k]] = $row[$fieldsList[$k]];
+				$col_value[$fieldsList[$k]] = $row[$fieldsList[$k]];
 			}
 			if(php7_count($col_value) > 0) {
 				$col_value['id'] = $this->id;
@@ -680,18 +682,18 @@ class Maintenance extends CRMEntity {
 		$userNameSql = getSqlForNameInDisplayFormat(array('first_name'=>'vtiger_users.first_name', 'last_name' => 'vtiger_users.last_name'), 'Users');
 
 		$query = "SELECT $fields_list FROM ".$this->entity_table."
-				INNER JOIN vtiger_maintenance ON vtiger_maintenance.maintenanceid = vtiger_crmentity.crmid
-				LEFT JOIN vtiger_maintenancecf ON vtiger_maintenancecf.maintenanceid = vtiger_maintenance.maintenanceid
-				LEFT JOIN vtiger_mpobillads ON vtiger_mpobillads.mpobilladdressid = vtiger_maintenance.maintenanceid
-				LEFT JOIN vtiger_mposhipads ON vtiger_mposhipads.mposhipaddressid = vtiger_maintenance.maintenanceid
-				LEFT JOIN vtiger_inventoryproductrel ON vtiger_inventoryproductrel.id = vtiger_maintenance.maintenanceid
-				LEFT JOIN vtiger_products ON vtiger_products.productid = vtiger_inventoryproductrel.productid
-				LEFT JOIN vtiger_service ON vtiger_service.serviceid = vtiger_inventoryproductrel.productid
-				LEFT JOIN vtiger_contactdetails ON vtiger_contactdetails.contactid = vtiger_maintenance.contactid
-				LEFT JOIN vtiger_vendor ON vtiger_vendor.vendorid = vtiger_maintenance.vendorid
-				LEFT JOIN vtiger_currency_info ON vtiger_currency_info.id = vtiger_maintenance.currency_id
-				LEFT JOIN vtiger_groups ON vtiger_groups.groupid = vtiger_crmentity.smownerid
-				LEFT JOIN vtiger_users ON vtiger_users.id = vtiger_crmentity.smownerid";
+		INNER JOIN vtiger_maintenance ON vtiger_maintenance.maintenanceid = vtiger_crmentity.crmid
+		LEFT JOIN vtiger_maintenancecf ON vtiger_maintenancecf.maintenanceid = vtiger_maintenance.maintenanceid
+		LEFT JOIN vtiger_mpobillads ON vtiger_mpobillads.mpobilladdressid = vtiger_maintenance.maintenanceid
+		LEFT JOIN vtiger_mposhipads ON vtiger_mposhipads.mposhipaddressid = vtiger_maintenance.maintenanceid
+		LEFT JOIN vtiger_inventoryproductrel ON vtiger_inventoryproductrel.id = vtiger_maintenance.maintenanceid
+		LEFT JOIN vtiger_products ON vtiger_products.productid = vtiger_inventoryproductrel.productid
+		LEFT JOIN vtiger_service ON vtiger_service.serviceid = vtiger_inventoryproductrel.productid
+		LEFT JOIN vtiger_contactdetails ON vtiger_contactdetails.contactid = vtiger_maintenance.contactid
+		LEFT JOIN vtiger_vendor ON vtiger_vendor.vendorid = vtiger_maintenance.vendorid
+		LEFT JOIN vtiger_currency_info ON vtiger_currency_info.id = vtiger_maintenance.currency_id
+		LEFT JOIN vtiger_groups ON vtiger_groups.groupid = vtiger_crmentity.smownerid
+		LEFT JOIN vtiger_users ON vtiger_users.id = vtiger_crmentity.smownerid";
 
 		$query .= $this->getNonAdminAccessControlQuery('Maintenance',$current_user);
 		$where_auto = " vtiger_crmentity.deleted=0";

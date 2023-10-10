@@ -1107,6 +1107,8 @@ class Vtiger_Field_Model extends Vtiger_Field {
 		$validator = array();
 		$fieldName = $this->getName();
 		switch($fieldName) {
+			case 'nmi'					:	$funcName = array('name'=>'lessThanTen');
+											break;
 			case 'birthday'				:	$funcName = array('name'=>'lessThanToday');
 											break;
 			case 'support_end_date'		:	$funcName = array('name' => 'greaterThanDependentField', 'params' => array('support_start_date'));

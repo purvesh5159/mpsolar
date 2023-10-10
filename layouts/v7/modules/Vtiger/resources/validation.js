@@ -546,6 +546,17 @@ jQuery.validator.addMethod("greaterThanOrEqualToToday", function(value, element,
 	}
 );
 
+jQuery.validator.addMethod("lessThanTen", function(value, element, params) {
+
+	var NumberRegex = /^[0-9]*$/;
+	if(value.length <= 10){
+		if(NumberRegex.test(value)){
+			return true;
+		}
+	}
+}, jQuery.validator.format(app.vtranslate('Positive Number + Should be less than or equal to'+" "+'10'))
+);
+
 jQuery.validator.addMethod("lessThanDependentField", function(value, element, params) {
 		var result = true; 
 		if(!value.length) { 

@@ -37,7 +37,7 @@ class Vtiger_GenerateStocknotifytoInstaller_Action extends Vtiger_IndexAjax_View
 		$installerid =  $so_focus->column_fields['installername'];
 		$contactid =  $so_focus->column_fields['contact_id'];
 		$installationdate =  $so_focus->column_fields['installationdate'];
-		$projectdate =  $so_focus->column_fields['projectdate'];
+		$projectno =  $so_focus->column_fields['subject'];
 		$notify =  $so_focus->column_fields['notifyinstaller'];
 
 		$pgquery = $adb->pquery("SELECT * FROM vtiger_installteam WHERE installteamid=".$installerid);
@@ -63,7 +63,7 @@ class Vtiger_GenerateStocknotifytoInstaller_Action extends Vtiger_IndexAjax_View
 		if($numOfRows != 0){       
 			$table ='Dear '.$fname.' '.$lname.','
 			.'<p>You can collect the requested products. Kindly confirm receipt of this mail.</p>'
-			.'<p>Project Date : '.date('d-m-Y',strtotime($projectdate)).'</p>'
+			.'<p>Project No : '.$projectno.'</p>'
 			.'<p>Installation Date : '.date('d-m-Y',strtotime($installationdate)).'</p>'
 			.'<p>Customer Name : '.$cfname.' '.$clname.'</p>'
 			.'<p>Address : '.$street.' '.$state.' '.$city.' '.$zipcode.' </p>'

@@ -10,4 +10,7 @@ $languageStrings = array(
 'Single Phase'	=>	'Single Phase',
 'Two Phase'	=>	'Two Phase',
 'Three Phase'	=>	'Three Phase',
+'Finance by brighte + Cash'	=>	'Finance by brighte + Cash',
+'Finance by plenti + Cash'	=>	'Finance by plenti + Cash',
+'Finance by humm + Cash'	=>	'Finance by humm + Cash',
 );

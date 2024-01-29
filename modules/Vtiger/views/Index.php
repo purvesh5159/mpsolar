@@ -7,7 +7,6 @@
  * Portions created by vtiger are Copyright (C) vtiger.
  * All Rights Reserved.
  ************************************************************************************/
-
 class Vtiger_Index_View extends Vtiger_Basic_View {
 
 	function __construct() {

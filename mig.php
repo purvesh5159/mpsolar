@@ -2953,3 +2953,34 @@ if ($blockInstance) {
 } else {
     echo "Block Does not exits -- LBL_CONTACT_INFORMATION in SalesOrder -- <br>";
 }
+
+$moduleInstance = null;
+$blockInstance = null;
+$fieldInstance = null;
+$moduleInstance = Vtiger_Module::getInstance('Payments');
+$blockInstance = Vtiger_Block::getInstance('Payments Details', $moduleInstance);
+if ($blockInstance) {
+    $fieldInstance = Vtiger_Field::getInstance('paymentamount', $moduleInstance);
+    if (!$fieldInstance) {
+        $field = new Vtiger_Field();
+        $field->name = 'paymentamount';
+        $field->column = 'paymentamount';
+        $field->uitype = 72;
+        $field->table = $moduleInstance->basetable;
+        $field->label = 'Payment Amount';
+        $field->summaryfield = 1;
+        $field->readonly = 1;
+        $field->presence = 2;
+        $field->typeofdata = 'V~O';
+        $field->columntype = 'VARCHAR(32)';
+        $field->quickcreate = 3;
+        $field->displaytype = 1;
+        $field->masseditable = 1;
+        $field->defaultvalue = 0;
+        $blockInstance->addField($field);
+    } else {
+        echo "field is present -- docstatus Contacts --- <br>";
+    }
+} else {
+    echo "Block Does not exits -- LBL_CONTACT_INFORMATION in Contacts -- <br>";
+}

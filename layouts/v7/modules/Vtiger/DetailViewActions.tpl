@@ -17,7 +17,7 @@
             {assign var=SOSTATUS value=$RECORD->get('sostatus')}
 
             {if $MODULE eq 'SalesOrder'}
-            <button class="btn btn-default hide" id="CreateMaintance" style="width:135px;">
+            <button class="btn btn-default" id="CreateMaintance" style="width:135px;">
                         {vtranslate('LBL_MAINTANCE',$MODULE)}
                 </button>
             {/if}

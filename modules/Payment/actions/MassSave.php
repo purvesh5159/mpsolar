@@ -8,5 +8,5 @@
  * All Rights Reserved.
  *************************************************************************************/
 
-class Payment_MassSave_Action extends Inventory_MassSave_Action {
+class Payment_MassSave_Action extends Vtiger_MassSave_Action {
 }

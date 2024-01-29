@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2023-10-03 07:56:47
+/* Smarty version 3.1.39, created on 2024-01-25 08:42:07
   from 'D:\wamp\www\mpsolar\layouts\v7\modules\Inventory\LineItemsDetail.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_651bc93f1bb8c7_57127091',
+  'unifunc' => 'content_65b21edfa52da4_99558679',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2e7ac4f01e5d476685f5adb6ccdb5fd859a1b8fa' => 
     array (
       0 => 'D:\\wamp\\www\\mpsolar\\layouts\\v7\\modules\\Inventory\\LineItemsDetail.tpl',
-      1 => 1694495948,
+      1 => 1706172122,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_651bc93f1bb8c7_57127091 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65b21edfa52da4_99558679 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_assignInScope('ITEM_DETAILS_BLOCK', $_smarty_tpl->tpl_vars['BLOCK_LIST']->value['LBL_ITEM_DETAILS']);
 $_smarty_tpl->_assignInScope('LINEITEM_FIELDS', $_smarty_tpl->tpl_vars['ITEM_DETAILS_BLOCK']->value->getFields());?>
 
@@ -99,14 +99,14 @@ if ($_smarty_tpl->tpl_vars['LINEITEM_FIELDS']->value['hdnDiscountPercent']) {?>
 
 <?php $_smarty_tpl->_assignInScope('FINAL_DETAILS', $_smarty_tpl->tpl_vars['RELATED_PRODUCTS']->value[1]['final_details']);?>
 <div class="details block">
-    <div class="lineItemTableDiv">
-        <table class="table table-bordered lineItemsTable" style = "margin-top:15px">
+    <div class="lineItemTableDiv <?php if ($_smarty_tpl->tpl_vars['MODULE_NAME']->value == 'Payment') {?> hide <?php }?>">
+        <table class="table table-bordered lineItemsTable <?php if ($_smarty_tpl->tpl_vars['MODULE_NAME']->value == 'Payment') {?> hide <?php }?>" style = "margin-top:15px">
         <?php if ($_smarty_tpl->tpl_vars['MODULE_NAME']->value == 'Payment') {?>
-        <thead>
+        <!--<thead>
         <th colspan="7" class="detailViewBlockHeader">
         Payment Details
         </th>
-        </thead>
+        </thead>-->
        <?php } else { ?>
             <thead>
             <th colspan="<?php echo $_smarty_tpl->tpl_vars['COL_SPAN1']->value;?>
@@ -117,8 +117,8 @@ if ($_smarty_tpl->tpl_vars['LINEITEM_FIELDS']->value['hdnDiscountPercent']) {?>
                     <?php if ($_smarty_tpl->tpl_vars['TAX_REGION_MODEL']->value) {?>
                         <?php ob_start();
 echo vtranslate($_smarty_tpl->tpl_vars['LINEITEM_FIELDS']->value['region_id']->get('label'),$_smarty_tpl->tpl_vars['MODULE_NAME']->value);
-$_prefixVariable9=ob_get_clean();
-$_smarty_tpl->_assignInScope('REGION_LABEL', $_prefixVariable9." : ".((string)$_smarty_tpl->tpl_vars['TAX_REGION_MODEL']->value->getName()));?>
+$_prefixVariable1=ob_get_clean();
+$_smarty_tpl->_assignInScope('REGION_LABEL', $_prefixVariable1." : ".((string)$_smarty_tpl->tpl_vars['TAX_REGION_MODEL']->value->getName()));?>
                     <?php }?>
                 <?php }?>
                 <?php echo $_smarty_tpl->tpl_vars['REGION_LABEL']->value;?>
@@ -142,22 +142,22 @@ $_smarty_tpl->_assignInScope('REGION_LABEL', $_prefixVariable9." : ".((string)$_
             <?php }?>
             <tbody>
             <?php if ($_smarty_tpl->tpl_vars['MODULE_NAME']->value == 'Payment') {?>   
-                 <tr>
+               <!--  <tr>
                     <td><span class="redColor">*</span><b>Payment Type</b></td>
                     <td><b>Payment no</b></td>
                     <td><b>Bank Name</b></td>
                     <td><b>Payment Date</b></td>
                     <td><b><?php echo vtranslate('LBL_TOTAL',$_smarty_tpl->tpl_vars['MODULE_NAME']->value);?>
 </b></td>
-                </tr>
+                </tr>-->
             <?php } else { ?>
                 <tr>
                     <?php if ($_smarty_tpl->tpl_vars['IMAGE_VIEWABLE']->value) {?>
                         <td class="lineItemFieldName">
                             <strong><?php ob_start();
 echo $_smarty_tpl->tpl_vars['LINEITEM_FIELDS']->value['image']->get('label');
-$_prefixVariable10 = ob_get_clean();
-echo vtranslate($_prefixVariable10,$_smarty_tpl->tpl_vars['MODULE']->value);?>
+$_prefixVariable2 = ob_get_clean();
+echo vtranslate($_prefixVariable2,$_smarty_tpl->tpl_vars['MODULE']->value);?>
 </strong>
                         </td>
                     <?php }?>
@@ -165,8 +165,8 @@ echo vtranslate($_prefixVariable10,$_smarty_tpl->tpl_vars['MODULE']->value);?>
                         <td class="lineItemFieldName">
                             <span class="redColor">*</span><strong><?php ob_start();
 echo $_smarty_tpl->tpl_vars['LINEITEM_FIELDS']->value['productid']->get('label');
-$_prefixVariable11 = ob_get_clean();
-echo vtranslate($_prefixVariable11,$_smarty_tpl->tpl_vars['MODULE_NAME']->value);?>
+$_prefixVariable3 = ob_get_clean();
+echo vtranslate($_prefixVariable3,$_smarty_tpl->tpl_vars['MODULE_NAME']->value);?>
 </strong>
                         </td>
                     <?php }?>
@@ -174,8 +174,8 @@ echo vtranslate($_prefixVariable11,$_smarty_tpl->tpl_vars['MODULE_NAME']->value)
                         <td class="lineItemFieldName">
                             <strong><?php ob_start();
 echo $_smarty_tpl->tpl_vars['LINEITEM_FIELDS']->value['quantity']->get('label');
-$_prefixVariable12 = ob_get_clean();
-echo vtranslate($_prefixVariable12,$_smarty_tpl->tpl_vars['MODULE_NAME']->value);?>
+$_prefixVariable4 = ob_get_clean();
+echo vtranslate($_prefixVariable4,$_smarty_tpl->tpl_vars['MODULE_NAME']->value);?>
 </strong>
                         </td>
                     <?php }?>
@@ -183,8 +183,8 @@ echo vtranslate($_prefixVariable12,$_smarty_tpl->tpl_vars['MODULE_NAME']->value)
                     <td class="lineItemFieldName">
                             <strong><?php ob_start();
 echo $_smarty_tpl->tpl_vars['LINEITEM_FIELDS']->value['assignqty']->get('label');
-$_prefixVariable13 = ob_get_clean();
-echo vtranslate($_prefixVariable13,$_smarty_tpl->tpl_vars['MODULE_NAME']->value);?>
+$_prefixVariable5 = ob_get_clean();
+echo vtranslate($_prefixVariable5,$_smarty_tpl->tpl_vars['MODULE_NAME']->value);?>
 </strong>
                         </td>
                     <?php }?>
@@ -192,8 +192,8 @@ echo vtranslate($_prefixVariable13,$_smarty_tpl->tpl_vars['MODULE_NAME']->value)
                         <td class="lineItemFieldName">
                             <strong><?php ob_start();
 echo $_smarty_tpl->tpl_vars['LINEITEM_FIELDS']->value['purchase_cost']->get('label');
-$_prefixVariable14 = ob_get_clean();
-echo vtranslate($_prefixVariable14,$_smarty_tpl->tpl_vars['MODULE_NAME']->value);?>
+$_prefixVariable6 = ob_get_clean();
+echo vtranslate($_prefixVariable6,$_smarty_tpl->tpl_vars['MODULE_NAME']->value);?>
 </strong>
                         </td>
                     <?php }?>
@@ -201,8 +201,8 @@ echo vtranslate($_prefixVariable14,$_smarty_tpl->tpl_vars['MODULE_NAME']->value)
                         <td style="white-space: nowrap;">
                             <strong><?php ob_start();
 echo $_smarty_tpl->tpl_vars['LINEITEM_FIELDS']->value['listprice']->get('label');
-$_prefixVariable15 = ob_get_clean();
-echo vtranslate($_prefixVariable15,$_smarty_tpl->tpl_vars['MODULE_NAME']->value);?>
+$_prefixVariable7 = ob_get_clean();
+echo vtranslate($_prefixVariable7,$_smarty_tpl->tpl_vars['MODULE_NAME']->value);?>
 </strong>
                         </td>
                     <?php }?>
@@ -214,8 +214,8 @@ echo vtranslate($_prefixVariable15,$_smarty_tpl->tpl_vars['MODULE_NAME']->value)
                         <td class="lineItemFieldName">
                             <strong class="pull-right"><?php ob_start();
 echo $_smarty_tpl->tpl_vars['LINEITEM_FIELDS']->value['margin']->get('label');
-$_prefixVariable16 = ob_get_clean();
-echo vtranslate($_prefixVariable16,$_smarty_tpl->tpl_vars['MODULE_NAME']->value);?>
+$_prefixVariable8 = ob_get_clean();
+echo vtranslate($_prefixVariable8,$_smarty_tpl->tpl_vars['MODULE_NAME']->value);?>
 </strong>
                         </td>
                     <?php }?>
@@ -233,7 +233,7 @@ $_smarty_tpl->tpl_vars['LINE_ITEM_DETAIL']->do_else = false;
 ?>
                     <tr>
                     <?php if ($_smarty_tpl->tpl_vars['MODULE_NAME']->value == 'Payment') {?>
-                        <td>
+                       <!-- <td>
                         <?php echo $_smarty_tpl->tpl_vars['LINE_ITEM_DETAIL']->value["paymentmode".((string)$_smarty_tpl->tpl_vars['INDEX']->value)];?>
 
                         </td>
@@ -254,7 +254,7 @@ $_smarty_tpl->tpl_vars['LINE_ITEM_DETAIL']->do_else = false;
                                     <?php echo $_smarty_tpl->tpl_vars['LINE_ITEM_DETAIL']->value["listPrice".((string)$_smarty_tpl->tpl_vars['INDEX']->value)];?>
 
                                 </div>
-                        </td>
+                        </td>-->
                         <?php } else { ?>
                         <?php if ($_smarty_tpl->tpl_vars['IMAGE_VIEWABLE']->value) {?>
                             <td style="text-align:center;">
@@ -303,7 +303,7 @@ $_smarty_tpl->tpl_vars['LINE_ITEM_DETAIL']->do_else = false;
                         <?php }?>
 
                          <?php if ($_smarty_tpl->tpl_vars['MODULE_NAME']->value == 'Payment') {?>
-                            <td>
+                            <!--<td>
                             <?php echo $_smarty_tpl->tpl_vars['LINE_ITEM_DETAIL']->value["paymentmode".((string)$_smarty_tpl->tpl_vars['INDEX']->value)];?>
 
                             </td>
@@ -322,7 +322,7 @@ $_smarty_tpl->tpl_vars['LINE_ITEM_DETAIL']->do_else = false;
                             <td>
                             <?php echo $_smarty_tpl->tpl_vars['LINE_ITEM_DETAIL']->value["listPrice".((string)$_smarty_tpl->tpl_vars['INDEX']->value)];?>
 
-                            </td>   
+                            </td> -->  
                         <?php }?>
                         <?php if ($_smarty_tpl->tpl_vars['QUANTITY_VIEWABLE']->value) {?>
                             <td>
@@ -372,8 +372,8 @@ echo (string)$_smarty_tpl->tpl_vars['LINE_ITEM_DETAIL']->value["discountTotal".(
 echo "
 									";
 }
-$_prefixVariable17=ob_get_clean();
-$_smarty_tpl->_assignInScope('DISCOUNT_INFO', $_prefixVariable17);?>
+$_prefixVariable9=ob_get_clean();
+$_smarty_tpl->_assignInScope('DISCOUNT_INFO', $_prefixVariable9);?>
                                         (-)&nbsp; <strong><a href="javascript:void(0)" class="individualDiscount inventoryLineItemDetails" tabindex="0" role="tooltip" id ="example" data-toggle="popover" data-trigger="focus" title="<?php echo vtranslate('LBL_DISCOUNT',$_smarty_tpl->tpl_vars['MODULE_NAME']->value);?>
 " data-content="<?php echo $_smarty_tpl->tpl_vars['DISCOUNT_INFO']->value;?>
 "><?php echo vtranslate('LBL_DISCOUNT',$_smarty_tpl->tpl_vars['MODULE_NAME']->value);?>
@@ -388,7 +388,7 @@ $_smarty_tpl->_assignInScope('DISCOUNT_INFO', $_prefixVariable17);?>
                                     <div class="individualTaxContainer">
                                         <?php ob_start();
 echo vtranslate('LBL_TOTAL_AFTER_DISCOUNT',$_smarty_tpl->tpl_vars['MODULE_NAME']->value);
-$_prefixVariable18=ob_get_clean();
+$_prefixVariable10=ob_get_clean();
 ob_start();
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['LINE_ITEM_DETAIL']->value['taxes'], 'tax_details');
 $_smarty_tpl->tpl_vars['tax_details']->do_else = true;
@@ -424,11 +424,11 @@ echo "<br />";
 }
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);
-$_prefixVariable19=ob_get_clean();
+$_prefixVariable11=ob_get_clean();
 ob_start();
 echo vtranslate('LBL_TOTAL_TAX_AMOUNT',$_smarty_tpl->tpl_vars['MODULE_NAME']->value);
-$_prefixVariable20=ob_get_clean();
-$_smarty_tpl->_assignInScope('INDIVIDUAL_TAX_INFO', $_prefixVariable18." = ".((string)$_smarty_tpl->tpl_vars['LINE_ITEM_DETAIL']->value["totalAfterDiscount".((string)$_smarty_tpl->tpl_vars['INDEX']->value)])."<br /><br />".$_prefixVariable19."<br /><br />".$_prefixVariable20." = ".((string)$_smarty_tpl->tpl_vars['LINE_ITEM_DETAIL']->value["taxTotal".((string)$_smarty_tpl->tpl_vars['INDEX']->value)]));?>
+$_prefixVariable12=ob_get_clean();
+$_smarty_tpl->_assignInScope('INDIVIDUAL_TAX_INFO', $_prefixVariable10." = ".((string)$_smarty_tpl->tpl_vars['LINE_ITEM_DETAIL']->value["totalAfterDiscount".((string)$_smarty_tpl->tpl_vars['INDEX']->value)])."<br /><br />".$_prefixVariable11."<br /><br />".$_prefixVariable12." = ".((string)$_smarty_tpl->tpl_vars['LINE_ITEM_DETAIL']->value["taxTotal".((string)$_smarty_tpl->tpl_vars['INDEX']->value)]));?>
                                         (+)&nbsp;<strong><a href="javascript:void(0)" class="individualTax inventoryLineItemDetails" tabindex="0" role="tooltip" id="example" title ="<?php echo vtranslate('LBL_TAX',$_smarty_tpl->tpl_vars['MODULE_NAME']->value);?>
 " data-trigger ="focus" data-toggle ="popover" data-content="<?php echo $_smarty_tpl->tpl_vars['INDIVIDUAL_TAX_INFO']->value;?>
 "><?php echo vtranslate('LBL_TAX',$_smarty_tpl->tpl_vars['MODULE_NAME']->value);?>
@@ -470,7 +470,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
     </div>
     <table class="table table-bordered lineItemsTable">
     <?php if ($_smarty_tpl->tpl_vars['MODULE_NAME']->value == 'Payment') {?>
-    <tr>
+   <!-- <tr>
             <td width="83%">
                 <div align="right">
                     <strong><?php echo vtranslate('LBL_GRAND_TOTAL',$_smarty_tpl->tpl_vars['MODULE_NAME']->value);?>
@@ -483,7 +483,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 
                 </div>
             </td>
-        </tr>
+        </tr>-->
     <?php } else { ?>
         <tr>
             <td width="83%">
@@ -505,7 +505,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                     <div align="right">
                         <?php ob_start();
 echo vtranslate('LBL_FINAL_DISCOUNT_AMOUNT',$_smarty_tpl->tpl_vars['MODULE_NAME']->value);
-$_prefixVariable21=ob_get_clean();
+$_prefixVariable13=ob_get_clean();
 ob_start();
 if ($_smarty_tpl->tpl_vars['DISCOUNT_PERCENT_VIEWABLE']->value && $_smarty_tpl->tpl_vars['FINAL_DETAILS']->value['discount_type_final'] == 'percentage') {
 echo " ";
@@ -516,8 +516,8 @@ echo " ";
 echo (string)$_smarty_tpl->tpl_vars['FINAL_DETAILS']->value['hdnSubTotal'];
 echo " = ";
 }
-$_prefixVariable22=ob_get_clean();
-$_smarty_tpl->_assignInScope('FINAL_DISCOUNT_INFO', $_prefixVariable21." = ".$_prefixVariable22.((string)$_smarty_tpl->tpl_vars['FINAL_DETAILS']->value['discountTotal_final']));?>
+$_prefixVariable14=ob_get_clean();
+$_smarty_tpl->_assignInScope('FINAL_DISCOUNT_INFO', $_prefixVariable13." = ".$_prefixVariable14.((string)$_smarty_tpl->tpl_vars['FINAL_DETAILS']->value['discountTotal_final']));?>
                         (-)&nbsp;<strong><a class="inventoryLineItemDetails" href="javascript:void(0)" id="finalDiscount" tabindex="0" role="tooltip" data-trigger ="focus" data-placement="left" data-toggle = "popover" title= "<?php echo vtranslate('LBL_OVERALL_DISCOUNT',$_smarty_tpl->tpl_vars['MODULE_NAME']->value);?>
 " data-content="<?php echo $_smarty_tpl->tpl_vars['FINAL_DISCOUNT_INFO']->value;?>
 "><?php echo vtranslate('LBL_OVERALL_DISCOUNT',$_smarty_tpl->tpl_vars['MODULE_NAME']->value);?>
@@ -539,7 +539,7 @@ $_smarty_tpl->_assignInScope('FINAL_DISCOUNT_INFO', $_prefixVariable21." = ".$_p
                     <div align="right">
                         <?php ob_start();
 echo vtranslate('LBL_TOTAL_AFTER_DISCOUNT',$_smarty_tpl->tpl_vars['MODULE_NAME']->value);
-$_prefixVariable23=ob_get_clean();
+$_prefixVariable15=ob_get_clean();
 ob_start();
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['SELECTED_CHARGES_AND_ITS_TAXES']->value, 'CHARGE_INFO', false, 'CHARGE_ID');
 $_smarty_tpl->tpl_vars['CHARGE_INFO']->do_else = true;
@@ -567,11 +567,11 @@ echo (string)$_smarty_tpl->tpl_vars['CHARGE_INFO']->value['amount'];
 echo "<br />";
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);
-$_prefixVariable24=ob_get_clean();
+$_prefixVariable16=ob_get_clean();
 ob_start();
 echo vtranslate('LBL_CHARGES_TOTAL',$_smarty_tpl->tpl_vars['MODULE_NAME']->value);
-$_prefixVariable25=ob_get_clean();
-$_smarty_tpl->_assignInScope('CHARGES_INFO', $_prefixVariable23." = ".((string)$_smarty_tpl->tpl_vars['FINAL_DETAILS']->value['totalAfterDiscount'])."<br /><br />".$_prefixVariable24."<br /><h5>".$_prefixVariable25." = ".((string)$_smarty_tpl->tpl_vars['FINAL_DETAILS']->value['shipping_handling_charge'])."</h5>");?>
+$_prefixVariable17=ob_get_clean();
+$_smarty_tpl->_assignInScope('CHARGES_INFO', $_prefixVariable15." = ".((string)$_smarty_tpl->tpl_vars['FINAL_DETAILS']->value['totalAfterDiscount'])."<br /><br />".$_prefixVariable16."<br /><h5>".$_prefixVariable17." = ".((string)$_smarty_tpl->tpl_vars['FINAL_DETAILS']->value['shipping_handling_charge'])."</h5>");?>
                         (+)&nbsp;<strong><a class="inventoryLineItemDetails" tabindex="0" role="tooltip" href="javascript:void(0)" id="example" data-trigger="focus" data-placement ="left"  data-toggle="popover" title=<?php echo vtranslate('LBL_CHARGES',$_smarty_tpl->tpl_vars['MODULE_NAME']->value);?>
  data-content="<?php echo $_smarty_tpl->tpl_vars['CHARGES_INFO']->value;?>
 "><?php echo vtranslate('LBL_CHARGES',$_smarty_tpl->tpl_vars['MODULE_NAME']->value);?>
@@ -626,7 +626,7 @@ echo abs($_smarty_tpl->tpl_vars['stc']->value);
                     <div align="right">
                         <?php ob_start();
 echo vtranslate('LBL_TOTAL_AFTER_DISCOUNT',$_smarty_tpl->tpl_vars['MODULE_NAME']->value);
-$_prefixVariable26=ob_get_clean();
+$_prefixVariable18=ob_get_clean();
 ob_start();
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['FINAL_DETAILS']->value['taxes'], 'tax_details');
 $_smarty_tpl->tpl_vars['tax_details']->do_else = true;
@@ -660,11 +660,11 @@ echo (string)$_smarty_tpl->tpl_vars['tax_details']->value['amount'];
 echo "<br />";
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);
-$_prefixVariable27=ob_get_clean();
+$_prefixVariable19=ob_get_clean();
 ob_start();
 echo vtranslate('LBL_TOTAL_TAX_AMOUNT',$_smarty_tpl->tpl_vars['MODULE_NAME']->value);
-$_prefixVariable28=ob_get_clean();
-$_smarty_tpl->_assignInScope('GROUP_TAX_INFO', $_prefixVariable26." = ".((string)$_smarty_tpl->tpl_vars['FINAL_DETAILS']->value['totalAfterDiscount'])."<br /><br />".$_prefixVariable27."<br />".$_prefixVariable28." = ".((string)$_smarty_tpl->tpl_vars['FINAL_DETAILS']->value['tax_totalamount']));?>
+$_prefixVariable20=ob_get_clean();
+$_smarty_tpl->_assignInScope('GROUP_TAX_INFO', $_prefixVariable18." = ".((string)$_smarty_tpl->tpl_vars['FINAL_DETAILS']->value['totalAfterDiscount'])."<br /><br />".$_prefixVariable19."<br />".$_prefixVariable20." = ".((string)$_smarty_tpl->tpl_vars['FINAL_DETAILS']->value['tax_totalamount']));?>
                         (+)&nbsp;<strong><a class="inventoryLineItemDetails" tabindex="0" role="tooltip" href="javascript:void(0)" id="finalTax" data-trigger ="focus" data-placement ="left" title = "<?php echo vtranslate('LBL_TAX',$_smarty_tpl->tpl_vars['MODULE_NAME']->value);?>
 " data-toggle ="popover" data-content="<?php echo $_smarty_tpl->tpl_vars['GROUP_TAX_INFO']->value;?>
 "><?php echo vtranslate('LBL_TAX',$_smarty_tpl->tpl_vars['MODULE_NAME']->value);?>
@@ -685,7 +685,7 @@ $_smarty_tpl->_assignInScope('GROUP_TAX_INFO', $_prefixVariable26." = ".((string
                     <div align="right">
                         <?php ob_start();
 echo vtranslate('LBL_CHARGES_TOTAL',$_smarty_tpl->tpl_vars['MODULE_NAME']->value);
-$_prefixVariable29=ob_get_clean();
+$_prefixVariable21=ob_get_clean();
 ob_start();
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['SELECTED_CHARGES_AND_ITS_TAXES']->value, 'CHARGE_INFO', false, 'CHARGE_ID');
 $_smarty_tpl->tpl_vars['CHARGE_INFO']->do_else = true;
@@ -738,11 +738,11 @@ echo "<br />";
 }
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);
-$_prefixVariable30=ob_get_clean();
+$_prefixVariable22=ob_get_clean();
 ob_start();
 echo vtranslate('LBL_TOTAL_TAX_AMOUNT',$_smarty_tpl->tpl_vars['MODULE_NAME']->value);
-$_prefixVariable31=ob_get_clean();
-$_smarty_tpl->_assignInScope('CHARGES_TAX_INFO', $_prefixVariable29." = ".((string)$_smarty_tpl->tpl_vars['FINAL_DETAILS']->value["shipping_handling_charge"])."<br /><br />".$_prefixVariable30."\r\n".$_prefixVariable31." = ".((string)$_smarty_tpl->tpl_vars['FINAL_DETAILS']->value['shtax_totalamount']));?>
+$_prefixVariable23=ob_get_clean();
+$_smarty_tpl->_assignInScope('CHARGES_TAX_INFO', $_prefixVariable21." = ".((string)$_smarty_tpl->tpl_vars['FINAL_DETAILS']->value["shipping_handling_charge"])."<br /><br />".$_prefixVariable22."\r\n".$_prefixVariable23." = ".((string)$_smarty_tpl->tpl_vars['FINAL_DETAILS']->value['shtax_totalamount']));?>
                         (+)&nbsp;<strong><a class="inventoryLineItemDetails" tabindex="0" role="tooltip" title = "<?php echo vtranslate('LBL_TAXES_ON_CHARGES',$_smarty_tpl->tpl_vars['MODULE_NAME']->value);?>
 " data-trigger ="focus" data-placement ="left" data-toggle="popover"  href="javascript:void(0)" id="taxesOnChargesList" data-content="<?php echo $_smarty_tpl->tpl_vars['CHARGES_TAX_INFO']->value;?>
 ">
@@ -763,7 +763,7 @@ $_smarty_tpl->_assignInScope('CHARGES_TAX_INFO', $_prefixVariable29." = ".((stri
                 <div align="right">
                     <?php ob_start();
 echo vtranslate('LBL_TOTAL_AFTER_DISCOUNT',$_smarty_tpl->tpl_vars['MODULE_NAME']->value);
-$_prefixVariable32=ob_get_clean();
+$_prefixVariable24=ob_get_clean();
 ob_start();
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['FINAL_DETAILS']->value['deductTaxes'], 'DEDUCTED_TAX_INFO', false, 'DEDUCTED_TAX_ID');
 $_smarty_tpl->tpl_vars['DEDUCTED_TAX_INFO']->do_else = true;
@@ -779,11 +779,11 @@ echo "\r\n";
 }
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);
-$_prefixVariable33=ob_get_clean();
+$_prefixVariable25=ob_get_clean();
 ob_start();
 echo vtranslate('LBL_DEDUCTED_TAXES_TOTAL',$_smarty_tpl->tpl_vars['MODULE_NAME']->value);
-$_prefixVariable34=ob_get_clean();
-$_smarty_tpl->_assignInScope('DEDUCTED_TAXES_INFO', $_prefixVariable32." = ".((string)$_smarty_tpl->tpl_vars['FINAL_DETAILS']->value["totalAfterDiscount"])."<br /><br />".$_prefixVariable33."\r\n\r\n".$_prefixVariable34." = ".((string)$_smarty_tpl->tpl_vars['FINAL_DETAILS']->value['deductTaxesTotalAmount']));?>
+$_prefixVariable26=ob_get_clean();
+$_smarty_tpl->_assignInScope('DEDUCTED_TAXES_INFO', $_prefixVariable24." = ".((string)$_smarty_tpl->tpl_vars['FINAL_DETAILS']->value["totalAfterDiscount"])."<br /><br />".$_prefixVariable25."\r\n\r\n".$_prefixVariable26." = ".((string)$_smarty_tpl->tpl_vars['FINAL_DETAILS']->value['deductTaxesTotalAmount']));?>
                     (-)&nbsp;<strong><a class="inventoryLineItemDetails" tabindex="0" role="tooltip" href="javascript:void(0)" id="deductedTaxesList" data-trigger="focus" data-toggle="popover" title = "<?php echo vtranslate('LBL_DEDUCTED_TAXES',$_smarty_tpl->tpl_vars['MODULE_NAME']->value);?>
 " data-placement ="left" data-content="<?php echo $_smarty_tpl->tpl_vars['DEDUCTED_TAXES_INFO']->value;?>
 ">
@@ -827,10 +827,10 @@ $_smarty_tpl->_assignInScope('DEDUCTED_TAXES_INFO', $_prefixVariable32." = ".((s
             </td>
         </tr>
         <?php }?>
-        <?php if ($_smarty_tpl->tpl_vars['MODULE_NAME']->value == 'Invoice' || $_smarty_tpl->tpl_vars['MODULE_NAME']->value == 'PurchaseOrder') {?>
+        <?php if ($_smarty_tpl->tpl_vars['MODULE_NAME']->value == 'Invoice' || $_smarty_tpl->tpl_vars['MODULE_NAME']->value == 'PurchaseOrder' || $_smarty_tpl->tpl_vars['MODULE_NAME']->value == 'SalesOrder') {?>
             <tr>
                 <td width="83%">
-                    <?php if ($_smarty_tpl->tpl_vars['MODULE_NAME']->value == 'Invoice') {?>
+                    <?php if ($_smarty_tpl->tpl_vars['MODULE_NAME']->value == 'Invoice' || $_smarty_tpl->tpl_vars['MODULE_NAME']->value == 'SalesOrder') {?>
                         <div align="right">
                             <strong><?php echo vtranslate('LBL_RECEIVED',$_smarty_tpl->tpl_vars['MODULE_NAME']->value);?>
 </strong>
@@ -843,7 +843,7 @@ $_smarty_tpl->_assignInScope('DEDUCTED_TAXES_INFO', $_prefixVariable32." = ".((s
                     <?php }?>
                 </td>
                 <td>
-                    <?php if ($_smarty_tpl->tpl_vars['MODULE_NAME']->value == 'Invoice') {?>
+                    <?php if ($_smarty_tpl->tpl_vars['MODULE_NAME']->value == 'Invoice' || $_smarty_tpl->tpl_vars['MODULE_NAME']->value == 'SalesOrder') {?>
                         <div align="right">
                             <?php if ($_smarty_tpl->tpl_vars['RECORD']->value->getDisplayValue('received')) {?>
                                 <?php echo $_smarty_tpl->tpl_vars['RECORD']->value->getDisplayValue('received');?>

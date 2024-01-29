@@ -8,6 +8,6 @@
  * All Rights Reserved.
  ************************************************************************************/
 
-class Payment_ServicesPopupAjax_View extends Inventory_ServicesPopupAjax_View {
+class Payment_ServicesPopupAjax_View extends Vtiger_ServicesPopupAjax_View {
 
 }

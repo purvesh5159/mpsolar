@@ -137,7 +137,7 @@
 	{/if}
 
 	{if $MODULE eq 'Payment'}
-	<td>
+	<!--<td>
 	<select class="paymentmode select smallInputBox inputElement" id="{$paymentmode}" name="{$paymentmode}"/ style="width:125px;" >
 		<option selected="selected">{$data.$paymentmode}</option>
 		<option value="Cheque">Cheque</option>
@@ -153,10 +153,9 @@
 	<td>
 		<textarea id="{$bankdetails}" name="{$bankdetails}" class="bankdetails lineItemCommentBox">{$data.$bankdetails}</textarea>
 	</td>
-
    <td>
 		<input id="{$paymentdate}" name="{$paymentdate}" class="paymentdate smallInputBox inputElement" type="date" value="{$data.$paymentdate}" style="width:130px;">
-	</td>
+	</td>-->
 	{/if}
     {if $MODULE neq 'Payment'}
 	<td>
@@ -333,9 +332,9 @@
 	</td>
 	{/if}
 {if $MODULE eq 'Payment'}
-	<td>
+	<!--<td>
 		<span id="netPrice{$row_no}" style="display:none"; class="pull-right netPrice">{if $data.$netPrice}{$data.$netPrice}{else}0{/if}</span>
-	</td>
+	</td>-->
 	{else}
 	<td>
 		<span id="netPrice{$row_no}" class="pull-right netPrice">{if $data.$netPrice}{$data.$netPrice}{else}0{/if}</span>

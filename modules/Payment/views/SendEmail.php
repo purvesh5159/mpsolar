@@ -8,7 +8,7 @@
  * All Rights Reserved.
  * *********************************************************************************** */
 
-class Payment_SendEmail_View extends Inventory_SendEmail_View {
+class Payment_SendEmail_View extends Vtiger_SendEmail_View {
 
 }
 

@@ -8,6 +8,6 @@
  * All Rights Reserved.
  ************************************************************************************/
 
-class Payment_ProductsPopup_View extends Inventory_ProductsPopup_View {
+class Payment_ProductsPopup_View extends Vtiger_ProductsPopup_View {
 
 }

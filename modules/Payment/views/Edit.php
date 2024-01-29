@@ -8,7 +8,7 @@
  * All Rights Reserved.
  *************************************************************************************/
 
-Class Payment_Edit_View extends Inventory_Edit_View {
+Class Payment_Edit_View extends Vtiger_Edit_View {
 
 	public function process(Vtiger_Request $request) {
 		parent::process($request);

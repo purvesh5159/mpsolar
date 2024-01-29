@@ -2027,7 +2027,7 @@ function getCurrencyDecimalPlaces($user = null) {
 }
 
 function getInventoryModules() {
-	$inventoryModules = array('Invoice','Quotes','PurchaseOrder','SalesOrder','Payment','Maintenance');
+	$inventoryModules = array('Invoice','Quotes','PurchaseOrder','SalesOrder','Maintenance');
 	return $inventoryModules;
 }
 

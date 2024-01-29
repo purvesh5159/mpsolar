@@ -11,9 +11,8 @@ Vtiger_Detail_Js("Inventory_Detail_Js", {
     triggerRecordPreview: function(recordId){
         var thisInstance = app.controller();
         thisInstance.showRecordPreview(recordId);
-    },
     
-    sendEmailPDFClickHandler: function(url) {
+    sendEmailPDFClickHandler: function(url){
         var params = app.convertUrlToDataParams(url);
         
         app.helper.showProgress();

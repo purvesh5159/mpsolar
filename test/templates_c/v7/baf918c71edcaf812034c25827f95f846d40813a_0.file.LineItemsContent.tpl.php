@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2023-10-03 07:25:23
+/* Smarty version 3.1.39, created on 2024-01-25 08:47:01
   from 'D:\wamp\www\mpsolar\layouts\v7\modules\Inventory\partials\LineItemsContent.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_651bc1e3c8f906_71898511',
+  'unifunc' => 'content_65b22005815527_62973716',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'baf918c71edcaf812034c25827f95f846d40813a' => 
     array (
       0 => 'D:\\wamp\\www\\mpsolar\\layouts\\v7\\modules\\Inventory\\partials\\LineItemsContent.tpl',
-      1 => 1692278522,
+      1 => 1706172366,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_651bc1e3c8f906_71898511 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65b22005815527_62973716 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_assignInScope('deleted', ("deleted").($_smarty_tpl->tpl_vars['row_no']->value));
 $_smarty_tpl->_assignInScope('image', ("productImage").($_smarty_tpl->tpl_vars['row_no']->value));
 $_smarty_tpl->_assignInScope('purchaseCost', ("purchaseCost").($_smarty_tpl->tpl_vars['row_no']->value));
@@ -63,15 +63,15 @@ if ($_smarty_tpl->tpl_vars['MODULE']->value == 'PurchaseOrder') {
 $_smarty_tpl->_assignInScope('listPriceValues', array());
 ob_start();
 echo $_smarty_tpl->tpl_vars['RECORD_CURRENCY_RATE']->value;
-$_prefixVariable15 = ob_get_clean();
+$_prefixVariable1 = ob_get_clean();
 ob_start();
 if ($_smarty_tpl->tpl_vars['data']->value[$_smarty_tpl->tpl_vars['purchaseCost']->value] && $_smarty_tpl->tpl_vars['RECORD_CURRENCY_RATE']->value) {
-echo (string)(((float)$_smarty_tpl->tpl_vars['data']->value[$_smarty_tpl->tpl_vars['purchaseCost']->value])/((float)$_smarty_tpl->tpl_vars['data']->value[$_smarty_tpl->tpl_vars['qty']->value]*(float)$_prefixVariable15));
+echo (string)(((float)$_smarty_tpl->tpl_vars['data']->value[$_smarty_tpl->tpl_vars['purchaseCost']->value])/((float)$_smarty_tpl->tpl_vars['data']->value[$_smarty_tpl->tpl_vars['qty']->value]*(float)$_prefixVariable1));
 } else {
 echo "0";
 }
-$_prefixVariable16=ob_get_clean();
-$_smarty_tpl->_assignInScope('purchaseCost', $_prefixVariable16);
+$_prefixVariable2=ob_get_clean();
+$_smarty_tpl->_assignInScope('purchaseCost', $_prefixVariable2);
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['CURRENCIES']->value, 'currency_details');
 $_smarty_tpl->tpl_vars['currency_details']->do_else = true;
 if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['currency_details']->value) {
@@ -147,7 +147,7 @@ if ($_smarty_tpl->tpl_vars['COMMENT_EDITABLE']->value) {?><div><br><textarea id=
 </textarea></div><?php }
 }?></td><?php }
 }
-if ($_smarty_tpl->tpl_vars['MODULE']->value == 'Payment') {?><td><select class="paymentmode select smallInputBox inputElement" id="<?php echo $_smarty_tpl->tpl_vars['paymentmode']->value;?>
+if ($_smarty_tpl->tpl_vars['MODULE']->value == 'Payment') {?><!--<td><select class="paymentmode select smallInputBox inputElement" id="<?php echo $_smarty_tpl->tpl_vars['paymentmode']->value;?>
 " name="<?php echo $_smarty_tpl->tpl_vars['paymentmode']->value;?>
 "/ style="width:125px;" ><option selected="selected"><?php echo $_smarty_tpl->tpl_vars['data']->value[$_smarty_tpl->tpl_vars['paymentmode']->value];?>
 </option><option value="Cheque">Cheque</option><option value="Cash">Cash</option><option value="Online Payment">Online Payment</option><option value="Card Swapping">Card Swapping</option><option value="Other">Other</option></select></td><td><input class="paymentnumber smallInputBox inputElement" id="<?php echo $_smarty_tpl->tpl_vars['paymentnumber']->value;?>
@@ -159,7 +159,7 @@ if ($_smarty_tpl->tpl_vars['MODULE']->value == 'Payment') {?><td><select class="
 </textarea></td><td><input id="<?php echo $_smarty_tpl->tpl_vars['paymentdate']->value;?>
 " name="<?php echo $_smarty_tpl->tpl_vars['paymentdate']->value;?>
 " class="paymentdate smallInputBox inputElement" type="date" value="<?php echo $_smarty_tpl->tpl_vars['data']->value[$_smarty_tpl->tpl_vars['paymentdate']->value];?>
-" style="width:130px;"></td><?php }
+" style="width:130px;"></td>--><?php }
 if ($_smarty_tpl->tpl_vars['MODULE']->value != 'Payment') {?><td><input id="<?php echo $_smarty_tpl->tpl_vars['qty']->value;?>
 " name="<?php echo $_smarty_tpl->tpl_vars['qty']->value;?>
 " type="text" class="qty smallInputBox inputElement"data-rule-required=true data-rule-positive=true data-rule-greater_than_zero=true value="<?php if (!empty($_smarty_tpl->tpl_vars['data']->value[$_smarty_tpl->tpl_vars['qty']->value])) {
@@ -202,8 +202,8 @@ echo $_smarty_tpl->tpl_vars['data']->value[$_smarty_tpl->tpl_vars['listPrice']->
 echo Zend_Json::encode($_smarty_tpl->tpl_vars['listPriceValues']->value);
 }?>' data-base-currency-id="<?php ob_start();
 echo $_smarty_tpl->tpl_vars['entityType']->value;
-$_prefixVariable17 = ob_get_clean();
-echo getProductBaseCurrency($_smarty_tpl->tpl_vars['productId']->value,$_prefixVariable17);?>
+$_prefixVariable3 = ob_get_clean();
+echo getProductBaseCurrency($_smarty_tpl->tpl_vars['productId']->value,$_prefixVariable3);?>
 " />&nbsp;<?php $_smarty_tpl->_assignInScope('PRICEBOOK_MODULE_MODEL', Vtiger_Module_Model::getInstance('PriceBooks'));
 if ($_smarty_tpl->tpl_vars['PRICEBOOK_MODULE_MODEL']->value->isPermitted('DetailView') && $_smarty_tpl->tpl_vars['MODULE']->value != 'PurchaseOrder') {?><span class="priceBookPopup cursorPointer" data-popup="Popup" title="<?php echo vtranslate('PriceBooks',$_smarty_tpl->tpl_vars['MODULE']->value);?>
 " data-module-name="PriceBooks" style="float:left"><?php echo Vtiger_Module_Model::getModuleIconPath('PriceBooks');?>
@@ -279,10 +279,10 @@ echo $_smarty_tpl->tpl_vars['data']->value[$_smarty_tpl->tpl_vars['margin']->val
 } else { ?>0<?php }?>"></span><span class="margin pull-right"><?php if ($_smarty_tpl->tpl_vars['data']->value[$_smarty_tpl->tpl_vars['margin']->value]) {
 echo $_smarty_tpl->tpl_vars['data']->value[$_smarty_tpl->tpl_vars['margin']->value];
 } else { ?>0<?php }?></span></td><?php }
-if ($_smarty_tpl->tpl_vars['MODULE']->value == 'Payment') {?><td><span id="netPrice<?php echo $_smarty_tpl->tpl_vars['row_no']->value;?>
+if ($_smarty_tpl->tpl_vars['MODULE']->value == 'Payment') {?><!--<td><span id="netPrice<?php echo $_smarty_tpl->tpl_vars['row_no']->value;?>
 " style="display:none"; class="pull-right netPrice"><?php if ($_smarty_tpl->tpl_vars['data']->value[$_smarty_tpl->tpl_vars['netPrice']->value]) {
 echo $_smarty_tpl->tpl_vars['data']->value[$_smarty_tpl->tpl_vars['netPrice']->value];
-} else { ?>0<?php }?></span></td><?php } else { ?><td><span id="netPrice<?php echo $_smarty_tpl->tpl_vars['row_no']->value;?>
+} else { ?>0<?php }?></span></td>--><?php } else { ?><td><span id="netPrice<?php echo $_smarty_tpl->tpl_vars['row_no']->value;?>
 " class="pull-right netPrice"><?php if ($_smarty_tpl->tpl_vars['data']->value[$_smarty_tpl->tpl_vars['netPrice']->value]) {
 echo $_smarty_tpl->tpl_vars['data']->value[$_smarty_tpl->tpl_vars['netPrice']->value];
 } else { ?>0<?php }?></span></td><?php }

@@ -48,17 +48,20 @@ class Inventory_RelationListView_Model extends Vtiger_RelationListView_Model {
 		
 		if($parentmodule=='Invoice' && $relatedmodule=='Payment')
 		{
+
+			// print_r($parentRecordModel);
+			// exit();
 			$cid=$parentRecordModel->get('contact_id');
-			$iid=$parentRecordModel->get('invoice_no');
-			$date=$parentRecordModel->get('duedate');
-			$ddate=date("d-m-Y", strtotime($date));
+			$iid=$parentRecordModel->getId();
+			$sid=$parentRecordModel->get('salesorder_id');
+			//$date=date("d-m-Y");
 			$bs=$parentRecordModel->get('bill_street');
 			$bc=$parentRecordModel->get('bill_city');	
 			$bss=$parentRecordModel->get('bill_state');
 			$bcc=$parentRecordModel->get('bill_code');
 
-			$createViewUrl = $relatedModel->getCreateRecordUrl().'&sourceModule='.$parentModule->get('name').
-			'&sourceRecord='.$parentRecordModel->getId().'&relationOperation=true&contact_id='.$cid.'&invoice_id='.$iid.'&pduedate='.$ddate.'&bill_street='.$bs.'&bill_city='.$bc.'&bill_state='.$bss.'&bill_code='.$bcc;
+			 $createViewUrl = $relatedModel->getCreateRecordUrl().'&sourceModule='.$parentModule->get('name').
+			 '&sourceRecord='.$parentRecordModel->getId().'&relationOperation=true&contact_id='.$cid.'&invoice_id='.$iid.'&bill_street='.$bs.'&bill_city='.$bc.'&bill_state='.$bss.'&bill_code='.$bcc.'&salesorder_id='.$sid;
 		}
 		else
 		{

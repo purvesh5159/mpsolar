@@ -101,10 +101,10 @@ class Vtiger_GenerateInvoiceAndProject_Action extends Vtiger_IndexAjax_View
 		$focus->_recurring_mode = 'recurringinvoice_from_so';
 
 		$focus->save("Invoice");
-		include_once 'modules/Invoice/InvoiceHandler.php';
-		$ad  =  new InvoiceHandler();
-		$modMeta  =  Vtiger_Record_Model::getInstanceById($focus->id,'Invoice');
-		$ad->handleEvent('vtiger.entity.aftersave' , $modMeta , "True");
+		//include_once 'modules/Invoice/InvoiceHandler.php';
+		//$ad  =  new InvoiceHandler();
+		//$modMeta  =  Vtiger_Record_Model::getInstanceById($focus->id,'Invoice');
+		//$ad->handleEvent('vtiger.entity.aftersave' , $modMeta , "True");
 		$response->setResult(array('success'=>true, 'data'=> "Record is created successfully"));
 		$response->emit();
 	}

@@ -11,7 +11,7 @@
 /**
  * Mass Edit Record Structure Model
  */
-class Payment_MassEditRecordStructure_Model extends Inventory_MassEditRecordStructure_Model {
+class Payment_MassEditRecordStructure_Model extends Vtiger_MassEditRecordStructure_Model {
 
 	public function getStructure() {
 		if(!empty($this->structuredValues)) {

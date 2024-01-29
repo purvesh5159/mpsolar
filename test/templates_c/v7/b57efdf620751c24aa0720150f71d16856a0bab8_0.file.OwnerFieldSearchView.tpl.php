@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.39, created on 2023-10-03 07:39:14
+/* Smarty version 3.1.39, created on 2024-01-23 05:28:43
   from 'D:\wamp\www\mpsolar\layouts\v7\modules\Vtiger\uitypes\OwnerFieldSearchView.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_651bc52273be11_60517613',
+  'unifunc' => 'content_65af4e8b2aed57_69191108',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_651bc52273be11_60517613 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65af4e8b2aed57_69191108 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_assignInScope('FIELD_INFO', $_smarty_tpl->tpl_vars['FIELD_MODEL']->value->getFieldInfo());?><div class="select2_search_div"><?php $_smarty_tpl->_assignInScope('ASSIGNED_USER_ID', $_smarty_tpl->tpl_vars['FIELD_MODEL']->value->get('name'));
 $_smarty_tpl->_assignInScope('ALL_ACTIVEUSER_LIST', $_smarty_tpl->tpl_vars['FIELD_INFO']->value['picklistvalues'][vtranslate('LBL_USERS')]);
 $_smarty_tpl->_assignInScope('SEARCH_VALUES', explode(',',$_smarty_tpl->tpl_vars['SEARCH_INFO']->value['searchValue']));

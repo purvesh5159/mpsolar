@@ -95,8 +95,8 @@ function getConvertQuotesToProjectInvoice($focus,$so_focus,$soid)
 function getConvertSalesOrderToMaintance($focus,$so_focus,$soid)
 {
 	global $log,$current_user;
-	$log->debug("Entering getConvertSoToInvoice(".get_class($focus).",".get_class($so_focus).",".$soid.") method ...");
-    $log->info("in getConvertSoToInvoice ".$soid);
+	$log->debug("Entering getConvertSalesOrderToMaintance(".get_class($focus).",".get_class($so_focus).",".$soid.") method ...");
+    $log->info("in getConvertSalesOrderToMaintance".$soid);
     $xyz=array('bill_street','bill_city','bill_code','bill_pobox','bill_country','bill_state','ship_street','ship_city','ship_code','ship_pobox','ship_country','ship_state');
 	for($i=0;$i<count($xyz);$i++){
 		if (getFieldVisibilityPermission('SalesOrder', $current_user->id,$xyz[$i]) == '0'){

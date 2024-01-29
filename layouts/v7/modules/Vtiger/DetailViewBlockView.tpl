@@ -21,7 +21,7 @@
          {if $BLOCK_LABEL_KEY eq 'Gross Profit Details'}{continue}{/if}
     {/if}
 		
-		<div class="block block_{$BLOCK_LABEL_KEY} {if $BLOCK_LABEL_KEY eq 'Installer Details'} hide {/if}" data-block="{$BLOCK_LABEL_KEY}" data-blockid="{$BLOCK_LIST[$BLOCK_LABEL_KEY]->get('id')}">
+		<div class="block block_{$BLOCK_LABEL_KEY}" data-block="{$BLOCK_LABEL_KEY}" data-blockid="{$BLOCK_LIST[$BLOCK_LABEL_KEY]->get('id')}">
 			{assign var=IS_HIDDEN value=$BLOCK->isHidden()}
 			{assign var=WIDTHTYPE value=$USER_MODEL->get('rowheight')}
 			<input type=hidden name="timeFormatOptions" data-value='{$DAY_STARTS}' />

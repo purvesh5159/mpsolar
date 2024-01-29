@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.39, created on 2023-10-03 07:39:05
+/* Smarty version 3.1.39, created on 2024-01-24 04:29:52
   from 'D:\wamp\www\mpsolar\layouts\v7\modules\Vtiger\dashboards\DashBoardPreProcess.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_651bc51950a7b6_82305987',
+  'unifunc' => 'content_65b092407c2fa4_35133238',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:modules/Vtiger/partials/SidebarHeader.tpl' => 1,
   ),
 ),false)) {
-function content_651bc51950a7b6_82305987 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65b092407c2fa4_35133238 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:modules/Vtiger/partials/Topbar.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 

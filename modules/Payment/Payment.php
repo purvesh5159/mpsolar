@@ -14,7 +14,7 @@ include_once 'modules/Vtiger/CRMEntity.php';
 class Payment extends Vtiger_CRMEntity {
 
 
-	var $table_name = 'vtiger_payment';
+	var $table_name = 'vtiger_payments';
 	var $table_index= 'paymentid';
 
 	/**
@@ -25,7 +25,7 @@ class Payment extends Vtiger_CRMEntity {
 	/**
 	 * Mandatory for Saving, Include tables related to this module.
 	 */
-	var $tab_name = Array('vtiger_crmentity','vtiger_payment','vtiger_paymentcf', 'vtiger_inventoryproductrel');
+	var $tab_name = Array('vtiger_crmentity','vtiger_payments','vtiger_paymentcf', 'vtiger_inventoryproductrel');
 	
 	/**
 	 * Other Related Tables
@@ -39,7 +39,7 @@ class Payment extends Vtiger_CRMEntity {
 	 */
 	var $tab_name_index = Array(
 		'vtiger_crmentity'=>'crmid',
-		'vtiger_payment'=>'paymentid',
+		'vtiger_payments'=>'paymentid',
 		'vtiger_paymentcf'=>'paymentid',
 		'vtiger_inventoryproductrel'=>'id'
 	     );
@@ -50,7 +50,7 @@ class Payment extends Vtiger_CRMEntity {
 	var $list_fields = Array (
 		/* Format: Field Label => Array(tablename, columnname) */
 		// tablename should not have prefix 'vtiger_'
-		'Payment No' => Array('payment', 'paymentno'),
+		'Payment No' => Array('payments', 'paymentno'),
 /*'Payment No'=> Array('payment', 'paymentno'),*/
 		'Assigned To' => Array('crmentity','smownerid')
 	);
@@ -68,7 +68,7 @@ class Payment extends Vtiger_CRMEntity {
 	var $search_fields = Array(
 		/* Format: Field Label => Array(tablename, columnname) */
 		// tablename should not have prefix 'vtiger_'
-		'Payment No' => Array('payment', 'paymentno'),
+		'Payment No' => Array('payments', 'paymentno'),
 /*'Payment No'=> Array('payment', 'paymentno'),*/
 		'Assigned To' => Array('vtiger_crmentity','assigned_user_id'),
 	);

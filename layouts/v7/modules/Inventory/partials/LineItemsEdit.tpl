@@ -79,12 +79,12 @@
 	{assign var=BLOCK_FIELDS value=$RECORD_STRUCTURE.$LINE_ITEM_BLOCK_LABEL}
 	{assign var=BLOCK_LABEL value=$LINE_ITEM_BLOCK_LABEL}
 	{if $BLOCK_FIELDS|@count gt 0}
-		<div class='fieldBlockContainer'>
+		<div class='fieldBlockContainer {if $MODULE eq 'Payment'}hide{/if}'>
 		  {if $MODULE eq 'Payment'}
-			<div class="row">
+			<!--<div class="row">
 				<div class="col-sm-4">
 					<h4 class='fieldBlockHeader' style="margin-top:5px;">Payment Details</h4>
-				</div>
+				</div>-->
 			</div>
 			{else}
 			<div class="row">
@@ -160,7 +160,7 @@
 			<div class="lineitemTableContainer">
 				<table class="table table-bordered" id="lineItemTab">
 				{if $MODULE eq 'Payment'}
-				<tr>
+				<!--<tr>
 						<td><strong>{vtranslate('LBL_TOOLS',$MODULE)}</strong></td>
 			            <td><b>Payment Type </b></td>
 			            <td><b>Payment no</b></td>
@@ -168,7 +168,7 @@
 			            <td><b>Payment Date</b></td>
 			            <td><b>Payment Total</b></td>
 			            <td><b>Total</b></td>
-                </tr>
+                </tr>-->
             {else}
 					<tr>
 						<td><strong>{vtranslate('LBL_TOOLS',$MODULE)}</strong></td>
@@ -243,11 +243,11 @@
 					</div>
 				{elseif $PRODUCT_ACTIVE eq 'true'}
 					{if $MODULE eq 'Payment'}
-					<div class="btn-group">
+					<!--<div class="btn-group">
                      <button type="button" class="btn addButton" id="addProduct">
                         <i class="icon-plus"></i><strong>Add Payment</strong></strong>
                     </button>
-                    </div>
+                    </div>-->
                     {else}
                     <div class="btn-group">
 						<button type="button" class="btn btn-default" id="addProduct" data-module-name="Products">
@@ -266,7 +266,7 @@
 		</div>
 		<br>
 	{if $MODULE eq 'Payment'}
-    <div class="fieldBlockContainer">
+    <!--<div class="fieldBlockContainer">
     <table class="table table-bordered blockContainer lineItemTable" id="lineItemResult">
         <tr>
             <td  width="83%">
@@ -277,7 +277,7 @@
             </td>
         </tr>
         </table>
-        </div>
+        </div>-->
 		{else}
 		<div class="fieldBlockContainer">
 			<table class="table table-bordered blockContainer lineItemTable" id="lineItemResult">
@@ -542,11 +542,11 @@
 						<span id="grandTotal" name="grandTotal" class="pull-right grandTotal">{$FINAL.grandTotal}</span>
 					</td>
 				</tr>
-				{if $MODULE eq 'Invoice' or $MODULE eq 'PurchaseOrder'}
+				{if $MODULE eq 'Invoice' or $MODULE eq 'PurchaseOrder' or $MODULE eq 'SalesOrder'}
 					<tr valign="top">
 						<td width="83%" >
 							<div class="pull-right">
-								{if $MODULE eq 'Invoice'}
+								{if $MODULE eq 'Invoice' or $MODULE eq 'SalesOrder'}
 									<strong>{vtranslate('LBL_RECEIVED',$MODULE)}</strong>
 								{else}
 									<strong>{vtranslate('LBL_PAID',$MODULE)}</strong>
@@ -554,7 +554,7 @@
 							</div>
 						</td>
 						<td>
-							{if $MODULE eq 'Invoice'}
+							{if $MODULE eq 'Invoice' or $MODULE eq 'SalesOrder'}
 								<span class="pull-right"><input id="received" name="received" type="text" class="lineItemInputBox form-control" value="{if $RECORD->getDisplayValue('received') && !($IS_DUPLICATE)}{$RECORD->getDisplayValue('received')}{else}0{/if}"></span>
 								{else}
 								<span class="pull-right"><input id="paid" name="paid" type="text" class="lineItemInputBox" value="{if $RECORD->getDisplayValue('paid') && !($IS_DUPLICATE)}{$RECORD->getDisplayValue('paid')}{else}0{/if}"></span>

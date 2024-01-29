@@ -11,7 +11,7 @@
 /**
  * Inventory Record Model Class
  */
-class Payment_Record_Model extends Inventory_Record_Model {
+class Payment_Record_Model extends Vtiger_Record_Model {
 
 	function getCreateInvoiceUrl() {
 		$invoiceModuleModel = Vtiger_Module_Model::getInstance('Invoice');

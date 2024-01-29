@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2023-10-04 05:45:25
+/* Smarty version 3.1.39, created on 2024-01-25 08:49:17
   from 'D:\wamp\www\mpsolar\layouts\v7\modules\Vtiger\partials\EditViewContents.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_651cfbf57e5220_02129757',
+  'unifunc' => 'content_65b2208de687f7_95097864',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'cb443acd8a0a6f1a0e097ef023d6269b61823ec5' => 
     array (
       0 => 'D:\\wamp\\www\\mpsolar\\layouts\\v7\\modules\\Vtiger\\partials\\EditViewContents.tpl',
-      1 => 1691393048,
+      1 => 1705644220,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_651cfbf57e5220_02129757 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65b2208de687f7_95097864 (Smarty_Internal_Template $_smarty_tpl) {
 if (!empty($_smarty_tpl->tpl_vars['PICKIST_DEPENDENCY_DATASOURCE']->value)) {?><input type="hidden" name="picklistDependency" value='<?php echo Vtiger_Util_Helper::toSafeHTML($_smarty_tpl->tpl_vars['PICKIST_DEPENDENCY_DATASOURCE']->value);?>
 ' /><?php }?><div name='editContent'><?php if ($_smarty_tpl->tpl_vars['DUPLICATE_RECORDS']->value) {?><div class="fieldBlockContainer duplicationMessageContainer"><div class="duplicationMessageHeader"><b><?php echo vtranslate('LBL_DUPLICATES_DETECTED',$_smarty_tpl->tpl_vars['MODULE']->value);?>
 </b></div><div><?php echo getDuplicatesPreventionMessage($_smarty_tpl->tpl_vars['MODULE']->value,$_smarty_tpl->tpl_vars['DUPLICATE_RECORDS']->value);?>

@@ -8,7 +8,15 @@
  * All Rights Reserved.
  *************************************************************************************/
 
-class Payment_Module_Model extends Inventory_Module_Model{
+class Payment_Module_Model extends Vtiger_Module_Model{
+
+	/**
+	 * Function to check whether the module is enabled for quick create
+	 * @return <Boolean> - true/false
+	 */
+	public function isQuickCreateSupported() {
+		return $this->isEntityModule();
+	}
 
 }
 ?>

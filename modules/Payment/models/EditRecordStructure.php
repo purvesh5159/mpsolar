@@ -11,7 +11,7 @@
 /**
  * SalesOrder Edit View Record Structure Model
  */
-class Payment_EditRecordStructure_Model extends Inventory_EditRecordStructure_Model {
+class Payment_EditRecordStructure_Model extends Vtiger_EditRecordStructure_Model {
 
 	
 }

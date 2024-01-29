@@ -7,7 +7,7 @@
  * All Rights Reserved.
  *************************************************************************************/
 
-Inventory_Detail_Js("Payment_Detail_Js",{},{
+vtiger_Detail_Js("Payment_Detail_Js",{},{
 	
 	/**
 	 * Function to register recordpresave event

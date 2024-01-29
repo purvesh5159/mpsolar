@@ -17,6 +17,8 @@ $languageStrings = array(
     'Peak Meter No# ' =>'Lot & DP No',
     'LBL_ASSIGNQTY' => 'Assigned QTY',
     'LBL_QTY' => 'QTY',
+    'LBL_RECEIVED' => 'Received',
+	'LBL_BALANCE' => 'Balance',
 
 	//Basic strings
 	'LBL_ADD_RECORD' => 'Add Project',

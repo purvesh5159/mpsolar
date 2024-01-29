@@ -26,7 +26,7 @@
          {if $BLOCK_LABEL eq 'Gross Profit Details'}{continue}{/if}
          {/if}
          {if $BLOCK_FIELDS|@count gt 0}
-             <div class='fieldBlockContainer' data-block="{$BLOCK_LABEL}{$IS_ADMIN}">
+             <div class='fieldBlockContainer {if $BLOCK_LABEL eq 'Installer Details'} hide {/if}' data-block="{$BLOCK_LABEL}" >
                      <h4 class='fieldBlockHeader'>{vtranslate($BLOCK_LABEL, $MODULE)}</h4>
                  <hr>
                  <table class="table table-borderless {if $BLOCK_LABEL eq 'LBL_ADDRESS_INFORMATION'} addressBlock{/if}">

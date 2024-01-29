@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.39, created on 2023-10-10 04:53:06
+/* Smarty version 3.1.39, created on 2024-01-23 05:27:36
   from 'D:\wamp\www\mpsolar\layouts\v7\modules\Settings\Picklist\PickListValueDetail.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6524d8b2a90164_18231510',
+  'unifunc' => 'content_65af4e48b34db9_82089170',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6524d8b2a90164_18231510 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65af4e48b34db9_82089170 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_assignInScope('PICKLIST_COLOR_MAP', Settings_Picklist_Module_Model::getPicklistColorMap($_smarty_tpl->tpl_vars['SELECTED_PICKLIST_FIELDMODEL']->value->getName()));?><style type="text/css"><?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['PICKLIST_COLOR_MAP']->value, 'PICKLIST_COLOR', false, 'PICKLIST_KEY_ID');
 $_smarty_tpl->tpl_vars['PICKLIST_COLOR']->do_else = true;

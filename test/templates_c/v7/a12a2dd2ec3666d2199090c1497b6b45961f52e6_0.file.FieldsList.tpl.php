@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.39, created on 2023-10-04 06:31:05
+/* Smarty version 3.1.39, created on 2024-01-24 05:29:04
   from 'D:\wamp\www\mpsolar\layouts\v7\modules\Settings\LayoutEditor\FieldsList.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_651d06a9782a18_34769286',
+  'unifunc' => 'content_65b0a02021f406_53554347',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_651d06a9782a18_34769286 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65b0a02021f406_53554347 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_assignInScope('IS_SORTABLE', $_smarty_tpl->tpl_vars['SELECTED_MODULE_MODEL']->value->isSortableAllowed());
 $_smarty_tpl->_assignInScope('ALL_BLOCK_LABELS', array());?><div class="row fieldsListContainer" style="padding:1% 0"><div class="col-sm-6"><button class="btn btn-default addButton addCustomBlock" type="button"><i class="fa fa-plus"></i>&nbsp;&nbsp;<?php echo vtranslate('LBL_ADD_CUSTOM_BLOCK',$_smarty_tpl->tpl_vars['QUALIFIED_MODULE']->value);?>
 </button></div><div class="col-sm-6"><?php if ($_smarty_tpl->tpl_vars['IS_SORTABLE']->value) {?><span class="pull-right"><button class="btn btn-success saveFieldSequence" type="button" style="opacity:0;margin-right:0px;"><?php echo vtranslate('LBL_SAVE_LAYOUT',$_smarty_tpl->tpl_vars['QUALIFIED_MODULE']->value);?>

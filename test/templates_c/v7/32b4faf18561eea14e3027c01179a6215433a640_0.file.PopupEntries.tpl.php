@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.39, created on 2023-10-03 07:53:35
+/* Smarty version 3.1.39, created on 2024-01-23 05:23:44
   from 'D:\wamp\www\mpsolar\layouts\v7\modules\Inventory\PopupEntries.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_651bc87f631f89_01419478',
+  'unifunc' => 'content_65af4d60791392_06980283',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_651bc87f631f89_01419478 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65af4d60791392_06980283 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <input type='hidden' id='pageNumber' value="<?php echo $_smarty_tpl->tpl_vars['PAGE_NUMBER']->value;?>
 "><input type='hidden' id='pageLimit' value="<?php echo $_smarty_tpl->tpl_vars['PAGING_MODEL']->value->getPageLimit();?>
@@ -74,8 +74,8 @@ $_smarty_tpl->tpl_vars['__smarty_foreach_popupListView']->value['index']++;
 $_smarty_tpl->_assignInScope('RECORD_DATA', ((string)$_smarty_tpl->tpl_vars['LISTVIEW_ENTRY']->value->getRawData()));?><tr class="listViewEntries" data-id="<?php echo $_smarty_tpl->tpl_vars['LISTVIEW_ENTRY']->value->getId();?>
 " data-name='<?php echo $_smarty_tpl->tpl_vars['LISTVIEW_ENTRY']->value->getName();?>
 ' data-info='<?php echo Vtiger_Util_Helper::toSafeHTML(ZEND_JSON::encode($_smarty_tpl->tpl_vars['LISTVIEW_ENTRY']->value->getRawData()));?>
-'<?php if ($_smarty_tpl->tpl_vars['GETURL']->value != '') {?> data-url="<?php $_prefixVariable2 = $_smarty_tpl->tpl_vars['GETURL']->value;
-echo (($_smarty_tpl->tpl_vars['LISTVIEW_ENTRY']->value->$_prefixVariable2()).('&sourceModule=')).($_smarty_tpl->tpl_vars['SOURCE_MODULE']->value);?>
+'<?php if ($_smarty_tpl->tpl_vars['GETURL']->value != '') {?> data-url="<?php $_prefixVariable1 = $_smarty_tpl->tpl_vars['GETURL']->value;
+echo (($_smarty_tpl->tpl_vars['LISTVIEW_ENTRY']->value->$_prefixVariable1()).('&sourceModule=')).($_smarty_tpl->tpl_vars['SOURCE_MODULE']->value);?>
 " <?php }?>  id="<?php echo $_smarty_tpl->tpl_vars['MODULE']->value;?>
 _popUpListView_row_<?php echo (isset($_smarty_tpl->tpl_vars['__smarty_foreach_popupListView']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_foreach_popupListView']->value['index'] : null)+1;?>
 "><?php if ($_smarty_tpl->tpl_vars['MULTI_SELECT']->value) {?><td class="<?php echo $_smarty_tpl->tpl_vars['WIDTHTYPE']->value;?>
@@ -89,8 +89,8 @@ $_smarty_tpl->_assignInScope('LISTVIEW_HEADERNAME', $_smarty_tpl->tpl_vars['LIST
 </a><?php } elseif ($_smarty_tpl->tpl_vars['LISTVIEW_HEADER']->value->get('uitype') == '72') {
 ob_start();
 echo $_smarty_tpl->tpl_vars['CURRENT_USER_MODEL']->value->get('currency_symbol_placement');
-$_prefixVariable3 = ob_get_clean();
-$_smarty_tpl->_assignInScope('CURRENCY_SYMBOL_PLACEMENT', $_prefixVariable3);
+$_prefixVariable2 = ob_get_clean();
+$_smarty_tpl->_assignInScope('CURRENCY_SYMBOL_PLACEMENT', $_prefixVariable2);
 if ($_smarty_tpl->tpl_vars['CURRENCY_SYMBOL_PLACEMENT']->value == '1.0$') {
 echo $_smarty_tpl->tpl_vars['LISTVIEW_ENTRY']->value->get($_smarty_tpl->tpl_vars['LISTVIEW_HEADERNAME']->value);
 echo $_smarty_tpl->tpl_vars['LISTVIEW_ENTRY']->value->get('currencySymbol');

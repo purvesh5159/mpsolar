@@ -917,7 +917,7 @@ function getInventoryTaxType($module, $id)
 	$inventoryTable = $focus->table_name;
 	$inventoryId = $focus->table_index;
     
-    if($inventoryTable != 'vtiger_payment')
+    if($inventoryTable != 'vtiger_payments')
     {
 	$res = $adb->pquery("SELECT taxtype FROM $inventoryTable WHERE $inventoryId=?", array($id));
 	$taxtype = $adb->query_result($res,0,'taxtype');
@@ -943,7 +943,7 @@ function getInventoryCurrencyInfo($module, $id)
 
 	$inventory_table = $focus->table_name;
 	$inventory_id = $focus->table_index;
-	if($inventory_table !='vtiger_payment')
+	if($inventory_table !='vtiger_payments')
 	{
 	$res = $adb->pquery("select currency_id, $inventory_table.conversion_rate as conv_rate, vtiger_currency_info.* from $inventory_table
 						inner join vtiger_currency_info on $inventory_table.currency_id = vtiger_currency_info.id

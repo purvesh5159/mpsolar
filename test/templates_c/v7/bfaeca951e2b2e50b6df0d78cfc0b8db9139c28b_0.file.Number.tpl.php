@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.39, created on 2023-10-10 05:06:10
+/* Smarty version 3.1.39, created on 2024-01-23 05:11:30
   from 'D:\wamp\www\mpsolar\layouts\v7\modules\Vtiger\uitypes\Number.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6524dbc297f999_98588186',
+  'unifunc' => 'content_65af4a82e40824_85541247',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6524dbc297f999_98588186 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65af4a82e40824_85541247 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_assignInScope('FIELD_INFO', $_smarty_tpl->tpl_vars['FIELD_MODEL']->value->getFieldInfo());
 $_smarty_tpl->_assignInScope('SPECIAL_VALIDATOR', $_smarty_tpl->tpl_vars['FIELD_MODEL']->value->getValidator());
 if ($_smarty_tpl->tpl_vars['MODULE']->value == 'HelpDesk' && ($_smarty_tpl->tpl_vars['FIELD_MODEL']->value->get('name') == 'days' || $_smarty_tpl->tpl_vars['FIELD_MODEL']->value->get('name') == 'hours')) {

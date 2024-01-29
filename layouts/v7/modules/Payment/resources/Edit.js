@@ -7,7 +7,7 @@
  * All Rights Reserved.
  *************************************************************************************/
 
-Inventory_Edit_Js("Payment_Edit_Js",{},{
+vtiger_Edit_Js("Payment_Edit_Js",{},{
 	
 	/**
 	 * Function which will register event for Reference Fields Selection

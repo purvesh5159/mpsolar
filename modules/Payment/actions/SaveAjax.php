@@ -7,7 +7,7 @@
  * Portions created by vtiger are Copyright (C) vtiger.
  * All Rights Reserved.
  *************************************************************************************/
-class Payment_SaveAjax_Action extends Inventory_SaveAjax_Action {
+class Payment_SaveAjax_Action extends Vtiger_SaveAjax_Action {
 	
 	/**
 	 * Function to get the record model based on the request parameters

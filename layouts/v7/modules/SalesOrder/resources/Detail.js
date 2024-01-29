@@ -15,11 +15,11 @@ Inventory_Detail_Js("SalesOrder_Detail_Js",{},{
        status = jQuery.trim(status);
        console.log(status);
 
-       if(status != 'Created') {
-           jQuery('[data-block="Installer Details"]').removeClass('hide');  
+      if(status != 'Created') {
+           jQuery('[data-block="Installer Details"]').show();
       }  
       else {
-        jQuery('[data-block="Installer Details"]').addClass('hide');     
+        jQuery('[data-block="Installer Details"]').hide();    
       }   
   },
 

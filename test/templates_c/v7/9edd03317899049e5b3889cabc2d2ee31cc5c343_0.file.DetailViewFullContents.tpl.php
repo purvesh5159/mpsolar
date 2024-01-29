@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.39, created on 2023-10-04 06:24:10
+/* Smarty version 3.1.39, created on 2024-01-23 05:12:01
   from 'D:\wamp\www\mpsolar\layouts\v7\modules\Quotes\DetailViewFullContents.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_651d050a5f6e78_35232487',
+  'unifunc' => 'content_65af4aa1dd2695_86605429',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_651d050a5f6e78_35232487 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65af4aa1dd2695_86605429 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender(vtemplate_path('DetailViewFullContents.tpl','Inventory'), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('RECORD_STRUCTURE'=>$_smarty_tpl->tpl_vars['RECORD_STRUCTURE']->value,'MODULE_NAME'=>$_smarty_tpl->tpl_vars['MODULE_NAME']->value), 0, true);
 }
 }

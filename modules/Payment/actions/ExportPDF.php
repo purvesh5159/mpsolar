@@ -10,5 +10,5 @@
 
 vimport('~~/modules/Payment/PaymentPDFController.php');
 
-class Payment_ExportPDF_Action extends Inventory_ExportPDF_Action {
+class Payment_ExportPDF_Action extends Vtiger_ExportPDF_Action {
 }

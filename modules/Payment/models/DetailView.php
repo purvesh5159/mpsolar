@@ -8,7 +8,7 @@
  * All Rights Reserved.
  *************************************************************************************/
 
-class Payment_DetailView_Model extends Inventory_DetailView_Model {
+class Payment_DetailView_Model extends Vtiger_DetailView_Model {
 
 	/**
 	 * Function to get the detail view links (links and widgets)

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2023-10-03 08:04:43
+/* Smarty version 3.1.39, created on 2024-01-23 05:06:39
   from 'D:\wamp\www\mpsolar\layouts\v7\modules\Vtiger\DetailViewBlockView.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_651bcb1b81fa48_64978575',
+  'unifunc' => 'content_65af495fbfcb17_89934451',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e1e5e636abebc5c4e0515ba8dbfa3849d5ba4759' => 
     array (
       0 => 'D:\\wamp\\www\\mpsolar\\layouts\\v7\\modules\\Vtiger\\DetailViewBlockView.tpl',
-      1 => 1696320281,
+      1 => 1705901361,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_651bcb1b81fa48_64978575 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65af495fbfcb17_89934451 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <input type="hidden" name="assingeid" id="assingeid" class="assingeid" value='<?php echo $_smarty_tpl->tpl_vars['ASSIGNEDID']->value;?>
 ' /><input type="hidden" name="currentedid" id="currentedid" class="currentedid" value='<?php echo $_smarty_tpl->tpl_vars['CURRENTID']->value;?>
@@ -39,7 +39,7 @@ if ($_smarty_tpl->tpl_vars['BLOCK_LABEL_KEY']->value == 'Gross Profit Details') 
 continue 1;
 }
 }?><div class="block block_<?php echo $_smarty_tpl->tpl_vars['BLOCK_LABEL_KEY']->value;?>
- <?php if ($_smarty_tpl->tpl_vars['BLOCK_LABEL_KEY']->value == 'Installer Details') {?> hide <?php }?>" data-block="<?php echo $_smarty_tpl->tpl_vars['BLOCK_LABEL_KEY']->value;?>
+" data-block="<?php echo $_smarty_tpl->tpl_vars['BLOCK_LABEL_KEY']->value;?>
 " data-blockid="<?php echo $_smarty_tpl->tpl_vars['BLOCK_LIST']->value[$_smarty_tpl->tpl_vars['BLOCK_LABEL_KEY']->value]->get('id');?>
 "><?php $_smarty_tpl->_assignInScope('IS_HIDDEN', $_smarty_tpl->tpl_vars['BLOCK']->value->isHidden());
 $_smarty_tpl->_assignInScope('WIDTHTYPE', $_smarty_tpl->tpl_vars['USER_MODEL']->value->get('rowheight'));?><input type=hidden name="timeFormatOptions" data-value='<?php echo $_smarty_tpl->tpl_vars['DAY_STARTS']->value;?>

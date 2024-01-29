@@ -74,14 +74,14 @@
 
 {assign var=FINAL_DETAILS value=$RELATED_PRODUCTS.1.final_details}
 <div class="details block">
-    <div class="lineItemTableDiv">
-        <table class="table table-bordered lineItemsTable" style = "margin-top:15px">
+    <div class="lineItemTableDiv {if $MODULE_NAME eq 'Payment'} hide {/if}">
+        <table class="table table-bordered lineItemsTable {if $MODULE_NAME eq 'Payment'} hide {/if}" style = "margin-top:15px">
         {if $MODULE_NAME eq 'Payment'}
-        <thead>
+        <!--<thead>
         <th colspan="7" class="detailViewBlockHeader">
         Payment Details
         </th>
-        </thead>
+        </thead>-->
        {else}
             <thead>
             <th colspan="{$COL_SPAN1}" class="lineItemBlockHeader">
@@ -105,13 +105,13 @@
             {/if}
             <tbody>
             {if  $MODULE_NAME eq 'Payment'}   
-                 <tr>
+               <!--  <tr>
                     <td><span class="redColor">*</span><b>Payment Type</b></td>
                     <td><b>Payment no</b></td>
                     <td><b>Bank Name</b></td>
                     <td><b>Payment Date</b></td>
                     <td><b>{vtranslate('LBL_TOTAL',$MODULE_NAME)}</b></td>
-                </tr>
+                </tr>-->
             {else}
                 <tr>
                     {if $IMAGE_VIEWABLE}
@@ -160,7 +160,7 @@
                 {foreach key=INDEX item=LINE_ITEM_DETAIL from=$RELATED_PRODUCTS}
                     <tr>
                     {if $MODULE_NAME eq 'Payment'}
-                        <td>
+                       <!-- <td>
                         {$LINE_ITEM_DETAIL["paymentmode$INDEX"]}
                         </td>
                          <td>
@@ -176,7 +176,7 @@
                                 <div>
                                     {$LINE_ITEM_DETAIL["listPrice$INDEX"]}
                                 </div>
-                        </td>
+                        </td>-->
                         {else}
                         {if $IMAGE_VIEWABLE}
                             <td style="text-align:center;">
@@ -214,7 +214,7 @@
                         {/if}
 
                          {if $MODULE_NAME eq 'Payment'}
-                            <td>
+                            <!--<td>
                             {$LINE_ITEM_DETAIL["paymentmode$INDEX"]}
                             </td>
                              <td>
@@ -228,7 +228,7 @@
                             </td>
                             <td>
                             {$LINE_ITEM_DETAIL["listPrice$INDEX"]}
-                            </td>   
+                            </td> -->  
                         {/if}
                         {if $QUANTITY_VIEWABLE}
                             <td>
@@ -296,7 +296,7 @@
     </div>
     <table class="table table-bordered lineItemsTable">
     {if $MODULE_NAME eq 'Payment'}
-    <tr>
+   <!-- <tr>
             <td width="83%">
                 <div align="right">
                     <strong>{vtranslate('LBL_GRAND_TOTAL',$MODULE_NAME)}</strong>
@@ -307,7 +307,7 @@
                     {$FINAL_DETAILS["grandTotal"]}
                 </div>
             </td>
-        </tr>
+        </tr>-->
     {else}
         <tr>
             <td width="83%">
@@ -449,10 +449,10 @@
             </td>
         </tr>
         {/if}
-        {if $MODULE_NAME eq 'Invoice' or $MODULE_NAME eq 'PurchaseOrder'}
+        {if $MODULE_NAME eq 'Invoice' or $MODULE_NAME eq 'PurchaseOrder' or $MODULE_NAME eq 'SalesOrder'}
             <tr>
                 <td width="83%">
-                    {if $MODULE_NAME eq 'Invoice'}
+                    {if $MODULE_NAME eq 'Invoice' or $MODULE_NAME eq 'SalesOrder'}
                         <div align="right">
                             <strong>{vtranslate('LBL_RECEIVED',$MODULE_NAME)}</strong>
                         </div>
@@ -463,7 +463,7 @@
                     {/if}
                 </td>
                 <td>
-                    {if $MODULE_NAME eq 'Invoice'}
+                    {if $MODULE_NAME eq 'Invoice' or $MODULE_NAME eq 'SalesOrder'}
                         <div align="right">
                             {if $RECORD->getDisplayValue('received')}
                                 {$RECORD->getDisplayValue('received')}

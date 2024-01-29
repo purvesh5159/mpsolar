@@ -8,5 +8,5 @@
  * All Rights Reserved.
  *************************************************************************************/
 
-class Payment_RelationListView_Model extends Inventory_RelationListView_Model {}
+class Payment_RelationListView_Model extends Vtiger_RelationListView_Model {}
 ?>

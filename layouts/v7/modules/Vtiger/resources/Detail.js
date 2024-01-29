@@ -1067,10 +1067,10 @@ Vtiger.Class("Vtiger_Detail_Js",{
 		var recordId = this.getRecordId();
 		let moduleNameOFCust  = app.getModuleName();
 		if (fieldDetailList['field'] == "sostatus" && fieldDetailList['value'] != "Created") {
-			 jQuery('[data-block="Installer Details"]').removeClass('hide'); 
+			 jQuery('[data-block="Installer Details"]').show(); 
 		}
-		if (fieldDetailList['field'] == "sostatus" && fieldDetailList['value'] == "Delivered") {
-			 jQuery('#CreateMaintance').removeClass('hide'); 
+		if (fieldDetailList['field'] == "sostatus" && fieldDetailList['value'] == "Dispatched") {
+			 jQuery('#CreateMaintance').show(); 
 		}
 		if (fieldDetailList['field'] == "quotestage" && fieldDetailList['value'] == "Accepted") {
 			let message = "Do you want to generate Project and Invoice";
@@ -1115,7 +1115,7 @@ Vtiger.Class("Vtiger_Detail_Js",{
 				}
 			);
 		} 
-		else if (moduleNameOFCust == "SalesOrder"  && fieldDetailList['field'] == "sostatus" && fieldDetailList['value'] == "Approved") {
+		/*else if (moduleNameOFCust == "SalesOrder"  && fieldDetailList['field'] == "sostatus" && fieldDetailList['value'] == "Approved") {
 			let message = "Do you want to generate project maintenance";
 			app.helper.showConfirmationBox({ 'message': message }).then(
 				function (e) {
@@ -1155,8 +1155,8 @@ Vtiger.Class("Vtiger_Detail_Js",{
 					return aDeferred.promise();
 				}
 			);
-		}
-        else if (moduleNameOFCust == "SalesOrder"  && fieldDetailList['field'] == "sostatus" && fieldDetailList['value'] == "Delivered") {
+		}*/
+        else if (moduleNameOFCust == "SalesOrder"  && fieldDetailList['field'] == "sostatus" && fieldDetailList['value'] == "Dispatched") {
 			let message = "Installer Inventory added to Account";
 			app.helper.showConfirmationBox({ 'message': message }).then(
 				function (e) {
@@ -2457,12 +2457,10 @@ Vtiger.Class("Vtiger_Detail_Js",{
 
 	registerMaintance : function() {
 		var self = this;
-		jQuery('#CreateMaintance').on('click',function(e){
-			var element = jQuery(e.currentTarget);
-			if(element.hasClass('processing')) return;
-			element.addClass('processing');
-			var record = self.getRecordId();
-			let message = "Do you want to create Maintance";
+		var recordId = this.getRecordId();
+		jQuery('#CreateMaintance').on('click',function() {
+
+		let message = "Do you want to generate project maintenance";
 			app.helper.showConfirmationBox({ 'message': message }).then(
 				function (e) {
 					var module = app.getModuleName();
@@ -2471,9 +2469,9 @@ Vtiger.Class("Vtiger_Detail_Js",{
 					if (typeof fieldDetailList != 'undefined') {
 						data = fieldDetailList;
 					}
-					data['record'] = record;
+					data['record'] = recordId;
 					data['module'] = app.getModuleName();
-					data['action'] = 'GenerateMaintance';
+					data['action'] = 'GenerateMaintenance';
 					AppConnector.request(data).then(
 						function (reponseData) {
 							aDeferred1.resolve(reponseData);
@@ -2485,12 +2483,12 @@ Vtiger.Class("Vtiger_Detail_Js",{
 				},
 				function (error, err) {
 					var aDeferred = jQuery.Deferred();
-					var record = this.getRecordId();
+					var recordId = self.getRecordId();
 					var data = {};
 					if (typeof fieldDetailList != 'undefined') {
 						data = fieldDetailList;
 					}
-					data['record'] = record;
+					data['record'] = recordId;
 					data['module'] = app.getModuleName();
 					data['action'] = 'SaveAjax';
 					AppConnector.request(data).then(
@@ -2501,24 +2499,7 @@ Vtiger.Class("Vtiger_Detail_Js",{
 					return aDeferred.promise();
 				}
 			);
-		/*	if(element.hasClass('active')) {
-				params.value = 0;
-			}else {
-				params.value = 1;
-			}
-
-			element.toggleClass('active');
-
-
-			app.request.post({data:params}).then(function(err,data){
-				element.removeClass('processing');
-			})
-			if(element.hasClass('active')){
-				app.helper.showSuccessNotification({'message':app.vtranslate('JS_FOLLOW_RECORD')});
-			} else {
-				app.helper.showSuccessNotification({'message':app.vtranslate('JS_UNFOLLOW_RECORD')});
-			}*/
-	  });
+	});
 	},
 
 	saveTag : function(callerParams) {
@@ -3047,7 +3028,6 @@ Vtiger.Class("Vtiger_Detail_Js",{
 			recentCommentsTab.trigger('click',{'commentid':commentId});
 		});
 		this.registerStarToggle();
-		this.registerMaintance();
 		this.registerTagEvents();
 		app.event.on("post.mail.sent",function(event,data){
 			var resultEle = jQuery(data);
@@ -3451,5 +3431,8 @@ Vtiger.Class("Vtiger_Detail_Js",{
 		//register event for picklist dependency setup
 		this.registerEventForPicklistDependencySetup(this.getForm());
 		vtUtils.enableTooltips();
+		jQuery('#CreateMaintance').hide(); 
+		jQuery('[data-block="Installer Details"]').hide();
+		this.registerMaintance();
 	},
 });

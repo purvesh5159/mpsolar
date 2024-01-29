@@ -8,5 +8,5 @@
  * All Rights Reserved.
  *************************************************************************************/
 
-class Payment_ListView_Model extends Inventory_ListView_Model {
+class Payment_ListView_Model extends Vtiger_ListView_Model {
 }

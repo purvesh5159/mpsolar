@@ -2957,8 +2957,8 @@ if ($blockInstance) {
 $moduleInstance = null;
 $blockInstance = null;
 $fieldInstance = null;
-$moduleInstance = Vtiger_Module::getInstance('Payments');
-$blockInstance = Vtiger_Block::getInstance('Payments Details', $moduleInstance);
+$moduleInstance = Vtiger_Module::getInstance('Payment');
+$blockInstance = Vtiger_Block::getInstance('Payment Details', $moduleInstance);
 if ($blockInstance) {
     $fieldInstance = Vtiger_Field::getInstance('paymentamount', $moduleInstance);
     if (!$fieldInstance) {
@@ -2973,7 +2973,7 @@ if ($blockInstance) {
         $field->presence = 2;
         $field->typeofdata = 'V~O';
         $field->columntype = 'VARCHAR(32)';
-        $field->quickcreate = 3;
+        $field->quickcreate = 2;
         $field->displaytype = 1;
         $field->masseditable = 1;
         $field->defaultvalue = 0;

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2024-01-25 05:37:51
+/* Smarty version 3.1.39, created on 2024-01-29 14:23:15
   from 'D:\wamp\www\mpsolar\layouts\v7\modules\Payment\SummaryViewWidgets.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_65b1f3af6268a8_39471777',
+  'unifunc' => 'content_65b7b4d3def5a7_14606423',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'b8bda11d7a5505fc98c1b913fc0056b0a5c1b63c' => 
     array (
       0 => 'D:\\wamp\\www\\mpsolar\\layouts\\v7\\modules\\Payment\\SummaryViewWidgets.tpl',
-      1 => 1669872319,
+      1 => 1706510637,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65b1f3af6268a8_39471777 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65b7b4d3def5a7_14606423 (Smarty_Internal_Template $_smarty_tpl) {
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['DETAILVIEW_LINKS']->value['DETAILVIEWWIDGET'], 'DETAIL_VIEW_WIDGET');
 $_smarty_tpl->tpl_vars['DETAIL_VIEW_WIDGET']->do_else = true;
 if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['DETAIL_VIEW_WIDGET']->value) {

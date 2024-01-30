@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.39, created on 2024-01-29 08:32:18
+/* Smarty version 3.1.39, created on 2024-01-30 06:15:18
   from 'D:\wamp\www\mpsolar\layouts\v7\modules\Settings\Workflows\WorkFlowConditions.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_65b76292a12b47_35995063',
+  'unifunc' => 'content_65b893f6c36ed1_63568912',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65b76292a12b47_35995063 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65b893f6c36ed1_63568912 (Smarty_Internal_Template $_smarty_tpl) {
 ?><input type="hidden" name="conditions" id="advanced_filter" value='' /><input type="hidden" id="olderConditions" value='<?php echo Vtiger_Util_Helper::toSafeHTML(ZEND_JSON::encode($_smarty_tpl->tpl_vars['WORKFLOW_MODEL']->value->get('conditions')));?>
 ' /><input type="hidden" name="filtersavedinnew" value="<?php echo $_smarty_tpl->tpl_vars['WORKFLOW_MODEL']->value->get('filtersavedinnew');?>
 " /><div class="editViewHeader"><div class='row'><div class="col-lg-12 col-md-12 col-lg-pull-0"><h4><?php echo vtranslate('LBL_WORKFLOW_CONDITION',$_smarty_tpl->tpl_vars['QUALIFIED_MODULE']->value);?>

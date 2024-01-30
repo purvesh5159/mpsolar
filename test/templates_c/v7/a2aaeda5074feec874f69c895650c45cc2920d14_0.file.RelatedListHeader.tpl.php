@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.39, created on 2024-01-23 07:51:59
+/* Smarty version 3.1.39, created on 2024-01-30 06:10:27
   from 'D:\wamp\www\mpsolar\layouts\v7\modules\Vtiger\partials\RelatedListHeader.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_65af701f9bbf42_91054161',
+  'unifunc' => 'content_65b892d356b292_78378040',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65af701f9bbf42_91054161 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65b892d356b292_78378040 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <div class="relatedHeader"><div class="btn-toolbar row"><div class="col-lg-6 col-md-6 col-sm-6 btn-toolbar"><?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['RELATED_LIST_LINKS']->value['LISTVIEWBASIC'], 'RELATED_LINK');
@@ -49,12 +49,12 @@ _relatedlistView_add_<?php echo Vtiger_Util_Helper::replaceSpaceWithUnderScores(
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?></ul><?php } else {
 ob_start();
 echo $_smarty_tpl->tpl_vars['RELATED_LINK']->value->get('_selectRelation');
-$_prefixVariable7 = ob_get_clean();
-$_smarty_tpl->_assignInScope('IS_SELECT_BUTTON', $_prefixVariable7);
+$_prefixVariable21 = ob_get_clean();
+$_smarty_tpl->_assignInScope('IS_SELECT_BUTTON', $_prefixVariable21);
 ob_start();
 echo $_smarty_tpl->tpl_vars['RELATED_LINK']->value->get('linklabel');
-$_prefixVariable8 = ob_get_clean();
-$_smarty_tpl->_assignInScope('LINK_LABEL', $_prefixVariable8);
+$_prefixVariable22 = ob_get_clean();
+$_smarty_tpl->_assignInScope('LINK_LABEL', $_prefixVariable22);
 if ($_smarty_tpl->tpl_vars['RELATED_LINK']->value->get('_linklabel') === '_add_event') {
 $_smarty_tpl->_assignInScope('RELATED_MODULE_NAME', 'Events');
 } elseif ($_smarty_tpl->tpl_vars['RELATED_LINK']->value->get('_linklabel') === '_add_task') {

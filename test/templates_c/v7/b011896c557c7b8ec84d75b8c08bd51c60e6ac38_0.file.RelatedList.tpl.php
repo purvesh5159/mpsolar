@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.39, created on 2024-01-23 07:51:59
+/* Smarty version 3.1.39, created on 2024-01-30 06:10:27
   from 'D:\wamp\www\mpsolar\layouts\v7\modules\Vtiger\RelatedList.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_65af701f832503_63181411',
+  'unifunc' => 'content_65b892d3366498_92093882',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65af701f832503_63181411 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65b892d3366498_92093882 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_assignInScope('RELATED_MODULE_NAME', $_smarty_tpl->tpl_vars['RELATED_MODULE']->value->get('name'));
 $_smarty_tpl->_subTemplateRender(vtemplate_path("PicklistColorMap.tpl",$_smarty_tpl->tpl_vars['MODULE']->value), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('LISTVIEW_HEADERS'=>$_smarty_tpl->tpl_vars['RELATED_HEADERS']->value), 0, true);
 ?><div class="relatedContainer"><?php ob_start();
@@ -29,8 +29,8 @@ echo (string)$_smarty_tpl->tpl_vars['RELATION_FIELD']->value->isActiveField();
 } else {
 echo "false";
 }
-$_prefixVariable1=ob_get_clean();
-$_smarty_tpl->_assignInScope('IS_RELATION_FIELD_ACTIVE', $_prefixVariable1);?><input type="hidden" name="currentPageNum" value="<?php echo $_smarty_tpl->tpl_vars['PAGING']->value->getCurrentPage();?>
+$_prefixVariable15=ob_get_clean();
+$_smarty_tpl->_assignInScope('IS_RELATION_FIELD_ACTIVE', $_prefixVariable15);?><input type="hidden" name="currentPageNum" value="<?php echo $_smarty_tpl->tpl_vars['PAGING']->value->getCurrentPage();?>
 " /><input type="hidden" name="relatedModuleName" class="relatedModuleName" value="<?php echo $_smarty_tpl->tpl_vars['RELATED_MODULE_NAME']->value;?>
 " /><input type="hidden" value="<?php echo $_smarty_tpl->tpl_vars['ORDER_BY']->value;?>
 " id="orderBy"><input type="hidden" value="<?php echo $_smarty_tpl->tpl_vars['SORT_ORDER']->value;?>
@@ -153,34 +153,34 @@ if ($_smarty_tpl->tpl_vars['RELATED_MODULE_NAME']->value == 'Calendar' || $_smar
 if ($_smarty_tpl->tpl_vars['RELATED_RECORD']->value->get('activitytype') == 'Task') {
 ob_start();
 echo $_smarty_tpl->tpl_vars['HEADER_FIELD']->value->getId();
-$_prefixVariable2 = ob_get_clean();
-$_smarty_tpl->_assignInScope('PICKLIST_FIELD_ID', $_prefixVariable2);
+$_prefixVariable16 = ob_get_clean();
+$_smarty_tpl->_assignInScope('PICKLIST_FIELD_ID', $_prefixVariable16);
 } else {
 if ($_smarty_tpl->tpl_vars['HEADER_FIELD']->value->getName() == 'taskstatus') {
 $_smarty_tpl->_assignInScope('EVENT_STATUS_FIELD_MODEL', Vtiger_Field_Model::getInstance('eventstatus',Vtiger_Module_Model::getInstance('Events')));
 if ($_smarty_tpl->tpl_vars['EVENT_STATUS_FIELD_MODEL']->value) {
 ob_start();
 echo $_smarty_tpl->tpl_vars['EVENT_STATUS_FIELD_MODEL']->value->getId();
-$_prefixVariable3 = ob_get_clean();
-$_smarty_tpl->_assignInScope('PICKLIST_FIELD_ID', $_prefixVariable3);
+$_prefixVariable17 = ob_get_clean();
+$_smarty_tpl->_assignInScope('PICKLIST_FIELD_ID', $_prefixVariable17);
 } else {
 ob_start();
 echo $_smarty_tpl->tpl_vars['HEADER_FIELD']->value->getId();
-$_prefixVariable4 = ob_get_clean();
-$_smarty_tpl->_assignInScope('PICKLIST_FIELD_ID', $_prefixVariable4);
+$_prefixVariable18 = ob_get_clean();
+$_smarty_tpl->_assignInScope('PICKLIST_FIELD_ID', $_prefixVariable18);
 }
 } else {
 ob_start();
 echo $_smarty_tpl->tpl_vars['HEADER_FIELD']->value->getId();
-$_prefixVariable5 = ob_get_clean();
-$_smarty_tpl->_assignInScope('PICKLIST_FIELD_ID', $_prefixVariable5);
+$_prefixVariable19 = ob_get_clean();
+$_smarty_tpl->_assignInScope('PICKLIST_FIELD_ID', $_prefixVariable19);
 }
 }
 } else {
 ob_start();
 echo $_smarty_tpl->tpl_vars['HEADER_FIELD']->value->getId();
-$_prefixVariable6 = ob_get_clean();
-$_smarty_tpl->_assignInScope('PICKLIST_FIELD_ID', $_prefixVariable6);
+$_prefixVariable20 = ob_get_clean();
+$_smarty_tpl->_assignInScope('PICKLIST_FIELD_ID', $_prefixVariable20);
 }?><span <?php if (!empty($_smarty_tpl->tpl_vars['RELATED_LIST_VALUE']->value)) {?> class="picklist-color picklist-<?php echo $_smarty_tpl->tpl_vars['PICKLIST_FIELD_ID']->value;?>
 -<?php echo Vtiger_Util_Helper::convertSpaceToHyphen($_smarty_tpl->tpl_vars['RELATED_LIST_VALUE']->value);?>
 " <?php }?>> <?php echo $_smarty_tpl->tpl_vars['RELATED_RECORD']->value->getDisplayValue($_smarty_tpl->tpl_vars['RELATED_HEADERNAME']->value);?>

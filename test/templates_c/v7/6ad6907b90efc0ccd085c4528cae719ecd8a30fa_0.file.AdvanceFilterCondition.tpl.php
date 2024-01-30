@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.39, created on 2024-01-29 08:32:18
+/* Smarty version 3.1.39, created on 2024-01-30 06:15:19
   from 'D:\wamp\www\mpsolar\layouts\v7\modules\Settings\Workflows\AdvanceFilterCondition.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_65b76292d25222_84861449',
+  'unifunc' => 'content_65b893f702cc10_03968464',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65b76292d25222_84861449 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65b893f702cc10_03968464 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="row conditionRow" style="margin-bottom: 10px;"><span class="col-lg-4 col-md-4 col-sm-4"><select class="<?php if (empty($_smarty_tpl->tpl_vars['NOCHOSEN']->value)) {?>select2<?php }?> col-lg-12" name="columnname" data-placeholder="<?php echo vtranslate('LBL_SELECT_FIELD',$_smarty_tpl->tpl_vars['QUALIFIED_MODULE']->value);?>
 "><option value="none"></option><?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['RECORD_STRUCTURE']->value, 'BLOCK_FIELDS', false, 'BLOCK_LABEL');

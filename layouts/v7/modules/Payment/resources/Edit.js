@@ -7,7 +7,7 @@
  * All Rights Reserved.
  *************************************************************************************/
 
-vtiger_Edit_Js("Payment_Edit_Js",{},{
+Vtiger_Edit_Js("Payment_Edit_Js",{},{
 	
 	/**
 	 * Function which will register event for Reference Fields Selection
@@ -16,7 +16,7 @@ vtiger_Edit_Js("Payment_Edit_Js",{},{
 		this._super(container);
 		var thisInstance = this;
 		
-		jQuery('input[name="account_id"]', container).on(Vtiger_Edit_Js.referenceSelectionEvent, function(e, data){
+		jQuery('input[name="invoice_id"]', container).on(Vtiger_Edit_Js.referenceSelectionEvent, function(e, data){
 			thisInstance.referenceSelectionEventHandler(data, container);
 		});
 	},
@@ -60,15 +60,15 @@ vtiger_Edit_Js("Payment_Edit_Js",{},{
 			params.action = 'BasicAjax';
 		}
 
-		if (params.search_module == 'Contacts' || params.search_module == 'Potentials') {
+		if (params.search_module == 'Invoice' || params.search_module == 'SalesOrder') {
 			var form = this.getForm();
-			var parentIdElement  = form.find('[name="account_id"]');
+			var parentIdElement  = form.find('[name="invoice_id"]');
 			if(parentIdElement.length > 0 && parentIdElement.val().length > 0) {
 				var closestContainer = parentIdElement.closest('td');
 				params.parent_id = parentIdElement.val();
 				params.parent_module = closestContainer.find('[name="popupReferenceModule"]').val();
 			} else if(params.search_module == 'Potentials') {
-				parentIdElement  = form.find('[name="contact_id"]');
+				parentIdElement  = form.find('[name="salesorder_id"]');
 				if(parentIdElement.length > 0 && parentIdElement.val().length > 0) {
 					closestContainer = parentIdElement.closest('td');
 					params.parent_id = parentIdElement.val();
@@ -163,8 +163,8 @@ vtiger_Edit_Js("Payment_Edit_Js",{},{
 	registerEvents: function(){
 		this._super();
 		/*this.registerEventForEnablingRecurrence();*/
-		this.registerForTogglingBillingandShippingAddress();
-		this.registerEventForCopyAddress();
+		/*this.registerForTogglingBillingandShippingAddress();*/
+		/*this.registerEventForCopyAddress();*/
 	}
 });
 

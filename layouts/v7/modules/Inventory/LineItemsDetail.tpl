@@ -104,31 +104,22 @@
             </thead>
             {/if}
             <tbody>
-            {if  $MODULE_NAME eq 'Payment'}   
-               <!--  <tr>
-                    <td><span class="redColor">*</span><b>Payment Type</b></td>
-                    <td><b>Payment no</b></td>
-                    <td><b>Bank Name</b></td>
-                    <td><b>Payment Date</b></td>
-                    <td><b>{vtranslate('LBL_TOTAL',$MODULE_NAME)}</b></td>
-                </tr>-->
-            {else}
                 <tr>
                     {if $IMAGE_VIEWABLE}
                         <td class="lineItemFieldName">
                             <strong>{vtranslate({$LINEITEM_FIELDS['image']->get('label')},$MODULE)}</strong>
                         </td>
                     {/if}
-                    {if $PRODUCT_VIEWABLE}
+                    
                         <td class="lineItemFieldName">
                             <span class="redColor">*</span><strong>{vtranslate({$LINEITEM_FIELDS['productid']->get('label')},$MODULE_NAME)}</strong>
                         </td>
-                    {/if}
-                    {if $QUANTITY_VIEWABLE}
+                  
+                   
                         <td class="lineItemFieldName">
                             <strong>{vtranslate({$LINEITEM_FIELDS['quantity']->get('label')},$MODULE_NAME)}</strong>
                         </td>
-                    {/if}
+                    
                     {if $MODULE_NAME eq 'SalesOrder'}
                     <td class="lineItemFieldName">
                             <strong>{vtranslate({$LINEITEM_FIELDS['assignqty']->get('label')},$MODULE_NAME)}</strong>
@@ -139,11 +130,11 @@
                             <strong>{vtranslate({$LINEITEM_FIELDS['purchase_cost']->get('label')},$MODULE_NAME)}</strong>
                         </td>
                     {/if}
-                    {if $LIST_PRICE_VIEWABLE}
+                    
                         <td style="white-space: nowrap;">
                             <strong>{vtranslate({$LINEITEM_FIELDS['listprice']->get('label')},$MODULE_NAME)}</strong>
                         </td>
-                    {/if}
+                   
                     <td class="lineItemFieldName">
                         <strong class="pull-right">{vtranslate('LBL_TOTAL',$MODULE_NAME)}</strong>
                     </td>
@@ -156,35 +147,16 @@
                         <strong class="pull-right">{vtranslate('LBL_NET_PRICE',$MODULE_NAME)}</strong>
                     </td>
                 </tr>
-            {/if}
+       
                 {foreach key=INDEX item=LINE_ITEM_DETAIL from=$RELATED_PRODUCTS}
                     <tr>
-                    {if $MODULE_NAME eq 'Payment'}
-                       <!-- <td>
-                        {$LINE_ITEM_DETAIL["paymentmode$INDEX"]}
-                        </td>
-                         <td>
-                        {$LINE_ITEM_DETAIL["paymentnumber$INDEX"]}
-                        </td>
-                        <td>
-                        {$LINE_ITEM_DETAIL["bankdetails$INDEX"]}
-                        </td>
-                        <td>
-                        {$LINE_ITEM_DETAIL["paymentdate$INDEX"]}
-                        </td>
-                        <td style="white-space: nowrap;">
-                                <div>
-                                    {$LINE_ITEM_DETAIL["listPrice$INDEX"]}
-                                </div>
-                        </td>-->
-                        {else}
                         {if $IMAGE_VIEWABLE}
                             <td style="text-align:center;">
                                 <img src='{$LINE_ITEM_DETAIL["productImage$INDEX"]}' height="42" width="42">
                             </td>
                         {/if}
 
-                        {if $PRODUCT_VIEWABLE}
+                        
                             <td>
                                 <div>
                                     {if $LINE_ITEM_DETAIL["productDeleted$INDEX"]}
@@ -211,30 +183,12 @@
                                     </div>
                                 {/if}
                             </td>
-                        {/if}
-
-                         {if $MODULE_NAME eq 'Payment'}
-                            <!--<td>
-                            {$LINE_ITEM_DETAIL["paymentmode$INDEX"]}
-                            </td>
-                             <td>
-                            {$LINE_ITEM_DETAIL["paymentnumber$INDEX"]}
-                            </td>
-                            <td>
-                            {$LINE_ITEM_DETAIL["bankdetails$INDEX"]}
-                            </td>
-                            <td>
-                            {$LINE_ITEM_DETAIL["paymentdate$INDEX"]}
-                            </td>
-                            <td>
-                            {$LINE_ITEM_DETAIL["listPrice$INDEX"]}
-                            </td> -->  
-                        {/if}
-                        {if $QUANTITY_VIEWABLE}
+                    
                             <td>
                                 {$LINE_ITEM_DETAIL["qty$INDEX"]}
                             </td>
-                        {/if}
+                        
+
                         {if $MODULE_NAME eq 'SalesOrder'}
                          <td>
                                 {$LINE_ITEM_DETAIL["assignqty$INDEX"]}
@@ -247,7 +201,7 @@
                             </td>
                         {/if}
 
-                        {if $LIST_PRICE_VIEWABLE}
+                      
                             <td style="white-space: nowrap;">
                                 <div>
                                     {$LINE_ITEM_DETAIL["listPrice$INDEX"]}
@@ -270,7 +224,7 @@
                                     </div>
                                 {/if}
                             </td>
-                        {/if}
+                        
 
                         <td>
                             <div align = "right">{$LINE_ITEM_DETAIL["productTotal$INDEX"]}</div>
@@ -284,31 +238,16 @@
                         </td>
                         {if $MARGIN_VIEWABLE}
                             <td><div align = "right">{$LINE_ITEM_DETAIL["margin$INDEX"]}</div></td>
-							{/if}
+						{/if}
                         <td>
                             <div align = "right">{$LINE_ITEM_DETAIL["netPrice$INDEX"]}</div>
                         </td>
-                        {/if}
                     </tr>
                 {/foreach}
             </tbody>
         </table>
     </div>
     <table class="table table-bordered lineItemsTable">
-    {if $MODULE_NAME eq 'Payment'}
-   <!-- <tr>
-            <td width="83%">
-                <div align="right">
-                    <strong>{vtranslate('LBL_GRAND_TOTAL',$MODULE_NAME)}</strong>
-                </div>
-            </td>
-            <td>
-                <div align="right">
-                    {$FINAL_DETAILS["grandTotal"]}
-                </div>
-            </td>
-        </tr>-->
-    {else}
         <tr>
             <td width="83%">
                 <div class="pull-right">
@@ -448,7 +387,6 @@
                 </div>
             </td>
         </tr>
-        {/if}
         {if $MODULE_NAME eq 'Invoice' or $MODULE_NAME eq 'PurchaseOrder' or $MODULE_NAME eq 'SalesOrder'}
             <tr>
                 <td width="83%">

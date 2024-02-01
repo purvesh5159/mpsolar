@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.39, created on 2024-01-30 06:15:11
+/* Smarty version 3.1.39, created on 2024-02-01 06:09:35
   from 'D:\wamp\www\mpsolar\layouts\v7\modules\Settings\Workflows\ListViewHeader.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_65b893efbf5e12_34225326',
+  'unifunc' => 'content_65bb359f785bf9_43536439',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65b893efbf5e12_34225326 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65bb359f785bf9_43536439 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <div class="listViewPageDiv" id="listViewContent"><div class="col-sm-12 col-xs-12 "><div id="listview-actions" class="listview-actions-container"><div class="list-content row workflowListContainer" id="list-content">
 <?php }

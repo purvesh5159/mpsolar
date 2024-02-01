@@ -1,7 +1,9 @@
 <?php
 require_once 'include/events/VTEventHandler.inc';
 class PaymentHandler extends VTEventHandler {
+
 	function handleEvent($eventName, $entityData) {
+		
 		global $adb,$log;
 		if ($eventName == 'vtiger.entity.beforesave') {
 			$moduleName = $entityData->getModuleName();
@@ -10,13 +12,14 @@ class PaymentHandler extends VTEventHandler {
 			if ($moduleName == 'Payment') {
 				$recordId = $entityData->get('invoice_id');
 				$payment = $entityData->get('paymentamount');
-				if ($_REQUEST['action'] == 'Save' && $_REQUEST['action'] == 'SaveAjax') {
+				//if ($_REQUEST['action'] == 'Save' && $_REQUEST['action'] == 'SaveAjax') {
 					if (!empty($recordId)) {
-						$getTotalSql = 'SELECT total FROM `vtiger_invoices` '
+						$getTotalSql = 'SELECT total FROM `vtiger_invoice` '
 						. ' INNER JOIN vtiger_crmentity '
-						. 'ON vtiger_crmentity.crmid = vtiger_invoices.invoiceid'
+						. 'ON vtiger_crmentity.crmid = vtiger_invoice.invoiceid'
 						. ' where invoiceid = ? and deleted = ?';
 						$sql = $adb->pquery($getTotalSql, array($recordId, 0));
+
 						$totalinvoice = $adb->query_result($sql, 0, 'total');
 
 						$getTotalSql = 'SELECT SUM(paymentamount) as paid FROM `vtiger_payments` '
@@ -27,20 +30,22 @@ class PaymentHandler extends VTEventHandler {
 						$totalPaid = $adb->query_result($sql, 0, 'paid');
 						$invoiceBalance = $totalinvoice - $totalPaid;
 						if (empty($payment)) {
-							$exception = new DuplicateException('Please fill payment amount ' . $payment, 200);
-							$exception->setModule($moduleName);
-							$exception->setSpecialError('Please fill payment amount ' . $payment);
-							throw $exception;
-						}
-
-						if ($totalPaid  > $totalinvoice) {
-							$exception = new DuplicateException('Current Payment total more than invoice amount, Current invoice amount is ' . $totalinvoice, 200);
-							$exception->setModule($moduleName);
-							$exception->setSpecialError('Current Payment total more than invoice amount, Current invoice amount is ' . $totalinvoice);
-							throw $exception;
+							$response = new Vtiger_Response();
+							$response->setEmitType(Vtiger_Response::$EMIT_JSON);
+							$response->setError('Please fill payment amount ' . $payment);
+							$response->emit();
+							die();
 						}
 						
-					}
+						if ($totalPaid  > $totalinvoice) {
+							$response = new Vtiger_Response();
+							$response->setEmitType(Vtiger_Response::$EMIT_JSON);
+							$response->setError('Current Payment total more than invoice amount, Current invoice amount is ' . round($totalinvoice));
+							$response->emit();
+							die();
+						}
+						
+					//}
 				}
 			} 
 		}

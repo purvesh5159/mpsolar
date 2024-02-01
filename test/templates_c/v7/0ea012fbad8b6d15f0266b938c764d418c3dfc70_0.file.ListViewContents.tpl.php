@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.39, created on 2024-01-30 06:15:11
+/* Smarty version 3.1.39, created on 2024-02-01 06:09:35
   from 'D:\wamp\www\mpsolar\layouts\v7\modules\Settings\Workflows\ListViewContents.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_65b893efef01c1_91801842',
+  'unifunc' => 'content_65bb359f9f1240_66738011',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65b893efef01c1_91801842 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65bb359f9f1240_66738011 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <div class="col-sm-12 col-xs-12 "><input type="hidden" id="pageStartRange" value="<?php echo $_smarty_tpl->tpl_vars['PAGING_MODEL']->value->getRecordStartRange();?>
 " /><input type="hidden" id="pageEndRange" value="<?php echo $_smarty_tpl->tpl_vars['PAGING_MODEL']->value->getRecordEndRange();?>

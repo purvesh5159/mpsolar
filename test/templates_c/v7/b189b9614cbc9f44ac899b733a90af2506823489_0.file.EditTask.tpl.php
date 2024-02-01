@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.39, created on 2024-01-30 06:17:15
+/* Smarty version 3.1.39, created on 2024-02-01 06:09:59
   from 'D:\wamp\www\mpsolar\layouts\v7\modules\Settings\Workflows\EditTask.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_65b8946ba6a7d3_35278390',
+  'unifunc' => 'content_65bb35b72c3282_76363245',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65b8946ba6a7d3_35278390 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65bb35b72c3282_76363245 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="fc-overlay-modal modal-content"><div class="modal-content"><?php ob_start();
 echo vtranslate('LBL_ADD_TASKS_FOR_WORKFLOW',$_smarty_tpl->tpl_vars['QUALIFIED_MODULE']->value);
 $_prefixVariable1 = ob_get_clean();

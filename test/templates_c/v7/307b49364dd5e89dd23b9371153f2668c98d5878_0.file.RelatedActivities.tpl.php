@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.39, created on 2024-01-30 06:54:26
+/* Smarty version 3.1.39, created on 2024-02-01 06:08:28
   from 'D:\wamp\www\mpsolar\layouts\v7\modules\Vtiger\RelatedActivities.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_65b89d222550e8_34180879',
+  'unifunc' => 'content_65bb355c150894_48465661',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65b89d222550e8_34180879 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65bb355c150894_48465661 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_assignInScope('MODULE_NAME', "Calendar");?><div class="summaryWidgetContainer"><div class="widget_header clearfix"><h4 class="display-inline-block pull-left"><?php echo vtranslate('LBL_ACTIVITIES',$_smarty_tpl->tpl_vars['MODULE_NAME']->value);?>
 </h4><?php $_smarty_tpl->_assignInScope('CALENDAR_MODEL', Vtiger_Module_Model::getInstance('Calendar'));?><div class="pull-right" style="margin-top: -5px;"><?php if ($_smarty_tpl->tpl_vars['CALENDAR_MODEL']->value->isPermitted('CreateView')) {?><button class="btn addButton btn-sm btn-default createActivity toDotask textOverflowEllipsis max-width-100" title="<?php echo vtranslate('LBL_ADD_TASK',$_smarty_tpl->tpl_vars['MODULE_NAME']->value);?>
 " type="button" href="javascript:void(0)" data-url="sourceModule=<?php echo $_smarty_tpl->tpl_vars['RECORD']->value->getModuleName();?>

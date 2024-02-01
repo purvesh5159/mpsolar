@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.39, created on 2024-01-30 12:06:49
+/* Smarty version 3.1.39, created on 2024-02-01 05:50:47
   from 'D:\wamp\www\mpsolar\layouts\v7\modules\Vtiger\uitypes\PhoneDetailView.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_65b8e659a5e524_67485517',
+  'unifunc' => 'content_65bb31370bea52_33063857',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65b8e659a5e524_67485517 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65bb31370bea52_33063857 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'D:\\wamp\\www\\mpsolar\\libraries\\Smarty\\libs\\plugins\\modifier.regex_replace.php','function'=>'smarty_modifier_regex_replace',),));
 ?>
 

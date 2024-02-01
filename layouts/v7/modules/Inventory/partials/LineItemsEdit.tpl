@@ -79,14 +79,7 @@
 	{assign var=BLOCK_FIELDS value=$RECORD_STRUCTURE.$LINE_ITEM_BLOCK_LABEL}
 	{assign var=BLOCK_LABEL value=$LINE_ITEM_BLOCK_LABEL}
 	{if $BLOCK_FIELDS|@count gt 0}
-		<div class='fieldBlockContainer {if $MODULE eq 'Payment'}hide{/if}'>
-		  {if $MODULE eq 'Payment'}
-			<!--<div class="row">
-				<div class="col-sm-4">
-					<h4 class='fieldBlockHeader' style="margin-top:5px;">Payment Details</h4>
-				</div>-->
-			</div>
-			{else}
+		<div class='fieldBlockContainer>
 			<div class="row">
 				<div class="col-sm-3">
 					<h4 class='fieldBlockHeader' style="margin-top:5px;">{vtranslate($BLOCK_LABEL, $MODULE)}</h4>
@@ -156,20 +149,9 @@
 					</div>
 				</div>
 			</div>
-			{/if}
+			
 			<div class="lineitemTableContainer">
 				<table class="table table-bordered" id="lineItemTab">
-				{if $MODULE eq 'Payment'}
-				<!--<tr>
-						<td><strong>{vtranslate('LBL_TOOLS',$MODULE)}</strong></td>
-			            <td><b>Payment Type </b></td>
-			            <td><b>Payment no</b></td>
-			            <td><b>Bank Name</b></td>
-			            <td><b>Payment Date</b></td>
-			            <td><b>Payment Total</b></td>
-			            <td><b>Total</b></td>
-                </tr>-->
-            {else}
 					<tr>
 						<td><strong>{vtranslate('LBL_TOOLS',$MODULE)}</strong></td>
 						{if isset($IMAGE_EDITABLE)}
@@ -208,7 +190,7 @@
 						{/if}
 						<td><strong class="pull-right">{vtranslate('LBL_NET_PRICE',$MODULE)}</strong></td>
 					</tr>
-					{/if}
+					
 					<tr id="row0" class="hide lineItemCloneCopy" data-row-num="0">
 						{include file="partials/LineItemsContent.tpl"|@vtemplate_path:'Inventory' row_no=0 data=[] IGNORE_UI_REGISTRATION=true}
 					</tr>

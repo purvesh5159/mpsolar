@@ -105,8 +105,8 @@ function getConvertSalesOrderToMaintance($focus,$so_focus,$soid)
 		else
 			$so_focus->column_fields[$xyz[$i]] = '';
 	}
-	// $focus->column_fields['salesorder_id'] = $soid;
-	$focus->column_fields['subject'] = $so_focus->column_fields['subject'];
+	$focus->column_fields['subject'] = $soid;
+	//$focus->column_fields['subject'] = $so_focus->column_fields['subject'];
 	$focus->column_fields['quotename'] = $so_focus->column_fields['quote_id'];
 	$focus->column_fields['projectdate'] = $so_focus->column_fields['projectdate'];
 	$focus->column_fields['duedate'] = $so_focus->column_fields['duedate'];

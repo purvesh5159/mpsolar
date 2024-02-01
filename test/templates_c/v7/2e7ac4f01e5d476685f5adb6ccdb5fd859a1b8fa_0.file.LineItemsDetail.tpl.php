@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2024-01-30 06:55:01
+/* Smarty version 3.1.39, created on 2024-02-01 05:50:47
   from 'D:\wamp\www\mpsolar\layouts\v7\modules\Inventory\LineItemsDetail.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_65b89d45b3c5f2_93624277',
+  'unifunc' => 'content_65bb31379666f0_65478564',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2e7ac4f01e5d476685f5adb6ccdb5fd859a1b8fa' => 
     array (
       0 => 'D:\\wamp\\www\\mpsolar\\layouts\\v7\\modules\\Inventory\\LineItemsDetail.tpl',
-      1 => 1706172122,
+      1 => 1706765943,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65b89d45b3c5f2_93624277 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65bb31379666f0_65478564 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_assignInScope('ITEM_DETAILS_BLOCK', $_smarty_tpl->tpl_vars['BLOCK_LIST']->value['LBL_ITEM_DETAILS']);
 $_smarty_tpl->_assignInScope('LINEITEM_FIELDS', $_smarty_tpl->tpl_vars['ITEM_DETAILS_BLOCK']->value->getFields());?>
 
@@ -141,16 +141,6 @@ $_smarty_tpl->_assignInScope('REGION_LABEL', $_prefixVariable9." : ".((string)$_
             </thead>
             <?php }?>
             <tbody>
-            <?php if ($_smarty_tpl->tpl_vars['MODULE_NAME']->value == 'Payment') {?>   
-               <!--  <tr>
-                    <td><span class="redColor">*</span><b>Payment Type</b></td>
-                    <td><b>Payment no</b></td>
-                    <td><b>Bank Name</b></td>
-                    <td><b>Payment Date</b></td>
-                    <td><b><?php echo vtranslate('LBL_TOTAL',$_smarty_tpl->tpl_vars['MODULE_NAME']->value);?>
-</b></td>
-                </tr>-->
-            <?php } else { ?>
                 <tr>
                     <?php if ($_smarty_tpl->tpl_vars['IMAGE_VIEWABLE']->value) {?>
                         <td class="lineItemFieldName">
@@ -161,7 +151,7 @@ echo vtranslate($_prefixVariable10,$_smarty_tpl->tpl_vars['MODULE']->value);?>
 </strong>
                         </td>
                     <?php }?>
-                    <?php if ($_smarty_tpl->tpl_vars['PRODUCT_VIEWABLE']->value) {?>
+                    
                         <td class="lineItemFieldName">
                             <span class="redColor">*</span><strong><?php ob_start();
 echo $_smarty_tpl->tpl_vars['LINEITEM_FIELDS']->value['productid']->get('label');
@@ -169,8 +159,8 @@ $_prefixVariable11 = ob_get_clean();
 echo vtranslate($_prefixVariable11,$_smarty_tpl->tpl_vars['MODULE_NAME']->value);?>
 </strong>
                         </td>
-                    <?php }?>
-                    <?php if ($_smarty_tpl->tpl_vars['QUANTITY_VIEWABLE']->value) {?>
+                  
+                   
                         <td class="lineItemFieldName">
                             <strong><?php ob_start();
 echo $_smarty_tpl->tpl_vars['LINEITEM_FIELDS']->value['quantity']->get('label');
@@ -178,7 +168,7 @@ $_prefixVariable12 = ob_get_clean();
 echo vtranslate($_prefixVariable12,$_smarty_tpl->tpl_vars['MODULE_NAME']->value);?>
 </strong>
                         </td>
-                    <?php }?>
+                    
                     <?php if ($_smarty_tpl->tpl_vars['MODULE_NAME']->value == 'SalesOrder') {?>
                     <td class="lineItemFieldName">
                             <strong><?php ob_start();
@@ -197,7 +187,7 @@ echo vtranslate($_prefixVariable14,$_smarty_tpl->tpl_vars['MODULE_NAME']->value)
 </strong>
                         </td>
                     <?php }?>
-                    <?php if ($_smarty_tpl->tpl_vars['LIST_PRICE_VIEWABLE']->value) {?>
+                    
                         <td style="white-space: nowrap;">
                             <strong><?php ob_start();
 echo $_smarty_tpl->tpl_vars['LINEITEM_FIELDS']->value['listprice']->get('label');
@@ -205,7 +195,7 @@ $_prefixVariable15 = ob_get_clean();
 echo vtranslate($_prefixVariable15,$_smarty_tpl->tpl_vars['MODULE_NAME']->value);?>
 </strong>
                         </td>
-                    <?php }?>
+                   
                     <td class="lineItemFieldName">
                         <strong class="pull-right"><?php echo vtranslate('LBL_TOTAL',$_smarty_tpl->tpl_vars['MODULE_NAME']->value);?>
 </strong>
@@ -224,7 +214,7 @@ echo vtranslate($_prefixVariable16,$_smarty_tpl->tpl_vars['MODULE_NAME']->value)
 </strong>
                     </td>
                 </tr>
-            <?php }?>
+       
                 <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['RELATED_PRODUCTS']->value, 'LINE_ITEM_DETAIL', false, 'INDEX');
 $_smarty_tpl->tpl_vars['LINE_ITEM_DETAIL']->do_else = true;
@@ -232,30 +222,6 @@ if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['INDEX']->value =
 $_smarty_tpl->tpl_vars['LINE_ITEM_DETAIL']->do_else = false;
 ?>
                     <tr>
-                    <?php if ($_smarty_tpl->tpl_vars['MODULE_NAME']->value == 'Payment') {?>
-                       <!-- <td>
-                        <?php echo $_smarty_tpl->tpl_vars['LINE_ITEM_DETAIL']->value["paymentmode".((string)$_smarty_tpl->tpl_vars['INDEX']->value)];?>
-
-                        </td>
-                         <td>
-                        <?php echo $_smarty_tpl->tpl_vars['LINE_ITEM_DETAIL']->value["paymentnumber".((string)$_smarty_tpl->tpl_vars['INDEX']->value)];?>
-
-                        </td>
-                        <td>
-                        <?php echo $_smarty_tpl->tpl_vars['LINE_ITEM_DETAIL']->value["bankdetails".((string)$_smarty_tpl->tpl_vars['INDEX']->value)];?>
-
-                        </td>
-                        <td>
-                        <?php echo $_smarty_tpl->tpl_vars['LINE_ITEM_DETAIL']->value["paymentdate".((string)$_smarty_tpl->tpl_vars['INDEX']->value)];?>
-
-                        </td>
-                        <td style="white-space: nowrap;">
-                                <div>
-                                    <?php echo $_smarty_tpl->tpl_vars['LINE_ITEM_DETAIL']->value["listPrice".((string)$_smarty_tpl->tpl_vars['INDEX']->value)];?>
-
-                                </div>
-                        </td>-->
-                        <?php } else { ?>
                         <?php if ($_smarty_tpl->tpl_vars['IMAGE_VIEWABLE']->value) {?>
                             <td style="text-align:center;">
                                 <img src='<?php echo $_smarty_tpl->tpl_vars['LINE_ITEM_DETAIL']->value["productImage".((string)$_smarty_tpl->tpl_vars['INDEX']->value)];?>
@@ -263,7 +229,7 @@ $_smarty_tpl->tpl_vars['LINE_ITEM_DETAIL']->do_else = false;
                             </td>
                         <?php }?>
 
-                        <?php if ($_smarty_tpl->tpl_vars['PRODUCT_VIEWABLE']->value) {?>
+                        
                             <td>
                                 <div>
                                     <?php if ($_smarty_tpl->tpl_vars['LINE_ITEM_DETAIL']->value["productDeleted".((string)$_smarty_tpl->tpl_vars['INDEX']->value)]) {?>
@@ -300,36 +266,13 @@ $_smarty_tpl->tpl_vars['LINE_ITEM_DETAIL']->do_else = false;
                                     </div>
                                 <?php }?>
                             </td>
-                        <?php }?>
-
-                         <?php if ($_smarty_tpl->tpl_vars['MODULE_NAME']->value == 'Payment') {?>
-                            <!--<td>
-                            <?php echo $_smarty_tpl->tpl_vars['LINE_ITEM_DETAIL']->value["paymentmode".((string)$_smarty_tpl->tpl_vars['INDEX']->value)];?>
-
-                            </td>
-                             <td>
-                            <?php echo $_smarty_tpl->tpl_vars['LINE_ITEM_DETAIL']->value["paymentnumber".((string)$_smarty_tpl->tpl_vars['INDEX']->value)];?>
-
-                            </td>
-                            <td>
-                            <?php echo $_smarty_tpl->tpl_vars['LINE_ITEM_DETAIL']->value["bankdetails".((string)$_smarty_tpl->tpl_vars['INDEX']->value)];?>
-
-                            </td>
-                            <td>
-                            <?php echo $_smarty_tpl->tpl_vars['LINE_ITEM_DETAIL']->value["paymentdate".((string)$_smarty_tpl->tpl_vars['INDEX']->value)];?>
-
-                            </td>
-                            <td>
-                            <?php echo $_smarty_tpl->tpl_vars['LINE_ITEM_DETAIL']->value["listPrice".((string)$_smarty_tpl->tpl_vars['INDEX']->value)];?>
-
-                            </td> -->  
-                        <?php }?>
-                        <?php if ($_smarty_tpl->tpl_vars['QUANTITY_VIEWABLE']->value) {?>
+                    
                             <td>
                                 <?php echo $_smarty_tpl->tpl_vars['LINE_ITEM_DETAIL']->value["qty".((string)$_smarty_tpl->tpl_vars['INDEX']->value)];?>
 
                             </td>
-                        <?php }?>
+                        
+
                         <?php if ($_smarty_tpl->tpl_vars['MODULE_NAME']->value == 'SalesOrder') {?>
                          <td>
                                 <?php echo $_smarty_tpl->tpl_vars['LINE_ITEM_DETAIL']->value["assignqty".((string)$_smarty_tpl->tpl_vars['INDEX']->value)];?>
@@ -344,7 +287,7 @@ $_smarty_tpl->tpl_vars['LINE_ITEM_DETAIL']->do_else = false;
                             </td>
                         <?php }?>
 
-                        <?php if ($_smarty_tpl->tpl_vars['LIST_PRICE_VIEWABLE']->value) {?>
+                      
                             <td style="white-space: nowrap;">
                                 <div>
                                     <?php echo $_smarty_tpl->tpl_vars['LINE_ITEM_DETAIL']->value["listPrice".((string)$_smarty_tpl->tpl_vars['INDEX']->value)];?>
@@ -436,7 +379,7 @@ $_smarty_tpl->_assignInScope('INDIVIDUAL_TAX_INFO', $_prefixVariable18." = ".((s
                                     </div>
                                 <?php }?>
                             </td>
-                        <?php }?>
+                        
 
                         <td>
                             <div align = "right"><?php echo $_smarty_tpl->tpl_vars['LINE_ITEM_DETAIL']->value["productTotal".((string)$_smarty_tpl->tpl_vars['INDEX']->value)];?>
@@ -455,12 +398,11 @@ $_smarty_tpl->_assignInScope('INDIVIDUAL_TAX_INFO', $_prefixVariable18." = ".((s
                         <?php if ($_smarty_tpl->tpl_vars['MARGIN_VIEWABLE']->value) {?>
                             <td><div align = "right"><?php echo $_smarty_tpl->tpl_vars['LINE_ITEM_DETAIL']->value["margin".((string)$_smarty_tpl->tpl_vars['INDEX']->value)];?>
 </div></td>
-							<?php }?>
+						<?php }?>
                         <td>
                             <div align = "right"><?php echo $_smarty_tpl->tpl_vars['LINE_ITEM_DETAIL']->value["netPrice".((string)$_smarty_tpl->tpl_vars['INDEX']->value)];?>
 </div>
                         </td>
-                        <?php }?>
                     </tr>
                 <?php
 }
@@ -469,22 +411,6 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
         </table>
     </div>
     <table class="table table-bordered lineItemsTable">
-    <?php if ($_smarty_tpl->tpl_vars['MODULE_NAME']->value == 'Payment') {?>
-   <!-- <tr>
-            <td width="83%">
-                <div align="right">
-                    <strong><?php echo vtranslate('LBL_GRAND_TOTAL',$_smarty_tpl->tpl_vars['MODULE_NAME']->value);?>
-</strong>
-                </div>
-            </td>
-            <td>
-                <div align="right">
-                    <?php echo $_smarty_tpl->tpl_vars['FINAL_DETAILS']->value["grandTotal"];?>
-
-                </div>
-            </td>
-        </tr>-->
-    <?php } else { ?>
         <tr>
             <td width="83%">
                 <div class="pull-right">
@@ -826,7 +752,6 @@ $_smarty_tpl->_assignInScope('DEDUCTED_TAXES_INFO', $_prefixVariable32." = ".((s
                 </div>
             </td>
         </tr>
-        <?php }?>
         <?php if ($_smarty_tpl->tpl_vars['MODULE_NAME']->value == 'Invoice' || $_smarty_tpl->tpl_vars['MODULE_NAME']->value == 'PurchaseOrder' || $_smarty_tpl->tpl_vars['MODULE_NAME']->value == 'SalesOrder') {?>
             <tr>
                 <td width="83%">

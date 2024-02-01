@@ -23,6 +23,7 @@ class Vtiger_RelatedList_View extends Vtiger_Index_View {
 	}
 	
 	function process(Vtiger_Request $request) {
+		global $adb;
 		$moduleName = $request->getModule();
 		$relatedModuleName = $request->get('relatedModule');
 		$parentId = $request->get('record');
@@ -31,6 +32,12 @@ class Vtiger_RelatedList_View extends Vtiger_Index_View {
 		$relatedModuleModel = Vtiger_Module_Model::getInstance($relatedModuleName);
 		$moduleFields = $relatedModuleModel->getFields();
         $searchParams = $request->get('search_params');
+
+        $rquery = $adb->pquery("select total from vtiger_invoice i inner join vtiger_crmentity c on i.invoiceid=c.crmid where c.deleted= 0 and i.invoiceid=".$parentId);
+		$total = $adb->query_result($rquery , 0 ,'total');
+
+		$payquery = $adb->pquery("select SUM(paymentamount) as payment from vtiger_payments p inner join vtiger_crmentity c on p.paymentid=c.crmid where c.deleted= 0 and p.invoiceid=".$parentId);
+		$totalreceived = $adb->query_result($payquery , 0 ,'payment');
         
         if(empty($searchParams)) {
             $searchParams = array();
@@ -108,6 +115,9 @@ class Vtiger_RelatedList_View extends Vtiger_Index_View {
 		$viewer->assign('RELATED_MODULE', $relatedModuleModel);
 		$viewer->assign('RELATED_ENTIRES_COUNT', $noOfEntries);
 		$viewer->assign('RELATION_FIELD', $relationField);
+		//purvesh hide button on payment done 
+		$viewer->assign('TOTAL', $total);
+		$viewer->assign('TOTALRECEIVED', $totalreceived);
 		$appName = $request->get('app');
 		if(!empty($appName)){
 			$viewer->assign('SELECTED_MENU_CATEGORY',$appName);

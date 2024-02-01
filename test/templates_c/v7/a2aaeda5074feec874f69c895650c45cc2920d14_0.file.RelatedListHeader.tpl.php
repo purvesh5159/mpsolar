@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2024-01-30 06:10:27
+/* Smarty version 3.1.39, created on 2024-02-01 06:08:44
   from 'D:\wamp\www\mpsolar\layouts\v7\modules\Vtiger\partials\RelatedListHeader.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_65b892d356b292_78378040',
+  'unifunc' => 'content_65bb356ca93a60_92276969',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a2aaeda5074feec874f69c895650c45cc2920d14' => 
     array (
       0 => 'D:\\wamp\\www\\mpsolar\\layouts\\v7\\modules\\Vtiger\\partials\\RelatedListHeader.tpl',
-      1 => 1669872319,
+      1 => 1706685522,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65b892d356b292_78378040 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65bb356ca93a60_92276969 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <div class="relatedHeader"><div class="btn-toolbar row"><div class="col-lg-6 col-md-6 col-sm-6 btn-toolbar"><?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['RELATED_LIST_LINKS']->value['LISTVIEWBASIC'], 'RELATED_LINK');
@@ -49,18 +49,19 @@ _relatedlistView_add_<?php echo Vtiger_Util_Helper::replaceSpaceWithUnderScores(
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?></ul><?php } else {
 ob_start();
 echo $_smarty_tpl->tpl_vars['RELATED_LINK']->value->get('_selectRelation');
-$_prefixVariable21 = ob_get_clean();
-$_smarty_tpl->_assignInScope('IS_SELECT_BUTTON', $_prefixVariable21);
+$_prefixVariable7 = ob_get_clean();
+$_smarty_tpl->_assignInScope('IS_SELECT_BUTTON', $_prefixVariable7);
 ob_start();
 echo $_smarty_tpl->tpl_vars['RELATED_LINK']->value->get('linklabel');
-$_prefixVariable22 = ob_get_clean();
-$_smarty_tpl->_assignInScope('LINK_LABEL', $_prefixVariable22);
+$_prefixVariable8 = ob_get_clean();
+$_smarty_tpl->_assignInScope('LINK_LABEL', $_prefixVariable8);
 if ($_smarty_tpl->tpl_vars['RELATED_LINK']->value->get('_linklabel') === '_add_event') {
 $_smarty_tpl->_assignInScope('RELATED_MODULE_NAME', 'Events');
 } elseif ($_smarty_tpl->tpl_vars['RELATED_LINK']->value->get('_linklabel') === '_add_task') {
 $_smarty_tpl->_assignInScope('RELATED_MODULE_NAME', 'Calendar');
 }
-if ($_smarty_tpl->tpl_vars['IS_SELECT_BUTTON']->value || $_smarty_tpl->tpl_vars['IS_CREATE_PERMITTED']->value) {?><button type="button" module="<?php echo $_smarty_tpl->tpl_vars['RELATED_MODULE_NAME']->value;?>
+if ($_smarty_tpl->tpl_vars['IS_SELECT_BUTTON']->value || $_smarty_tpl->tpl_vars['IS_CREATE_PERMITTED']->value) {?><!--	<button type="button" module="<?php echo $_smarty_tpl->tpl_vars['RELATED_MODULE_NAME']->value;?>
+" class=" <?php if ($_smarty_tpl->tpl_vars['TOTAL']->value <= $_smarty_tpl->tpl_vars['TOTALRECEIVED']->value) {?> hide <?php }?> btn btn-default--><button type="button" module="<?php echo $_smarty_tpl->tpl_vars['RELATED_MODULE_NAME']->value;?>
 " class="btn btn-default<?php if ($_smarty_tpl->tpl_vars['IS_SELECT_BUTTON']->value == true) {?> selectRelation<?php } else { ?> addButton" name="addButton<?php }?>"<?php if ($_smarty_tpl->tpl_vars['IS_SELECT_BUTTON']->value == true) {?> data-moduleName="<?php echo $_smarty_tpl->tpl_vars['RELATED_LINK']->value->get('_module')->get('name');?>
 " <?php }
 if (($_smarty_tpl->tpl_vars['RELATED_LINK']->value->isPageLoadLink())) {

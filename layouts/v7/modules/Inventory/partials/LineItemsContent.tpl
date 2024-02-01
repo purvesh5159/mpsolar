@@ -24,11 +24,6 @@
     {assign var="subprod_names" value="subprod_names"|cat:$row_no}
 	{assign var="subprod_qty_list" value="subprod_qty_list"|cat:$row_no}
     {assign var="entityIdentifier" value="entityType"|cat:$row_no}
-
-    {assign var="bankdetails" value="bankdetails"|cat:$row_no}
-    {assign var="paymentmode" value="paymentmode"|cat:$row_no}
-    {assign var="paymentdate" value="paymentdate"|cat:$row_no} 
-    {assign var="paymentnumber" value="paymentnumber"|cat:$row_no}
     {assign var="entityType" value=$data.$entityIdentifier}
 
     {assign var="discount_type" value="discount_type"|cat:$row_no}
@@ -62,7 +57,6 @@
 		&nbsp;<a><img src="{vimage_path('drag.png')}" border="0" title="{vtranslate('LBL_DRAG',$MODULE)}"/></a>
 		<input type="hidden" class="rowNumber" value="{$row_no}" />
 	</td>
-	{if $MODULE neq 'Payment'}
 	{if $IMAGE_EDITABLE}
 		<td class='lineItemImage' style="text-align:center;">
 			<img src='{$data.$image}' height="42" width="42">
@@ -134,30 +128,7 @@
 			{/if}
 		</td>
 	{/if}
-	{/if}
-
-	{if $MODULE eq 'Payment'}
-	<!--<td>
-	<select class="paymentmode select smallInputBox inputElement" id="{$paymentmode}" name="{$paymentmode}"/ style="width:125px;" >
-		<option selected="selected">{$data.$paymentmode}</option>
-		<option value="Cheque">Cheque</option>
-		<option value="Cash">Cash</option>
-		<option value="Online Payment">Online Payment</option>
-		<option value="Card Swapping">Card Swapping</option>
-		<option value="Other">Other</option>
-	</select>
-	</td>
-		<td>
-		<input class="paymentnumber smallInputBox inputElement" id="{$paymentnumber}" name="{$paymentnumber}" type="text"  value="{$data.$paymentnumber}" style="width:120px;">
-	</td>
-	<td>
-		<textarea id="{$bankdetails}" name="{$bankdetails}" class="bankdetails lineItemCommentBox">{$data.$bankdetails}</textarea>
-	</td>
-   <td>
-		<input id="{$paymentdate}" name="{$paymentdate}" class="paymentdate smallInputBox inputElement" type="date" value="{$data.$paymentdate}" style="width:130px;">
-	</td>-->
-	{/if}
-    {if $MODULE neq 'Payment'}
+ 
 	<td>
 		<input id="{$qty}" name="{$qty}" type="text" class="qty smallInputBox inputElement"
 			   data-rule-required=true data-rule-positive=true data-rule-greater_than_zero=true value="{if !empty($data.$qty)}{$data.$qty}{else}1{/if}"
@@ -188,7 +159,6 @@
 				   {if $QUANTITY_EDITABLE eq false} disabled=disabled {/if} />
 		</td>
 	 {/if}
-	{/if}
 
 	{if $PURCHASE_COST_EDITABLE}
 		<td>
@@ -331,13 +301,8 @@
 		<span class="margin pull-right">{if $data.$margin}{$data.$margin}{else}0{/if}</span>
 	</td>
 	{/if}
-{if $MODULE eq 'Payment'}
-	<!--<td>
-		<span id="netPrice{$row_no}" style="display:none"; class="pull-right netPrice">{if $data.$netPrice}{$data.$netPrice}{else}0{/if}</span>
-	</td>-->
-	{else}
+
 	<td>
 		<span id="netPrice{$row_no}" class="pull-right netPrice">{if $data.$netPrice}{$data.$netPrice}{else}0{/if}</span>
 	</td>
-	{/if}
 {/strip}

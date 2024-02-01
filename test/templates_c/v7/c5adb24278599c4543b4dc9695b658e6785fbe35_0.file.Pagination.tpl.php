@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.39, created on 2024-01-30 06:10:27
+/* Smarty version 3.1.39, created on 2024-02-01 05:50:35
   from 'D:\wamp\www\mpsolar\layouts\v7\modules\Vtiger\Pagination.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_65b892d35f8f60_95382200',
+  'unifunc' => 'content_65bb312bb6d184_26162481',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65b892d35f8f60_95382200 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65bb312bb6d184_26162481 (Smarty_Internal_Template $_smarty_tpl) {
 if (!$_smarty_tpl->tpl_vars['CLASS_VIEW_ACTION']->value) {?>
     <?php $_smarty_tpl->_assignInScope('CLASS_VIEW_ACTION', 'listViewActions');?>
     <?php $_smarty_tpl->_assignInScope('CLASS_VIEW_PAGING_INPUT', 'listViewPagingInput');?>

@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.39, created on 2024-01-30 06:15:19
+/* Smarty version 3.1.39, created on 2024-02-01 06:09:48
   from 'D:\wamp\www\mpsolar\layouts\v7\modules\Settings\Workflows\TasksList.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_65b893f7972349_06053288',
+  'unifunc' => 'content_65bb35ac884909_20183914',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65b893f7972349_06053288 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65bb35ac884909_20183914 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div style="padding-left: 15px;"><div id="table-content" class="table-container"><table id="listview-table" class="table <?php if ($_smarty_tpl->tpl_vars['TASK_LIST']->value == '0') {?>listview-table-norecords <?php } else { ?> listview-table<?php }?> "><thead><tr class="listViewContentHeader"><th width="20%"><?php echo vtranslate('LBL_ACTIVE',$_smarty_tpl->tpl_vars['QUALIFIED_MODULE']->value);?>
 </th><th width="30%"><?php echo vtranslate('LBL_TASK_TYPE',$_smarty_tpl->tpl_vars['QUALIFIED_MODULE']->value);?>
 </th><th><?php echo vtranslate('LBL_TASK_TITLE',$_smarty_tpl->tpl_vars['QUALIFIED_MODULE']->value);?>

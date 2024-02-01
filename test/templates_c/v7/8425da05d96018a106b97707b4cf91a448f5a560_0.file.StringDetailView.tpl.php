@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.39, created on 2024-01-30 06:10:25
+/* Smarty version 3.1.39, created on 2024-02-01 05:50:41
   from 'D:\wamp\www\mpsolar\layouts\v7\modules\Vtiger\uitypes\StringDetailView.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_65b892d1ce6899_99239617',
+  'unifunc' => 'content_65bb3131658682_89569368',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65b892d1ce6899_99239617 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65bb3131658682_89569368 (Smarty_Internal_Template $_smarty_tpl) {
 if ($_smarty_tpl->tpl_vars['FIELD_MODEL']->value->getFieldDataType() == 'picklist' && $_smarty_tpl->tpl_vars['MODULE']->value != 'Users') {?>
     <?php $_smarty_tpl->_assignInScope('PICKLIST_COLOR', Settings_Picklist_Module_Model::getPicklistColorByValue($_smarty_tpl->tpl_vars['FIELD_MODEL']->value->getName(),$_smarty_tpl->tpl_vars['FIELD_MODEL']->value->get('fieldvalue')));?>  
     <span <?php if (!empty($_smarty_tpl->tpl_vars['PICKLIST_COLOR']->value)) {?> class="picklist-color" style="background-color: <?php echo $_smarty_tpl->tpl_vars['PICKLIST_COLOR']->value;?>

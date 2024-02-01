@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.39, created on 2024-01-30 06:54:26
+/* Smarty version 3.1.39, created on 2024-02-01 06:08:28
   from 'D:\wamp\www\mpsolar\layouts\v7\modules\Invoice\SummaryViewWidgets.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_65b89d225bccd8_06556132',
+  'unifunc' => 'content_65bb355c2d6838_40435092',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65b89d225bccd8_06556132 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65bb355c2d6838_40435092 (Smarty_Internal_Template $_smarty_tpl) {
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['DETAILVIEW_LINKS']->value['DETAILVIEWWIDGET'], 'DETAIL_VIEW_WIDGET');
 $_smarty_tpl->tpl_vars['DETAIL_VIEW_WIDGET']->do_else = true;
 if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['DETAIL_VIEW_WIDGET']->value) {

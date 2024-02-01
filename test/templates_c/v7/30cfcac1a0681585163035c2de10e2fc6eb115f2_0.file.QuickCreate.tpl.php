@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.39, created on 2024-01-30 06:54:42
+/* Smarty version 3.1.39, created on 2024-02-01 06:08:46
   from 'D:\wamp\www\mpsolar\layouts\v7\modules\Vtiger\QuickCreate.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_65b89d3265a730_65976893',
+  'unifunc' => 'content_65bb356ec6cf92_76580491',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65b89d3265a730_65976893 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65bb356ec6cf92_76580491 (Smarty_Internal_Template $_smarty_tpl) {
 ?>    
 <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['SCRIPTS']->value, 'jsModel', false, 'index');

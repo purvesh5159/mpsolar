@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2024-01-30 06:10:25
+/* Smarty version 3.1.39, created on 2024-02-01 05:57:51
   from 'D:\wamp\www\mpsolar\layouts\v7\modules\Vtiger\DetailViewActions.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_65b892d1ed6620_02557047',
+  'unifunc' => 'content_65bb32df544921_30987447',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '5fbab39fc8a4e2116a84eb556073af8f1189643e' => 
     array (
       0 => 'D:\\wamp\\www\\mpsolar\\layouts\\v7\\modules\\Vtiger\\DetailViewActions.tpl',
-      1 => 1705904950,
+      1 => 1706767067,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65b892d1ed6620_02557047 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65bb32df544921_30987447 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="col-lg-6 detailViewButtoncontainer"><div class="pull-right btn-toolbar"><div class="btn-group"><?php $_smarty_tpl->_assignInScope('STARRED', $_smarty_tpl->tpl_vars['RECORD']->value->get('starred'));
 $_smarty_tpl->_assignInScope('SOSTATUS', $_smarty_tpl->tpl_vars['RECORD']->value->get('sostatus'));
 if ($_smarty_tpl->tpl_vars['MODULE']->value == 'SalesOrder') {?><button class="btn btn-default" id="CreateMaintance" style="width:135px;"><?php echo vtranslate('LBL_MAINTANCE',$_smarty_tpl->tpl_vars['MODULE']->value);?>
@@ -35,7 +35,7 @@ $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->t
 $_smarty_tpl->tpl_vars['DETAIL_VIEW_BASIC_LINK']->do_else = true;
 if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['DETAIL_VIEW_BASIC_LINK']->value) {
 $_smarty_tpl->tpl_vars['DETAIL_VIEW_BASIC_LINK']->do_else = false;
-?><button class="btn btn-default" id="<?php echo $_smarty_tpl->tpl_vars['MODULE_NAME']->value;?>
+?><button class="btn btn-default <?php if ($_smarty_tpl->tpl_vars['MODULE']->value == 'Maintenance' && $_smarty_tpl->tpl_vars['DETAIL_VIEW_BASIC_LINK']->value->getLabel() == 'LBL_EDIT') {?> hide<?php }?>" id="<?php echo $_smarty_tpl->tpl_vars['MODULE_NAME']->value;?>
 _detailView_basicAction_<?php echo Vtiger_Util_Helper::replaceSpaceWithUnderScores($_smarty_tpl->tpl_vars['DETAIL_VIEW_BASIC_LINK']->value->getLabel());?>
 "<?php if ($_smarty_tpl->tpl_vars['DETAIL_VIEW_BASIC_LINK']->value->isPageLoadLink()) {?>onclick="window.location.href = '<?php echo $_smarty_tpl->tpl_vars['DETAIL_VIEW_BASIC_LINK']->value->getUrl();?>
 &app=<?php echo $_smarty_tpl->tpl_vars['SELECTED_MENU_CATEGORY']->value;?>
@@ -64,8 +64,8 @@ _detailView_moreAction_<?php echo Vtiger_Util_Helper::replaceSpaceWithUnderScore
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?></ul><?php }?></div><?php ob_start();
 echo $_smarty_tpl->tpl_vars['NO_PAGINATION']->value;
-$_prefixVariable7 = ob_get_clean();
-if (!$_prefixVariable7) {?><div class="btn-group pull-right"><button class="btn btn-default " id="detailViewPreviousRecordButton" <?php if (empty($_smarty_tpl->tpl_vars['PREVIOUS_RECORD_URL']->value)) {?> disabled="disabled" <?php } else { ?> onclick="window.location.href = '<?php echo $_smarty_tpl->tpl_vars['PREVIOUS_RECORD_URL']->value;?>
+$_prefixVariable1 = ob_get_clean();
+if (!$_prefixVariable1) {?><div class="btn-group pull-right"><button class="btn btn-default " id="detailViewPreviousRecordButton" <?php if (empty($_smarty_tpl->tpl_vars['PREVIOUS_RECORD_URL']->value)) {?> disabled="disabled" <?php } else { ?> onclick="window.location.href = '<?php echo $_smarty_tpl->tpl_vars['PREVIOUS_RECORD_URL']->value;?>
 &app=<?php echo $_smarty_tpl->tpl_vars['SELECTED_MENU_CATEGORY']->value;?>
 '" <?php }?> ><i class="fa fa-chevron-left"></i></button><button class="btn btn-default  " id="detailViewNextRecordButton"<?php if (empty($_smarty_tpl->tpl_vars['NEXT_RECORD_URL']->value)) {?> disabled="disabled" <?php } else { ?> onclick="window.location.href = '<?php echo $_smarty_tpl->tpl_vars['NEXT_RECORD_URL']->value;?>
 &app=<?php echo $_smarty_tpl->tpl_vars['SELECTED_MENU_CATEGORY']->value;?>

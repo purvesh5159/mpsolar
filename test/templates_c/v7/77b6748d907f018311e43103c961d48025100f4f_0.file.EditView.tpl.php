@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.39, created on 2024-01-30 06:15:17
+/* Smarty version 3.1.39, created on 2024-02-01 06:09:43
   from 'D:\wamp\www\mpsolar\layouts\v7\modules\Settings\Workflows\EditView.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_65b893f54e9867_50586291',
+  'unifunc' => 'content_65bb35a7737657_40789060',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65b893f54e9867_50586291 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65bb35a7737657_40789060 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="editViewPageDiv"><div class="col-sm-12 col-xs-12" id="EditView"><form name="EditWorkflow" action="index.php" method="post" id="workflow_edit" class="form-horizontal"><?php $_smarty_tpl->_assignInScope('WORKFLOW_MODEL_OBJ', $_smarty_tpl->tpl_vars['WORKFLOW_MODEL']->value->getWorkflowObject());?><input type="hidden" name="record" value="<?php echo $_smarty_tpl->tpl_vars['RECORDID']->value;?>
 " id="record" /><input type="hidden" name="module" value="Workflows" /><input type="hidden" name="action" value="SaveWorkflow" /><input type="hidden" name="parent" value="Settings" /><input type="hidden" name="returnsourcemodule" value="<?php echo $_smarty_tpl->tpl_vars['RETURN_SOURCE_MODULE']->value;?>
 " /><input type="hidden" name="returnpage" value="<?php echo $_smarty_tpl->tpl_vars['RETURN_PAGE']->value;?>

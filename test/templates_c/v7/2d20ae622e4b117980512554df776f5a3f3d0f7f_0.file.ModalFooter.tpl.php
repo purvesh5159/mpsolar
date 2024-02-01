@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.39, created on 2024-01-30 06:10:26
+/* Smarty version 3.1.39, created on 2024-02-01 05:50:34
   from 'D:\wamp\www\mpsolar\layouts\v7\modules\Vtiger\ModalFooter.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_65b892d25246a9_44334681',
+  'unifunc' => 'content_65bb312adc0184_38995415',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,14 +20,14 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65b892d25246a9_44334681 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65bb312adc0184_38995415 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="modal-footer "><center><?php if ($_smarty_tpl->tpl_vars['BUTTON_NAME']->value != null) {
 $_smarty_tpl->_assignInScope('BUTTON_LABEL', $_smarty_tpl->tpl_vars['BUTTON_NAME']->value);
 } else {
 ob_start();
 echo vtranslate('LBL_SAVE',$_smarty_tpl->tpl_vars['MODULE']->value);
-$_prefixVariable10 = ob_get_clean();
-$_smarty_tpl->_assignInScope('BUTTON_LABEL', $_prefixVariable10);
+$_prefixVariable3 = ob_get_clean();
+$_smarty_tpl->_assignInScope('BUTTON_LABEL', $_prefixVariable3);
 }?><button <?php if ($_smarty_tpl->tpl_vars['BUTTON_ID']->value != null) {?> id="<?php echo $_smarty_tpl->tpl_vars['BUTTON_ID']->value;?>
 " <?php }?> class="btn btn-success" type="submit" name="saveButton"><strong><?php echo $_smarty_tpl->tpl_vars['BUTTON_LABEL']->value;?>
 </strong></button><a href="#" class="cancelLink" type="reset" data-dismiss="modal"><?php echo vtranslate('LBL_CANCEL',$_smarty_tpl->tpl_vars['MODULE']->value);?>

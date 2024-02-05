@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2024-01-23 05:25:15
+/* Smarty version 3.1.39, created on 2024-02-05 04:16:13
   from 'D:\wamp\www\mpsolar\layouts\v7\modules\Vtiger\ListViewActions.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_65af4dbb06e9b0_14740338',
+  'unifunc' => 'content_65c0610d52b209_34763635',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'c8b664543ebf42b56e45bf147001531b4b44c6f7' => 
     array (
       0 => 'D:\\wamp\\www\\mpsolar\\layouts\\v7\\modules\\Vtiger\\ListViewActions.tpl',
-      1 => 1669872319,
+      1 => 1706510637,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65af4dbb06e9b0_14740338 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65c0610d52b209_34763635 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_assignInScope('LISTVIEW_MASSACTIONS_1', array());?><div id="listview-actions" class="listview-actions-container"><?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['LISTVIEW_MASSACTIONS']->value, 'LIST_MASSACTION', false, NULL, 'massActions', array (
 ));

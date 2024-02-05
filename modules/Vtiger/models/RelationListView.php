@@ -614,7 +614,7 @@ class Vtiger_RelationListView_Model extends Vtiger_Base_Model {
 			return $db->query_result($result, 0, 'currency_symbol');
 		} else if(($tableName == 'vtiger_invoice' || $tableName == 'vtiger_quotes' || $tableName == 'vtiger_purchaseorder' || $tableName == 'vtiger_salesorder') &&
 			($columnName == 'total' || $columnName == 'subtotal' || $columnName == 'discount_amount' || $columnName == 's_h_amount' || $columnName == 'paid' ||
-			$columnName == 'balance' || $columnName == 'received' || $columnName == 'listprice' || $columnName == 'adjustment' || $columnName == 'pre_tax_total')) {
+			$columnName == 'balance' || $columnName == 'received' || $columnName == 'listprice' || $columnName == 'adjustment' || $columnName == 'pre_tax_total' || $columnName == 'stc')) {
 			$focus = CRMEntity::getInstance($moduleName);
 			$query = "SELECT currency_symbol FROM vtiger_currency_info WHERE id = ( SELECT currency_id FROM ".$tableName." WHERE ".$focus->table_index." = ? )";
 			$result = $db->pquery($query, array($recordId));

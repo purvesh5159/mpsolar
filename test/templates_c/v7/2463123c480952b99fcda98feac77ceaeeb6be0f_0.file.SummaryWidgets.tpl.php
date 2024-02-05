@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2024-01-23 05:06:38
+/* Smarty version 3.1.39, created on 2024-02-05 04:17:11
   from 'D:\wamp\www\mpsolar\layouts\v7\modules\Vtiger\SummaryWidgets.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_65af495e6027c5_16649339',
+  'unifunc' => 'content_65c06147004af8_51155508',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2463123c480952b99fcda98feac77ceaeeb6be0f' => 
     array (
       0 => 'D:\\wamp\\www\\mpsolar\\layouts\\v7\\modules\\Vtiger\\SummaryWidgets.tpl',
-      1 => 1669872319,
+      1 => 1706510637,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65af495e6027c5_16649339 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65c06147004af8_51155508 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <input type="hidden" name="page" value="<?php echo $_smarty_tpl->tpl_vars['PAGING_MODEL']->value->get('page');?>
 " /><input type="hidden" name="pageLimit" value="<?php echo $_smarty_tpl->tpl_vars['PAGING_MODEL']->value->get('limit');?>

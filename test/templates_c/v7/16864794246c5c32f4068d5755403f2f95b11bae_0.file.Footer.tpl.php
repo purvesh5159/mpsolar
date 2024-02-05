@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2024-01-23 05:06:35
+/* Smarty version 3.1.39, created on 2024-02-05 03:54:01
   from 'D:\wamp\www\mpsolar\layouts\v7\modules\Vtiger\Footer.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_65af495b2b8573_54205701',
+  'unifunc' => 'content_65c05bd90977a2_15488313',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '16864794246c5c32f4068d5755403f2f95b11bae' => 
     array (
       0 => 'D:\\wamp\\www\\mpsolar\\layouts\\v7\\modules\\Vtiger\\Footer.tpl',
-      1 => 1688101156,
+      1 => 1706510637,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65af495b2b8573_54205701 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65c05bd90977a2_15488313 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <footer class="app-footer">
 	<p>

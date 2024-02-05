@@ -6,5 +6,4 @@
  * Portions created by vtiger are Copyright (C) vtiger.
  * All Rights Reserved.
  *************************************************************************************/
-
 Inventory_Detail_Js("Quotes_Detail_Js",{},{});

@@ -42,23 +42,25 @@ class Vtiger_GenerateInstallerInventory_Action extends Vtiger_IndexAjax_View
 		$projectid =  $salesorder_id;
 
 
-		$result = $adb->pquery("select vtiger_inventoryproductrel.productid,vtiger_inventoryproductrel.sequence_no,vtiger_inventoryproductrel.quantity,vtiger_inventoryproductrel.assignqty,vtiger_inventoryproductrel.lineitem_id,vtiger_inventoryproductrel.description,vtiger_products.productcode,vtiger_products.productcategory,vtiger_products.manufacturer,vtiger_products.series,vtiger_products.model,vtiger_products.size from vtiger_inventoryproductrel INNER JOIN vtiger_products on vtiger_products.productid=vtiger_inventoryproductrel.productid where vtiger_inventoryproductrel.id = ? ", array($salesorder_id));
+		$result = $adb->pquery("select vtiger_inventoryproductrel.productid,vtiger_inventoryproductrel.sequence_no,vtiger_inventoryproductrel.quantity,vtiger_inventoryproductrel.assignqty,vtiger_inventoryproductrel.lineitem_id,vtiger_inventoryproductrel.description,vtiger_products.productcode,vtiger_products.productcategory,vtiger_products.manufacturer,vtiger_products.series,vtiger_products.model,vtiger_products.size from vtiger_inventoryproductrel INNER JOIN vtiger_products on vtiger_products.productid=vtiger_inventoryproductrel.productid where vtiger_inventoryproductrel.id = ? and ( vtiger_products.productcategory = ? or vtiger_products.productcategory = ? )", array($salesorder_id, 'Panel' ,'Inverter'));
 
 		while($row = $adb->fetch_array($result)) {
 			$productid = $row['productid'];
 			$quantity = $row['quantity'];
+			$productcategory = $row['productcategory'];
 			$vres = $adb->pquery("select * from vtiger_installerinventory INNER JOIN
-			 	vtiger_crmentity on vtiger_installerinventory.installerinventoryid=vtiger_crmentity.crmid where vtiger_installerinventory.installerid = ? and vtiger_installerinventory.projectno = ? and vtiger_installerinventory.productname = ? and vtiger_crmentity.deleted=? ", array($installername,$salesorder_id,$productid,0));
+				vtiger_crmentity on vtiger_installerinventory.installerinventoryid=vtiger_crmentity.crmid where vtiger_installerinventory.installerid = ? and vtiger_installerinventory.projectno = ? and vtiger_installerinventory.productname = ? and vtiger_crmentity.deleted=? ", array($installername,$salesorder_id,$productid,0));
 
-				 if ($adb->num_rows($vres) > 0) {
-				 	$usedqty = $adb->query_result($vres, 0, 'qty');
-			        $invid = $adb->query_result($vres, 0, 'installerinventoryid');
-			        $qty = $quantity + $usedqty; 
-					$update_query = "update vtiger_installerinventory set qty= ? where installerinventoryid = ?";
-					$update_params = array($qty,$invid);
-					$adb->pquery($update_query, $update_params);
-				 }
-				 else{
+			if ($adb->num_rows($vres) > 0) {
+				$usedqty = $adb->query_result($vres, 0, 'qty');
+				$invid = $adb->query_result($vres, 0, 'installerinventoryid');
+				$qty = $quantity + $usedqty; 
+				$update_query = "update vtiger_installerinventory set qty= ? where installerinventoryid = ?";
+				$update_params = array($qty,$invid);
+				$adb->pquery($update_query, $update_params);
+			}
+			else{
+				if($productcategory == 'Panel' || $productcategory == 'Inverter'){
 					$focus->column_fields['productname'] = $productid;
 					$focus->column_fields['qty'] = $quantity;
 					$focus->column_fields['partno'] = $row['productcode'];
@@ -70,8 +72,9 @@ class Vtiger_GenerateInstallerInventory_Action extends Vtiger_IndexAjax_View
 					$focus->column_fields['installerid'] = $installername;
 					$focus->column_fields['projectno'] = $projectid;
 				}
-				
-            $focus->id = '';
+			}
+
+			$focus->id = '';
 			$focus->mode = '';
 			$focus->save("Installerinventory");
 			$response->setResult(array('success'=>true, 'data'=> "Record is created successfully"));

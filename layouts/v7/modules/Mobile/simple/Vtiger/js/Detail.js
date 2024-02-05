@@ -47,6 +47,7 @@ mobileapp.controller('VtigerDetailController', function ($scope, $api) {
 						'balance',
 						'hdnS_H_Amount',
 						'paid',
+                        'stc',
 						'tags',
 						'shipping_&_handling',
 						'shipping_&_handling_shtax1',
@@ -88,6 +89,7 @@ mobileapp.controller('VtigerDetailController', function ($scope, $api) {
          $scope.lineItemsSummary['total_tax'] = lineItemFinalDetails['tax_totalamount'];
          $scope.lineItemsSummary['totalAfterDiscount'] = lineItemFinalDetails['totalAfterDiscount'];
          $scope.lineItemsSummary['adjustment'] = lineItemFinalDetails['adjustment'];
+         $scope.lineItemsSummary['stc'] = lineItemFinalDetails['stc'];
     };
     
     $scope.loadRecord = function () {

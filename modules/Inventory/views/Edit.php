@@ -189,13 +189,13 @@ Class Inventory_Edit_View extends Vtiger_Edit_View {
 		$viewer->assign('CURRENCIES', $currencies);
 		$viewer->assign('TERMSANDCONDITIONS', $termsAndConditions);
 
-		$gid = $recordModel->get('quote_id');
-		global $adb;
-		$result = $adb->pquery('select stc from vtiger_quotes where quoteid= ? ', array($gid));
-    	if ($adb->num_rows($result) > 0) {
-    		$stc = $adb->query_result($result, 0, 'stc');
-    	}
-    	$viewer->assign('stc', $stc);
+		// $gid = $recordModel->get('quote_id');
+		// global $adb;
+		// $result = $adb->pquery('select stc from vtiger_quotes where quoteid= ? ', array($gid));
+    	// if ($adb->num_rows($result) > 0) {
+    	// 	$stc = $adb->query_result($result, 0, 'stc');
+    	// }
+    	// $viewer->assign('stc', $stc);
 
 		$productModuleModel = Vtiger_Module_Model::getInstance('Products');
 		$viewer->assign('PRODUCT_ACTIVE', $productModuleModel->isActive());

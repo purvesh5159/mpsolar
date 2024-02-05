@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2024-01-23 05:06:34
+/* Smarty version 3.1.39, created on 2024-02-05 03:53:57
   from 'D:\wamp\www\mpsolar\layouts\v7\modules\Vtiger\ModuleHeader.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_65af495a095329_48498982',
+  'unifunc' => 'content_65c05bd5deaef4_62443720',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'c8b3a77571b492e87038cdf97d14416fca485c48' => 
     array (
       0 => 'D:\\wamp\\www\\mpsolar\\layouts\\v7\\modules\\Vtiger\\ModuleHeader.tpl',
-      1 => 1669872319,
+      1 => 1706510637,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65af495a095329_48498982 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65c05bd5deaef4_62443720 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <div class="col-sm-11 col-xs-10 padding0 module-action-bar clearfix coloredBorderTop"><div class="module-action-content clearfix <?php echo $_smarty_tpl->tpl_vars['MODULE']->value;?>
 -module-action-content"><div class="col-lg-7 col-md-6 col-sm-5 col-xs-11 padding0 module-breadcrumb module-breadcrumb-<?php echo $_REQUEST['view'];?>

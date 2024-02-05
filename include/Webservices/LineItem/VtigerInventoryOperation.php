@@ -263,6 +263,10 @@ class VtigerInventoryOperation extends VtigerModuleOperation {
 			$_REQUEST['total'] = $element['hdnGrandTotal'];
 		}
 
+		if (!empty($element['stc'])) {
+			$_REQUEST['stc'] = $element['stc'];
+		}
+
 		if (isset($element['region_id'])) {
 			$_REQUEST['region_id'] = $element['region_id'];
 		}

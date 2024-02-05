@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2024-01-25 08:42:07
+/* Smarty version 3.1.39, created on 2024-02-05 04:47:48
   from 'D:\wamp\www\mpsolar\layouts\v7\modules\Inventory\LineItemsDetail.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_65b21edfa52da4_99558679',
+  'unifunc' => 'content_65c06874eb30b0_87596966',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2e7ac4f01e5d476685f5adb6ccdb5fd859a1b8fa' => 
     array (
       0 => 'D:\\wamp\\www\\mpsolar\\layouts\\v7\\modules\\Inventory\\LineItemsDetail.tpl',
-      1 => 1706172122,
+      1 => 1707108353,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65b21edfa52da4_99558679 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65c06874eb30b0_87596966 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_assignInScope('ITEM_DETAILS_BLOCK', $_smarty_tpl->tpl_vars['BLOCK_LIST']->value['LBL_ITEM_DETAILS']);
 $_smarty_tpl->_assignInScope('LINEITEM_FIELDS', $_smarty_tpl->tpl_vars['ITEM_DETAILS_BLOCK']->value->getFields());?>
 
@@ -597,8 +597,8 @@ $_smarty_tpl->_assignInScope('CHARGES_INFO', $_prefixVariable15." = ".((string)$
         </td>
         <td>
             <span class="pull-right">
-            <?php if ($_smarty_tpl->tpl_vars['FINAL_DETAILS']->value["stc"]) {
-echo $_smarty_tpl->tpl_vars['FINAL_DETAILS']->value["stc"];
+            <?php if ($_smarty_tpl->tpl_vars['FINAL_DETAILS']->value["stcincentive"]) {
+echo $_smarty_tpl->tpl_vars['FINAL_DETAILS']->value["stcincentive"];
 } elseif ($_smarty_tpl->tpl_vars['stc']->value) {
 echo abs($_smarty_tpl->tpl_vars['stc']->value);
 } else { ?>0<?php }?>

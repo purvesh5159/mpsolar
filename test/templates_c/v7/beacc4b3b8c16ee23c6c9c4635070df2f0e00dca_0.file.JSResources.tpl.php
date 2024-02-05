@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2024-01-23 05:06:35
+/* Smarty version 3.1.39, created on 2024-02-05 03:54:01
   from 'D:\wamp\www\mpsolar\layouts\v7\modules\Vtiger\JSResources.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_65af495b44ad53_72295902',
+  'unifunc' => 'content_65c05bd91a69b1_83612118',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'beacc4b3b8c16ee23c6c9c4635070df2f0e00dca' => 
     array (
       0 => 'D:\\wamp\\www\\mpsolar\\layouts\\v7\\modules\\Vtiger\\JSResources.tpl',
-      1 => 1669872319,
+      1 => 1706510637,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65af495b44ad53_72295902 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65c05bd91a69b1_83612118 (Smarty_Internal_Template $_smarty_tpl) {
 echo '<script'; ?>
  type="text/javascript" src="<?php echo vresource_url('layouts/v7/lib/jquery/purl.js');?>
 "><?php echo '</script'; ?>

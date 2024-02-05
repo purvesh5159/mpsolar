@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2024-01-29 05:11:08
+/* Smarty version 3.1.39, created on 2024-02-05 04:58:39
   from 'D:\wamp\www\mpsolar\layouts\v7\modules\Inventory\partials\LineItemsEdit.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_65b7336c6e06e6_00695449',
+  'unifunc' => 'content_65c06affbb1732_72460287',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'ae1b017fe0b7cf3cdd42941b0cda2fcbadbecf88' => 
     array (
       0 => 'D:\\wamp\\www\\mpsolar\\layouts\\v7\\modules\\Inventory\\partials\\LineItemsEdit.tpl',
-      1 => 1706172536,
+      1 => 1707109111,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65b7336c6e06e6_00695449 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65c06affbb1732_72460287 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_assignInScope('LINEITEM_FIELDS', $_smarty_tpl->tpl_vars['RECORD_STRUCTURE']->value['LBL_ITEM_DETAILS']);
 $_smarty_tpl->_assignInScope('COL_SPAN1', 1);
 $_smarty_tpl->_assignInScope('COL_SPAN2', 2);
@@ -242,7 +242,7 @@ echo $_smarty_tpl->tpl_vars['FINAL']->value['shipping_handling_charge'];
 echo $_smarty_tpl->tpl_vars['FINAL']->value['shipping_handling_charge'];
 } else { ?>0<?php }?></span></td></tr><?php }
 if ($_smarty_tpl->tpl_vars['MODULE']->value == 'Quotes' || $_smarty_tpl->tpl_vars['MODULE']->value == 'SalesOrder' || $_smarty_tpl->tpl_vars['MODULE']->value == 'Maintenance' || $_smarty_tpl->tpl_vars['MODULE']->value == 'Invoice') {?><tr valign="top"><td width="83%" ><div class="pull-right"><b><?php echo vtranslate('LBL_STC',$_smarty_tpl->tpl_vars['MODULE']->value);?>
-&nbsp;&nbsp;</b> </div></td><td><?php $_smarty_tpl->_assignInScope('finalstc', $_smarty_tpl->tpl_vars['FINAL']->value['stc']);?><span class="pull-right" id="stcTotal"><?php if ($_smarty_tpl->tpl_vars['finalstc']->value) {
+&nbsp;&nbsp;</b> </div></td><td><?php $_smarty_tpl->_assignInScope('finalstc', $_smarty_tpl->tpl_vars['FINAL']->value['stcincentive']);?><span class="pull-right" id="stcTotal"><?php if ($_smarty_tpl->tpl_vars['finalstc']->value) {
 echo $_smarty_tpl->tpl_vars['finalstc']->value;
 } elseif ($_smarty_tpl->tpl_vars['stc']->value) {
 echo abs($_smarty_tpl->tpl_vars['stc']->value);

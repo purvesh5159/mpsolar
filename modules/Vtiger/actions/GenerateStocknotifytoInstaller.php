@@ -13,9 +13,9 @@ class Vtiger_GenerateStocknotifytoInstaller_Action extends Vtiger_IndexAjax_View
 
 	public function process(Vtiger_Request $request)
 	{
-		ini_set('display_errors', 1);
-		ini_set('display_startup_errors', 1);
-		error_reporting(E_ALL);
+		// ini_set('display_errors', 1);
+		// ini_set('display_startup_errors', 1);
+		// error_reporting(E_ALL);
 
 		$salesorder_id = $request->get('record');
 		$response = new Vtiger_Response();

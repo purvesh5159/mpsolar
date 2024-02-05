@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2024-01-23 05:11:57
+/* Smarty version 3.1.39, created on 2024-02-05 04:16:42
   from 'D:\wamp\www\mpsolar\layouts\v7\modules\Quotes\DetailViewHeaderTitle.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_65af4a9da5e014_05166834',
+  'unifunc' => 'content_65c0612ab3b0b2_76589856',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'bbd5158a08f4bba78a8db540ec9b849c1cc1f6ec' => 
     array (
       0 => 'D:\\wamp\\www\\mpsolar\\layouts\\v7\\modules\\Quotes\\DetailViewHeaderTitle.tpl',
-      1 => 1669872319,
+      1 => 1706510637,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65af4a9da5e014_05166834 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65c0612ab3b0b2_76589856 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="col-sm-6"><div class="record-header clearfix"><div class="recordImage bgquotes app-<?php echo $_smarty_tpl->tpl_vars['SELECTED_MENU_CATEGORY']->value;?>
 "><?php $_smarty_tpl->_assignInScope('IMAGE_DETAILS', $_smarty_tpl->tpl_vars['RECORD']->value->getImageDetails());
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['IMAGE_DETAILS']->value, 'IMAGE_INFO', false, 'ITER');

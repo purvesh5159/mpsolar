@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2024-01-24 05:28:53
+/* Smarty version 3.1.39, created on 2024-02-05 05:02:27
   from 'D:\wamp\www\mpsolar\layouts\v7\modules\Settings\Vtiger\Index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_65b0a015d6aa27_61257113',
+  'unifunc' => 'content_65c06be3859576_45802628',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'fbced11e67bb0a9dff376de3484b2149d0f1a103' => 
     array (
       0 => 'D:\\wamp\\www\\mpsolar\\layouts\\v7\\modules\\Settings\\Vtiger\\Index.tpl',
-      1 => 1669872319,
+      1 => 1706510637,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65b0a015d6aa27_61257113 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65c06be3859576_45802628 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="settingsIndexPage col-lg-12 col-md-12 col-sm-12"><div><h4><?php echo vtranslate('LBL_SUMMARY',$_smarty_tpl->tpl_vars['MODULE']->value);?>
 </h4></div><hr><div class="row"><span class="col-lg-4 col-md-4 col-sm-4 settingsSummary"><a href="index.php?module=Users&parent=Settings&view=List"><h2 class="summaryCount"><?php echo $_smarty_tpl->tpl_vars['USERS_COUNT']->value;?>
 </h2><p class="summaryText" style="margin-top:20px;"><?php echo vtranslate('LBL_ACTIVE_USERS',$_smarty_tpl->tpl_vars['MODULE']->value);?>

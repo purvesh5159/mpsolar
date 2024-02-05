@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2024-01-23 05:06:35
+/* Smarty version 3.1.39, created on 2024-02-05 04:16:44
   from 'D:\wamp\www\mpsolar\layouts\v7\modules\Vtiger\DetailViewPostProcess.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_65af495b282471_44141220',
+  'unifunc' => 'content_65c0612ced2061_44614025',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e831eabbadd426f8deed53967dc9b02cb6c6d57a' => 
     array (
       0 => 'D:\\wamp\\www\\mpsolar\\layouts\\v7\\modules\\Vtiger\\DetailViewPostProcess.tpl',
-      1 => 1669872319,
+      1 => 1706510637,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65af495b282471_44141220 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65c0612ced2061_44614025 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
                 </div>
             </div>

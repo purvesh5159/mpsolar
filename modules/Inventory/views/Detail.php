@@ -103,7 +103,7 @@ class Inventory_Detail_View extends Vtiger_Detail_View {
 		$finalDetails['deductTaxes'] = $deductTaxes;
 		//Deducted tax details convertion ended
 
-		$currencyFieldsList = array('adjustment', 'grandTotal', 'hdnSubTotal', 'preTaxTotal', 'tax_totalamount',
+		$currencyFieldsList = array('stc', 'adjustment', 'grandTotal', 'hdnSubTotal', 'preTaxTotal', 'tax_totalamount',
 									'shtax_totalamount', 'discountTotal_final', 'discount_amount_final', 'shipping_handling_charge', 'totalAfterDiscount', 'deductTaxesTotalAmount');
 		foreach ($currencyFieldsList as $fieldName) {
 			$finalDetails[$fieldName] = Vtiger_Currency_UIType::transformDisplayValue($finalDetails[$fieldName], null, true);
@@ -200,13 +200,13 @@ class Inventory_Detail_View extends Vtiger_Detail_View {
                $viewer->assign('IS_ADMIN', '1');
         }
 		
-		$gid = $recordModel->get('quote_id');
-		global $adb;
-		$result = $adb->pquery('select stc from vtiger_quotes where quoteid= ? ', array($gid));
-    	if ($adb->num_rows($result) > 0) {
-    		$stc = $adb->query_result($result, 0, 'stc');
-    	}
-    	$viewer->assign('stc', $stc);
+		// $gid = $recordModel->get('quote_id');
+		// global $adb;
+		// $result = $adb->pquery('select stc from vtiger_quotes where quoteid= ? ', array($gid));
+    	// if ($adb->num_rows($result) > 0) {
+    	// 	$stc = $adb->query_result($result, 0, 'stc');
+    	// }
+    	// $viewer->assign('stc', $stc);
 
 //		$viewer->view('LineItemsDetail.tpl', 'Inventory');
 	}

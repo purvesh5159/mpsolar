@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2024-01-24 04:29:40
+/* Smarty version 3.1.39, created on 2024-02-05 04:16:31
   from 'D:\wamp\www\mpsolar\layouts\v7\modules\Vtiger\OperationNotPermitted.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_65b09234693d25_70589062',
+  'unifunc' => 'content_65c0611f6fc309_74027299',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '0ea705f80718d0d362883e0de0c061ba492a94fd' => 
     array (
       0 => 'D:\\wamp\\www\\mpsolar\\layouts\\v7\\modules\\Vtiger\\OperationNotPermitted.tpl',
-      1 => 1669872319,
+      1 => 1706510637,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65b09234693d25_70589062 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65c0611f6fc309_74027299 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div style="margin:0 auto;width: 50em;">
 	<table border='0' cellpadding='5' cellspacing='0' height='600px' width="700px">
 	<tr><td align='center'>

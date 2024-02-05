@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2024-01-23 05:25:14
+/* Smarty version 3.1.39, created on 2024-02-05 04:16:12
   from 'D:\wamp\www\mpsolar\layouts\v7\modules\Vtiger\partials\SidebarEssentials.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_65af4dba601082_14776100',
+  'unifunc' => 'content_65c0610c701896_95333249',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '34fb0efb9e9bb82234f1ee07f4c3ef0ef9b8068c' => 
     array (
       0 => 'D:\\wamp\\www\\mpsolar\\layouts\\v7\\modules\\Vtiger\\partials\\SidebarEssentials.tpl',
-      1 => 1669872319,
+      1 => 1706510637,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65af4dba601082_14776100 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65c0610c701896_95333249 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="sidebar-menu">
     <div class="module-filters" id="module-filters">
         <div class="sidebar-container lists-menu-container">

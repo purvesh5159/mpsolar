@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2024-01-23 05:06:34
+/* Smarty version 3.1.39, created on 2024-02-05 03:53:58
   from 'D:\wamp\www\mpsolar\layouts\v7\modules\Vtiger\partials\Menubar.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_65af495a116f52_47016264',
+  'unifunc' => 'content_65c05bd64b3648_14782079',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '0173cbbb526bf18529aff06bcadedb39613745c2' => 
     array (
       0 => 'D:\\wamp\\www\\mpsolar\\layouts\\v7\\modules\\Vtiger\\partials\\Menubar.tpl',
-      1 => 1669872319,
+      1 => 1706510637,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65af495a116f52_47016264 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65c05bd64b3648_14782079 (Smarty_Internal_Template $_smarty_tpl) {
 if ($_smarty_tpl->tpl_vars['MENU_STRUCTURE']->value) {
 $_smarty_tpl->_assignInScope('topMenus', $_smarty_tpl->tpl_vars['MENU_STRUCTURE']->value->getTop());
 $_smarty_tpl->_assignInScope('moreMenus', $_smarty_tpl->tpl_vars['MENU_STRUCTURE']->value->getMore());?>

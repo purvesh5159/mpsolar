@@ -389,7 +389,7 @@
 		            </td>
 		            
 		           <td>
-		                {assign var=finalstc value=$FINAL.stc}
+		                {assign var=finalstc value=$FINAL.stcincentive}
 						<span class="pull-right" id="stcTotal">{if $finalstc}{$finalstc}{elseif $stc}{abs($stc)}{else}0{/if}</span>
 						<input type="hidden" id="stcTotal" name="stc" value="{if $finalstc}{$finalstc}{elseif $stc}{abs($stc)}{else}0{/if}"/>
 		            </td>

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2024-01-23 07:51:59
+/* Smarty version 3.1.39, created on 2024-02-05 04:51:32
   from 'D:\wamp\www\mpsolar\layouts\v7\modules\Vtiger\partials\RelatedListHeader.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_65af701f9bbf42_91054161',
+  'unifunc' => 'content_65c06954622fb0_10704318',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a2aaeda5074feec874f69c895650c45cc2920d14' => 
     array (
       0 => 'D:\\wamp\\www\\mpsolar\\layouts\\v7\\modules\\Vtiger\\partials\\RelatedListHeader.tpl',
-      1 => 1669872319,
+      1 => 1706510637,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65af701f9bbf42_91054161 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65c06954622fb0_10704318 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <div class="relatedHeader"><div class="btn-toolbar row"><div class="col-lg-6 col-md-6 col-sm-6 btn-toolbar"><?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['RELATED_LIST_LINKS']->value['LISTVIEWBASIC'], 'RELATED_LINK');

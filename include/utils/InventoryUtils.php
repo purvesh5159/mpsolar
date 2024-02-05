@@ -831,7 +831,7 @@ function saveInventoryProductDetails(&$focus, $module, $update_prod_stock='false
 	$updatequery .= " taxtype=?,";
 	array_push($updateparams, $_REQUEST['taxtype']);
     
-    if ($module == 'Quotes') {
+    if ($module == 'Quotes' || $module == 'SalesOrder'  || $module == 'Invoice'   || $module == 'Maintenance') {
 		$updatequery .= " stc=?,";
 		array_push($updateparams, $_REQUEST['stc']);
 	}

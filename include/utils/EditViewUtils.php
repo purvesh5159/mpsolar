@@ -310,12 +310,6 @@ function getAssociatedProducts($module, $focus, $seid = '', $refModuleName = fal
 		$purchaseCost = $adb->query_result($result,$i-1,'purchase_cost');
 		$margin = $adb->query_result($result,$i-1,'margin');
 		$isSubProductsViewable = $adb->query_result($result, $i-1, 'is_subproducts_viewable');
-
-		//payment module
-		$bankdetails = $adb->query_result($result,$i-1,'bankdetails');
-		$paymentmode = $adb->query_result($result,$i-1,'paymentmode');
-		$paymentdate = $adb->query_result($result,$i-1,'paymentdate');
-		$paymentnumber = $adb->query_result($result,$i-1,'paymentnumber');
 		
 		if ($purchaseCost) {
 			$product_Detail[$i]['purchaseCost'.$i] = number_format($purchaseCost, $no_of_decimal_places, '.', '');
@@ -414,10 +408,6 @@ function getAssociatedProducts($module, $focus, $seid = '', $refModuleName = fal
 			$product_Detail[$i]['subprod_qty_list'.$i] = $subProductQtyList;
 			$product_Detail[$i]['subprod_names'.$i]=$subprodname_str;
 		}
-		$product_Detail[$i]['bankdetails'.$i]=$bankdetails;
-		$product_Detail[$i]['paymentmode'.$i]=$paymentmode;
-        $product_Detail[$i]['paymentdate'.$i]=$paymentdate;
-        $product_Detail[$i]['paymentnumber'.$i]=$paymentnumber;
 		$discount_percent = decimalFormat($adb->query_result($result,$i-1,'discount_percent'));
 		$discount_amount = $adb->query_result($result,$i-1,'discount_amount');
 		$discount_amount = decimalFormat(number_format($discount_amount, $no_of_decimal_places,'.',''));
@@ -683,7 +673,8 @@ function getAssociatedProducts($module, $focus, $seid = '', $refModuleName = fal
     //To set the STC value
 	$stc = ($focus->column_fields['stc'] != '')?$focus->column_fields['stc']:'0';
 	$stc = number_format($stc, $no_of_decimal_places,'.','');
-	$product_Detail[1]['final_details']['stc'] = $stc;
+	
+	$product_Detail[1]['final_details']['stcincentive'] = $stc;
 
 	//To set the grand total
 	$grandTotal = ($focus->column_fields['hdnGrandTotal'] != '')?$focus->column_fields['hdnGrandTotal']:0;

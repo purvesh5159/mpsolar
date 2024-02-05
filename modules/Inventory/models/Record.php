@@ -68,9 +68,26 @@ class Inventory_Record_Model extends Vtiger_Record_Model {
 	}
 
 	function getProducts() {
+		global $adb;
 		$numOfCurrencyDecimalPlaces = getCurrencyDecimalPlaces();
 		$relatedProducts = getAssociatedProducts($this->getModuleName(), $this->getEntity());
 		$productsCount = php7_count($relatedProducts);
+		$moduleName = $this->getModuleName();
+		$recordId = $this->getId();
+		if($moduleName == 'SalesOrder')
+		{
+			$result = $adb->pquery('select stc from vtiger_salesorder where saleorderid = ?', array($recordId));
+			if ($adb->num_rows($result) > 0) {
+				$stc = $adb->query_result($result, 0, 'stc');
+			}
+		} 
+
+		if($moduleName == 'Invoice') {
+			$result = $adb->pquery('select stc from vtiger_invoice where invoiceid = ?', array($recordId));
+			if ($adb->num_rows($result) > 0) {
+				$stc = $adb->query_result($result, 0, 'stc');
+			}
+		}
 
 		//Updating Tax details
 		$taxtype = $relatedProducts[1]['final_details']['taxtype'];
@@ -201,6 +218,7 @@ class Inventory_Record_Model extends Vtiger_Record_Model {
 
 		$relatedProducts[1]['final_details']['deductTaxes'] = $deductTaxes;
 		$relatedProducts[1]['final_details']['deductTaxesTotalAmount'] = number_format($deductedTaxesTotalAmount, $numOfCurrencyDecimalPlaces,'.','');
+		$relatedProducts[1]['final_details']['stc'] = number_format($stc, $numOfCurrencyDecimalPlaces,'.','');;
 
 		if ($productIdsList) {
 			$imageDetailsList = Products_Record_Model::getProductsImageDetails($productIdsList);
@@ -886,6 +904,7 @@ class Inventory_Record_Model extends Vtiger_Record_Model {
 		$finalDetails['taxes']			= $taxDetails;
 		$finalDetails['tax_totalamount']= number_format($taxTotal, $noOfDecimalPlaces, '.', '');
 		$finalDetails['adjustment']		= number_format($requestData['adjustment'], $noOfDecimalPlaces, '.', '');
+		$finalDetails['stc']		    = number_format($requestData['stc'], $noOfDecimalPlaces, '.', '');
 		$finalDetails['grandTotal']		= number_format($requestData['total'], $noOfDecimalPlaces, '.', '');
 		$finalDetails['preTaxTotal']	= number_format($requestData['pre_tax_total'], $noOfDecimalPlaces, '.', '');
 		$finalDetails['shipping_handling_charge'] = number_format($requestData['shipping_handling_charge'], $noOfDecimalPlaces, ',', '');

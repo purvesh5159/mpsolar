@@ -2953,3 +2953,30 @@ if ($blockInstance) {
 } else {
     echo "Block Does not exits -- LBL_CONTACT_INFORMATION in SalesOrder -- <br>";
 }
+
+$moduleInstance = null;
+$blockInstance = null;
+$fieldInstance = null;
+$moduleInstance = Vtiger_Module::getInstance('Documents');
+$blockInstance = Vtiger_Block::getInstance('LBL_FILE_INFORMATION', $moduleInstance);
+if ($blockInstance) {
+    $fieldInstance = Vtiger_Field::getInstance('typeofdoc', $moduleInstance);
+    if (!$fieldInstance) {
+        $fieldInstance = new Vtiger_Field();
+        $fieldInstance->name = 'typeofdoc';
+        $fieldInstance->label = 'Type of docreceived';
+        $fieldInstance->table = $moduleInstance->basetable;
+        $fieldInstance->column = 'typeofdoc';
+        $fieldInstance->uitype = '16';
+        $fieldInstance->presence = '0';
+        $fieldInstance->typeofdata = 'V~O';
+        $fieldInstance->columntype = 'VARCHAR(100)';
+        $fieldInstance->defaultvalue = NULL;
+        $blockInstance->addField($fieldInstance);
+        $fieldInstance->setPicklistValues(array( 'Sign Contract', 'Panel Layout', 'Electricity Bill', 'Switch Board', 'Photograph' ,'Payment Receipt' , 'Front Of The House Image', 'Roof Photograph'));
+    } else {
+        echo "field is already Present --- typeofdoc in Documents Module --- <br>";
+    }
+} else {
+    echo " block does not exits --- LBL_FILE_INFORMATION -- <br>";
+}

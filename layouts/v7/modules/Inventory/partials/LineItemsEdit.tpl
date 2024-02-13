@@ -382,20 +382,6 @@
 						</td>
 					</tr>
 				{/if}
-				{if $MODULE eq 'Quotes' or $MODULE eq 'SalesOrder' or $MODULE eq 'Maintenance' or $MODULE eq 'Invoice'}
-		         <tr valign="top">
-		            <td width="83%" >
-		                <div class="pull-right"><b>{vtranslate('LBL_STC',$MODULE)}&nbsp;&nbsp;</b> </div>
-		            </td>
-		            
-		           <td>
-		                {assign var=finalstc value=$FINAL.stcincentive}
-						<span class="pull-right" id="stcTotal">{if $finalstc}{$finalstc}{elseif $stc}{abs($stc)}{else}0{/if}</span>
-						<input type="hidden" id="stcTotal" name="stc" value="{if $finalstc}{$finalstc}{elseif $stc}{abs($stc)}{else}0{/if}"/>
-		            </td>
-
-		        </tr>
-               {/if}
 				<tr>
 					<td width="83%">
 						<span class="pull-right"><strong>{vtranslate('LBL_PRE_TAX_TOTAL', $MODULE)} </strong></span>
@@ -437,7 +423,7 @@
 				</tr>
 				<!-- Group Tax - ends -->
 				{if $SH_PERCENT_EDITABLE}
-					<tr>
+					<tr class="hide">
 						<td width="83%">
 							<span class="pull-right">(+)&nbsp;<strong><a href="javascript:void(0)" id="chargeTaxes">{vtranslate('LBL_TAXES_ON_CHARGES',$MODULE)} </a></strong></span>
 
@@ -487,7 +473,7 @@
 							<span class="pull-right" id="chargeTaxTotal">{if $FINAL.shtax_totalamount}{$FINAL.shtax_totalamount}{else}0{/if}</span>
 						</td>
 					</tr>
-					<tr>
+					<tr class="hide">
 						<td width="83%">
 							<span class="pull-right">(-)&nbsp;<strong><a href="javascript:void(0)" id="deductTaxes">{vtranslate('LBL_DEDUCTED_TAXES',$MODULE)} </a></strong></span>
 
@@ -534,6 +520,19 @@
 						</span>
 					</td>
 				</tr>
+				{if $MODULE eq 'Quotes' or $MODULE eq 'SalesOrder' or $MODULE eq 'Maintenance' or $MODULE eq 'Invoice'}
+		         <tr valign="top">
+		            <td width="83%" >
+		                <div class="pull-right"><b>{vtranslate('LBL_STC',$MODULE)}&nbsp;&nbsp;</b> </div>
+		            </td>
+		            
+		           <td>
+		                {assign var=finalstc value=$FINAL.stcincentive}
+						<span class="pull-right" id="stcTotal">{if $finalstc}{$finalstc}{elseif $stc}{abs($stc)}{else}0{/if}</span>
+						<input type="hidden" id="stcTotal" name="stc" value="{if $finalstc}{$finalstc}{elseif $stc}{abs($stc)}{else}0{/if}"/>
+		            </td>
+		        </tr>
+               {/if}
 				<tr valign="top">
 					<td width="83%">
 						<span class="pull-right"><strong>{vtranslate('LBL_GRAND_TOTAL',$MODULE)}</strong></span>

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2024-02-05 04:47:48
+/* Smarty version 3.1.39, created on 2024-02-13 12:06:16
   from 'D:\wamp\www\mpsolar\layouts\v7\modules\Inventory\LineItemsDetail.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_65c06874eb30b0_87596966',
+  'unifunc' => 'content_65cb5b38da2578_38314612',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2e7ac4f01e5d476685f5adb6ccdb5fd859a1b8fa' => 
     array (
       0 => 'D:\\wamp\\www\\mpsolar\\layouts\\v7\\modules\\Inventory\\LineItemsDetail.tpl',
-      1 => 1707108353,
+      1 => 1707825971,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65c06874eb30b0_87596966 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65cb5b38da2578_38314612 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_assignInScope('ITEM_DETAILS_BLOCK', $_smarty_tpl->tpl_vars['BLOCK_LIST']->value['LBL_ITEM_DETAILS']);
 $_smarty_tpl->_assignInScope('LINEITEM_FIELDS', $_smarty_tpl->tpl_vars['ITEM_DETAILS_BLOCK']->value->getFields());?>
 
@@ -586,26 +586,6 @@ $_smarty_tpl->_assignInScope('CHARGES_INFO', $_prefixVariable15." = ".((string)$
                 </td>
             </tr>
         <?php }?>
-
-        <?php if ($_smarty_tpl->tpl_vars['MODULE']->value == 'Quotes' || $_smarty_tpl->tpl_vars['MODULE']->value == 'SalesOrder' || $_smarty_tpl->tpl_vars['MODULE']->value == 'Maintenance' || $_smarty_tpl->tpl_vars['MODULE']->value == 'Invoice') {?>
-        <tr>
-        <td width="83%">
-            <span class="pull-right">
-            <b><?php echo vtranslate('LBL_STC',$_smarty_tpl->tpl_vars['MODULE_NAME']->value);?>
-</b>
-            </span>
-        </td>
-        <td>
-            <span class="pull-right">
-            <?php if ($_smarty_tpl->tpl_vars['FINAL_DETAILS']->value["stcincentive"]) {
-echo $_smarty_tpl->tpl_vars['FINAL_DETAILS']->value["stcincentive"];
-} elseif ($_smarty_tpl->tpl_vars['stc']->value) {
-echo abs($_smarty_tpl->tpl_vars['stc']->value);
-} else { ?>0<?php }?>
-            </span>
-        </td>
-        </tr>
-        <?php }?>
         <tr>
             <td width="83%">
                 <div align="right">
@@ -680,7 +660,7 @@ $_smarty_tpl->_assignInScope('GROUP_TAX_INFO', $_prefixVariable18." = ".((string
             </tr>
         <?php }?>
         <?php if ($_smarty_tpl->tpl_vars['SH_PERCENT_VIEWABLE']->value) {?>
-            <tr>
+            <tr class="hide">
                 <td width="83%">
                     <div align="right">
                         <?php ob_start();
@@ -758,7 +738,7 @@ $_smarty_tpl->_assignInScope('CHARGES_TAX_INFO', $_prefixVariable21." = ".((stri
                 </td>
             </tr>
         <?php }?>
-        <tr>
+        <tr class="hide">
             <td width="83%">
                 <div align="right">
                     <?php ob_start();
@@ -812,6 +792,25 @@ $_smarty_tpl->_assignInScope('DEDUCTED_TAXES_INFO', $_prefixVariable24." = ".((s
                 </div>
             </td>
         </tr>
+         <?php if ($_smarty_tpl->tpl_vars['MODULE']->value == 'Quotes' || $_smarty_tpl->tpl_vars['MODULE']->value == 'SalesOrder' || $_smarty_tpl->tpl_vars['MODULE']->value == 'Maintenance' || $_smarty_tpl->tpl_vars['MODULE']->value == 'Invoice') {?>
+        <tr>
+        <td width="83%">
+            <span class="pull-right">
+            <b><?php echo vtranslate('LBL_STC',$_smarty_tpl->tpl_vars['MODULE_NAME']->value);?>
+</b>
+            </span>
+        </td>
+        <td>
+            <span class="pull-right">
+            <?php if ($_smarty_tpl->tpl_vars['FINAL_DETAILS']->value["stcincentive"]) {
+echo $_smarty_tpl->tpl_vars['FINAL_DETAILS']->value["stcincentive"];
+} elseif ($_smarty_tpl->tpl_vars['stc']->value) {
+echo abs($_smarty_tpl->tpl_vars['stc']->value);
+} else { ?>0<?php }?>
+            </span>
+        </td>
+        </tr>
+        <?php }?>
         <tr>
             <td width="83%">
                 <div align="right">

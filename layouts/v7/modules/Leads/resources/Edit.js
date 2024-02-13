@@ -83,8 +83,7 @@ Vtiger_Edit_Js("Leads_Edit_Js",{
 			console.log(recordId);
 			var params = {};
             if(!(lane in thisInstance.duplicateCheckCache)) {
-            	var vtigerInstance = Vtiger_Helper_Js.getInstance();
-                vtigerInstance.heckDuplicateNameGeneralised({
+                Vtiger_Helper_Js.heckDuplicateNameGeneralised({
                     'lane' : lane, 
                     'recordId' : recordId,
                     'moduleName' : 'Leads'

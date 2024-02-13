@@ -1776,10 +1776,11 @@ Vtiger_Edit_Js("Inventory_Edit_Js", {
 			}
 
 			if(jQuery('.selectedModuleId', lineItemRow).val() == jQuery('.stcigField').val()){
-				let noofstc = $(".stcTotalVal").val() * parseFloat(element.val());
+				let sizeofsystem = $(".stcTotalVal").val() * parseFloat(element.val());
 				let dpvalue = $(".dpvalue").val();
 				console.log(dpvalue);
-				let STCValue = (noofstc * dpvalue * 1.382  - 1)/1000 * (39);
+				let noofstc = (sizeofsystem * dpvalue * 1.382  - 1)/1000 ;
+				let STCValue = noofstc * 39;
 				
 				$("input[name='noofstc']").val(noofstc);
 				$("input[name='stc']").val(STCValue);

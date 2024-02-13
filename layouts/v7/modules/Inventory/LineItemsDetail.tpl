@@ -352,21 +352,6 @@
                 </td>
             </tr>
         {/if}
-
-        {if $MODULE eq 'Quotes' or $MODULE eq 'SalesOrder' or $MODULE eq 'Maintenance' or $MODULE eq 'Invoice'}
-        <tr>
-        <td width="83%">
-            <span class="pull-right">
-            <b>{vtranslate('LBL_STC',$MODULE_NAME)}</b>
-            </span>
-        </td>
-        <td>
-            <span class="pull-right">
-            {if $FINAL_DETAILS["stcincentive"]}{$FINAL_DETAILS["stcincentive"]}{elseif $stc}{abs($stc)}{else}0{/if}
-            </span>
-        </td>
-        </tr>
-        {/if}
         <tr>
             <td width="83%">
                 <div align="right">
@@ -395,7 +380,7 @@
             </tr>
         {/if}
         {if $SH_PERCENT_VIEWABLE}
-            <tr>
+            <tr class="hide">
                 <td width="83%">
                     <div align="right">
                         {assign var=CHARGES_TAX_INFO value="{vtranslate('LBL_CHARGES_TOTAL',$MODULE_NAME)} = {$FINAL_DETAILS["shipping_handling_charge"]}<br /><br />{foreach key=CHARGE_ID item=CHARGE_INFO from=$SELECTED_CHARGES_AND_ITS_TAXES}{if $CHARGE_INFO['taxes']}{if $CHARGE_INFO['deleted']}({strtoupper(vtranslate('LBL_DELETED',$MODULE_NAME))}){/if} {$CHARGE_INFO['name']}<br />{foreach item=CHARGE_TAX_INFO from=$CHARGE_INFO['taxes']}&emsp;{$CHARGE_TAX_INFO['name']}: &emsp;{$CHARGE_TAX_INFO['percent']}% {vtranslate('LBL_OF',$MODULE_NAME)} {if $CHARGE_TAX_INFO['method'] eq 'Compound'}({/if}{$CHARGE_INFO['amount']} {if $CHARGE_TAX_INFO['method'] eq 'Compound'}{foreach item=COMPOUND_TAX_ID from=$CHARGE_TAX_INFO['compoundon']}{if $CHARGE_INFO['taxes'][$COMPOUND_TAX_ID]['name']} + {$CHARGE_INFO['taxes'][$COMPOUND_TAX_ID]['name']}{/if}{/foreach}){/if} = {$CHARGE_TAX_INFO['amount']}<br />{/foreach}<br />{/if}{/foreach}\r\n{vtranslate('LBL_TOTAL_TAX_AMOUNT',$MODULE_NAME)} = {$FINAL_DETAILS['shtax_totalamount']}"}
@@ -410,7 +395,7 @@
                 </td>
             </tr>
         {/if}
-        <tr>
+        <tr class="hide">
             <td width="83%">
                 <div align="right">
                     {assign var=DEDUCTED_TAXES_INFO value="{vtranslate('LBL_TOTAL_AFTER_DISCOUNT',$MODULE_NAME)} = {$FINAL_DETAILS["totalAfterDiscount"]}<br /><br />{foreach key=DEDUCTED_TAX_ID item=DEDUCTED_TAX_INFO from=$FINAL_DETAILS['deductTaxes']}{if $DEDUCTED_TAX_INFO['selected'] eq true}{$DEDUCTED_TAX_INFO['taxlabel']}: \t{$DEDUCTED_TAX_INFO['percentage']}%  = {$DEDUCTED_TAX_INFO['amount']}\r\n{/if}{/foreach}\r\n\r\n{vtranslate('LBL_DEDUCTED_TAXES_TOTAL',$MODULE_NAME)} = {$FINAL_DETAILS['deductTaxesTotalAmount']}"}
@@ -436,6 +421,20 @@
                 </div>
             </td>
         </tr>
+         {if $MODULE eq 'Quotes' or $MODULE eq 'SalesOrder' or $MODULE eq 'Maintenance' or $MODULE eq 'Invoice'}
+        <tr>
+        <td width="83%">
+            <span class="pull-right">
+            <b>{vtranslate('LBL_STC',$MODULE_NAME)}</b>
+            </span>
+        </td>
+        <td>
+            <span class="pull-right">
+            {if $FINAL_DETAILS["stcincentive"]}{$FINAL_DETAILS["stcincentive"]}{elseif $stc}{abs($stc)}{else}0{/if}
+            </span>
+        </td>
+        </tr>
+        {/if}
         <tr>
             <td width="83%">
                 <div align="right">

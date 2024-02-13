@@ -301,6 +301,31 @@ class Leads_Record_Model extends Vtiger_Record_Model {
 		$calendarModuleModel = Vtiger_Module_Model::getInstance('Calendar');
 		return $calendarModuleModel->getCreateTaskRecordUrl().'&parent_id='.$this->getId();
 	}
+
+	public function checkDuplicate($lane,$city,$state,$code) {
+		$db = PearDatabase::getInstance();
+
+		$query = "SELECT 1 FROM  vtiger_leaddetails 
+					INNER JOIN vtiger_crmentity
+					ON vtiger_crmentity.crmid=vtiger_leaddetails.leadid 
+					INNER JOIN vtiger_leadaddress
+					ON vtiger_leadaddress.leadaddressid=vtiger_leaddetails.leadid
+					where ((lane = ? and city = ?) or state = ? or vtiger_leadaddress.code = ?) and vtiger_crmentity.deleted = 0 ";
+                $params = array($lane,$city,$state,$code); 
+
+		$record = $this->getId();
+		if ($record) {
+			$query .= " AND vtiger_crmentity.crmid != ?";
+			array_push($params, $record);
+		}
+
+		$result = $db->pquery($query, $params);
+		
+		if ($db->num_rows($result)) {
+			return true;
+		}
+		return false;
+	}
     
     /**
 	 * Function to check whether the lead is converted or not

@@ -229,6 +229,40 @@ jQuery.Class("Vtiger_Helper_Js",{
 		return aDeferred.promise();
 	},
 
+	heckDuplicateNameGeneralised : function(details) {
+		var lane = details.lane;
+		var recordId = details.recordId;
+		var aDeferred = jQuery.Deferred();
+		var moduleName = details.moduleName;
+		if(typeof moduleName == "undefined"){
+			moduleName = app.getModuleName();
+		}
+		var params = {
+		'module' : moduleName,
+		'action' : "CheckDuplicate",
+		'lane' :  lane,
+		'city' :    document.getElementById("Leads_editView_fieldName_city").value,
+		'state' : document.getElementById("Leads_editView_fieldName_state").value,
+		'code' :  document.getElementById("Leads_editView_fieldName_code").value,
+		'record' : recordId
+		}
+		AppConnector.request(params).then(
+			function(data) {
+				var response = data['result'];
+				var result = response['success'];
+				if(result == true) {
+					aDeferred.reject(response);
+				} else {
+					aDeferred.resolve(response);
+				}
+			},
+			function(error,err){
+				aDeferred.reject();
+			}
+		);
+		return aDeferred.promise();
+	},
+
 	showMessage : function(params){
 		if(typeof params.type == "undefined"){
 			params.type = 'info';

@@ -412,12 +412,24 @@ class ListViewController {
 					}
 				} elseif ($fieldDataType == 'email') {
 					global $current_user;
-					if($current_user->internal_mailer == 1){
+					$user = $current_user->id;
+					if ($user != 1 && $module == 'Leads') {
+						$variable = substr($rawValue, 0, strpos($rawValue, "@"));
+						if($current_user->internal_mailer == 1){
 						//check added for email link in user detailview
-						$value = "<a class='emailField' data-rawvalue=\"$rawValue\" onclick=\"Vtiger_Helper_Js.getInternalMailer($recordId,".
-						"'$fieldName','$module');\">".textlength_check($value)."</a>";
+							$value = "<a class='emailField' data-rawvalue=\"$rawValue\" onclick=\"Vtiger_Helper_Js.getInternalMailer($recordId,".
+							"'$fieldName','$module');\">".textlength_check($value)."</a>";
+						} else {
+							$value = '<a class="emailField" data-rawvalue="'.$rawValue.'" href="mailto:'.$rawValue.'">'.textlength_check($variable).'</a>';
+						}
 					} else {
-						$value = '<a class="emailField" data-rawvalue="'.$rawValue.'" href="mailto:'.$rawValue.'">'.textlength_check($value).'</a>';
+						if($current_user->internal_mailer == 1){
+						//check added for email link in user detailview
+							$value = "<a class='emailField' data-rawvalue=\"$rawValue\" onclick=\"Vtiger_Helper_Js.getInternalMailer($recordId,".
+							"'$fieldName','$module');\">".textlength_check($value)."</a>";
+						} else {
+							$value = '<a class="emailField" data-rawvalue="'.$rawValue.'" href="mailto:'.$rawValue.'">'.textlength_check($value).'</a>';
+						}
 					}
 				} elseif($fieldDataType == 'boolean') {
 					if ($value === 'on') {

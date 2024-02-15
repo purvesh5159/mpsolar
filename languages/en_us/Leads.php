@@ -13,6 +13,7 @@ $languageStrings = array(
 	'SINGLE_Leads' => 'Lead',
 	'LBL_RECORDS_LIST' => 'Leads List',
 	'LBL_ADD_RECORD' => 'Add Lead',
+	'LBL_DUPLICATES_EXIST' => "The Information you are trying to save already exits",
 
 	// Blocks
 	'LBL_LEAD_INFORMATION' => 'Lead Details',

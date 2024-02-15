@@ -79,11 +79,9 @@ Vtiger_Edit_Js("Leads_Edit_Js",{
 			//var lane = document.getElementById("Leads_editView_fieldName_lane").value;
 			var lane = jQuery('input[name="lane"]').val();		
 			var recordId = jQuery('input[name="record"]').val();
-			console.log(lane);
-			console.log(recordId);
 			var params = {};
             if(!(lane in thisInstance.duplicateCheckCache)) {
-                Vtiger_Helper_Js.heckDuplicateNameGeneralised({
+                thisInstance.heckDuplicateNameGeneralised({
                     'lane' : lane, 
                     'recordId' : recordId,
                     'moduleName' : 'Leads'
@@ -98,7 +96,7 @@ Vtiger_Edit_Js("Leads_Edit_Js",{
 						var message = app.vtranslate('JS_DUPLICTAE_CREATION_CONFIRMATION');
 						var errorMessage = "The Information you are trying to save already exits";
 						params = {
-							text: errorMessage,
+							text: message,
 							'type': 'error',
 						};
 						Vtiger_Helper_Js.showMessage(params);
@@ -120,6 +118,42 @@ Vtiger_Edit_Js("Leads_Edit_Js",{
 			}
             e.preventDefault();
 		});
+	},
+
+	heckDuplicateNameGeneralised : function(details) {
+		var lane = details.lane;
+		var recordId = details.recordId;
+		var aDeferred = jQuery.Deferred();
+		var moduleName = details.moduleName;
+		if(typeof moduleName == "undefined"){
+			moduleName = app.getModuleName();
+		}
+		var params = {
+		'module' : moduleName,
+		'action' : "CheckDuplicate",
+		'lane' :  lane,
+		'city' :  jQuery('input[name="city"]').val(),
+		'state' : jQuery('input[name="state"]').val(),
+		'code' :  jQuery('input[name="code"]').val(),
+		'record' : recordId
+		}
+		console.log(params);
+		AppConnector.request(params).then(
+			function(data) {
+			console.log(data);
+				var response = data['result'];
+				var result = response['success'];
+				if(result == true) {
+					aDeferred.reject(response);
+				} else {
+					aDeferred.resolve(response);
+				}
+			},
+			function(error,err){
+				aDeferred.reject();
+			}
+		);
+		return aDeferred.promise();
 	},
 	
 	/**

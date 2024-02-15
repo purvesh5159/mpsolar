@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.39, created on 2024-02-05 03:53:58
+/* Smarty version 3.1.39, created on 2024-02-15 08:21:01
   from 'D:\wamp\www\mpsolar\layouts\v7\modules\Inventory\EditView.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_65c05bd6385f88_81270204',
+  'unifunc' => 'content_65cdc96d0097e5_36435956',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:modules/Vtiger/partials/Menubar.tpl' => 1,
   ),
 ),false)) {
-function content_65c05bd6385f88_81270204 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65cdc96d0097e5_36435956 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <div class="main-container clearfix">
         <div id="modnavigator" class="module-nav editViewModNavigator">
@@ -58,8 +58,8 @@ function content_65c05bd6385f88_81270204 (Smarty_Internal_Template $_smarty_tpl)
                             <?php $_smarty_tpl->_assignInScope('WIDTHTYPE', $_smarty_tpl->tpl_vars['USER_MODEL']->value->get('rowheight'));?>
                             <?php ob_start();
 echo $_smarty_tpl->tpl_vars['MODULE']->value;
-$_prefixVariable5 = ob_get_clean();
-$_smarty_tpl->_assignInScope('QUALIFIED_MODULE_NAME', $_prefixVariable5);?>
+$_prefixVariable1 = ob_get_clean();
+$_smarty_tpl->_assignInScope('QUALIFIED_MODULE_NAME', $_prefixVariable1);?>
                             <?php $_smarty_tpl->_assignInScope('IS_PARENT_EXISTS', strpos($_smarty_tpl->tpl_vars['MODULE']->value,":"));?>
                             <?php if ($_smarty_tpl->tpl_vars['IS_PARENT_EXISTS']->value) {?>
                                 <?php $_smarty_tpl->_assignInScope('SPLITTED_MODULE', explode(":",$_smarty_tpl->tpl_vars['MODULE']->value));?>

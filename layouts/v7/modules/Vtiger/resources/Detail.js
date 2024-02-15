@@ -1069,7 +1069,7 @@ Vtiger.Class("Vtiger_Detail_Js",{
 		if (fieldDetailList['field'] == "sostatus" && fieldDetailList['value'] != "Created") {
 			 jQuery('[data-block="Installer Details"]').show(); 
 		}
-		if (fieldDetailList['field'] == "sostatus" && fieldDetailList['value'] == "Dispatched") {
+		if (fieldDetailList['field'] == "sostatus" && fieldDetailList['value'] == "Completed") {
 			 jQuery('#CreateMaintance').show(); 
 		}
 		if (fieldDetailList['field'] == "quotestage" && fieldDetailList['value'] == "Accepted") {
@@ -1112,6 +1112,7 @@ Vtiger.Class("Vtiger_Detail_Js",{
 						}
 					);
 					return aDeferred.promise();
+					location.reload();
 				}
 			);
 		} 
@@ -1194,6 +1195,7 @@ Vtiger.Class("Vtiger_Detail_Js",{
 						}
 					);
 					return aDeferred.promise();
+					location.reload();
 				}
 			);
 		}
@@ -3388,12 +3390,25 @@ Vtiger.Class("Vtiger_Detail_Js",{
 	//Events common for DetailView and OverlayDetailView
 	registerBasicEvents: function(){
 		var self = this;
+		jQuery('#CreateMaintance').hide(); 
+		jQuery('[data-block="Installer Details"]').hide();
 		var module = app.getModuleName();
+		var status = jQuery('#SalesOrder_detailView_fieldValue_sostatus span span').text();
+		var status = jQuery.trim(status);
+		console.log(status);
+		if (status == 'Completed')
+		{
+         jQuery('#CreateMaintance').show();
+		}
+
+		if (status != 'Created')
+		{
+         jQuery('[data-block="Installer Details"]').show();
+		}
 		if(module == 'Leads'){
 		var a = jQuery('input[name=assingeid]').val();
 		var b = jQuery('input[name=currentedid]').val();
-		//console.log(a);
-		//console.log(b);
+		
 			if (a != b)
 			{
 				jQuery('.block').addClass('hide'); 
@@ -3431,8 +3446,6 @@ Vtiger.Class("Vtiger_Detail_Js",{
 		//register event for picklist dependency setup
 		this.registerEventForPicklistDependencySetup(this.getForm());
 		vtUtils.enableTooltips();
-		jQuery('#CreateMaintance').hide(); 
-		jQuery('[data-block="Installer Details"]').hide();
 		this.registerMaintance();
 	},
 });

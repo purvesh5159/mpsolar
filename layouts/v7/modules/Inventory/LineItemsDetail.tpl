@@ -352,6 +352,20 @@
                 </td>
             </tr>
         {/if}
+         {if $MODULE eq 'Quotes' or $MODULE eq 'SalesOrder' or $MODULE eq 'Maintenance' or $MODULE eq 'Invoice'}
+        <tr>
+        <td width="83%">
+            <span class="pull-right">
+            <b>{vtranslate('LBL_STC',$MODULE_NAME)}</b>
+            </span>
+        </td>
+        <td>
+            <span class="pull-right">
+            {if $FINAL_DETAILS["stcincentive"]}{$FINAL_DETAILS["stcincentive"]}{elseif $stc}{abs($stc)}{else}0{/if}
+            </span>
+        </td>
+        </tr>
+        {/if}
         <tr>
             <td width="83%">
                 <div align="right">
@@ -421,20 +435,6 @@
                 </div>
             </td>
         </tr>
-         {if $MODULE eq 'Quotes' or $MODULE eq 'SalesOrder' or $MODULE eq 'Maintenance' or $MODULE eq 'Invoice'}
-        <tr>
-        <td width="83%">
-            <span class="pull-right">
-            <b>{vtranslate('LBL_STC',$MODULE_NAME)}</b>
-            </span>
-        </td>
-        <td>
-            <span class="pull-right">
-            {if $FINAL_DETAILS["stcincentive"]}{$FINAL_DETAILS["stcincentive"]}{elseif $stc}{abs($stc)}{else}0{/if}
-            </span>
-        </td>
-        </tr>
-        {/if}
         <tr>
             <td width="83%">
                 <div align="right">

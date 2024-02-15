@@ -31,8 +31,8 @@ class Payment extends Vtiger_CRMEntity {
 	 * Other Related Tables
 	 */
 	var $related_tables = Array( 
-					'vtiger_paymentcf' => Array('paymentid')
-					);
+		'vtiger_paymentcf' => Array('paymentid')
+	);
 
 	/**
 	 * Mandatory for Saving, Include tablename and tablekey columnname here.
@@ -42,7 +42,7 @@ class Payment extends Vtiger_CRMEntity {
 		'vtiger_payments'=>'paymentid',
 		'vtiger_paymentcf'=>'paymentid',
 		'vtiger_inventoryproductrel'=>'id'
-	     );
+	);
 
 	/**
 	 * Mandatory for Listing (Related listview)
@@ -51,13 +51,13 @@ class Payment extends Vtiger_CRMEntity {
 		/* Format: Field Label => Array(tablename, columnname) */
 		// tablename should not have prefix 'vtiger_'
 		'Payment No' => Array('payments', 'paymentno'),
-/*'Payment No'=> Array('payment', 'paymentno'),*/
+		/*'Payment No'=> Array('payment', 'paymentno'),*/
 		'Assigned To' => Array('crmentity','smownerid')
 	);
 	var $list_fields_name = Array (
 		/* Format: Field Label => fieldname */
 		'Payment No' => 'paymentno',
-/*'Payment No'=> 'paymentno',*/
+		/*'Payment No'=> 'paymentno',*/
 		'Assigned To' => 'assigned_user_id'
 	);
 
@@ -69,13 +69,13 @@ class Payment extends Vtiger_CRMEntity {
 		/* Format: Field Label => Array(tablename, columnname) */
 		// tablename should not have prefix 'vtiger_'
 		'Payment No' => Array('payments', 'paymentno'),
-/*'Payment No'=> Array('payment', 'paymentno'),*/
+		/*'Payment No'=> Array('payment', 'paymentno'),*/
 		'Assigned To' => Array('vtiger_crmentity','assigned_user_id'),
 	);
 	var $search_fields_name = Array (
 		/* Format: Field Label => fieldname */
 		'Payment No' => 'paymentno',
-/*'Payment No'=> 'paymentno',*/
+		/*'Payment No'=> 'paymentno',*/
 		'Assigned To' => 'assigned_user_id',
 	);
 
@@ -102,7 +102,7 @@ class Payment extends Vtiger_CRMEntity {
 	*/
 	function vtlib_handler($moduleName, $eventType) {
 		global $adb;
- 		if($eventType == 'module.postinstall') {
+		if($eventType == 'module.postinstall') {
 			// TODO Handle actions after this module is installed.
 			Payment::checkWebServiceEntry();
 			Payment::createUserFieldTable($moduleName);
@@ -117,21 +117,21 @@ class Payment extends Vtiger_CRMEntity {
 			// TODO Handle actions after this module is updated.
 			Payment::checkWebServiceEntry();
 		}
- 	}
+	}
 
  	/**	Constructor which will set the column_fields in this object
 	 */
-        function __construct() {
-            $this->log =Logger::getLogger('Payment');
-            $this->log->debug("Entering Payment() method ...");
-            $this->db = PearDatabase::getInstance();
-            $this->column_fields = getColumnFields('payment');
-            $this->log->debug("Exiting Payment method ...");
-        }   
-	function Payment() {
-            self::__construct();
-	}
-	
+ 	function __construct() {
+ 		$this->log =Logger::getLogger('Payment');
+ 		$this->log->debug("Entering Payment() method ...");
+ 		$this->db = PearDatabase::getInstance();
+ 		$this->column_fields = getColumnFields('payment');
+ 		$this->log->debug("Exiting Payment method ...");
+ 	}   
+ 	function Payment() {
+ 		self::__construct();
+ 	}
+
 	/*
 	 * Function to handle module specific operations when saving a entity
 	 */
@@ -148,7 +148,80 @@ class Payment extends Vtiger_CRMEntity {
 			$q1 = 'UPDATE vtiger_crmentity SET label = \''.$label.'\' WHERE crmid = '.$this->id;
 			$adb->pquery($q1,array());
 		}
-	}
+
+		$current_user = Users_Record_Model::getCurrentUserModel();
+		$currencyId = $current_user->column_fields["currency_id"];
+		$currencyResult = $adb->pquery('SELECT currency_code, conversion_rate FROM '
+			. 'vtiger_currency_info WHERE id=?', [$currencyId]);
+		$dataaa = $adb->fetchByAssoc($currencyResult);
+		$conversionRate = $dataaa['conversion_rate'];
+		$invoiceId = $_REQUEST['invoice_id'];
+		$soId = $_REQUEST['salesorder_id'];
+
+		if(!empty($invoiceId)){
+			$result = $adb->pquery('SELECT total, conversion_rate, currency_id, '
+				. ' createdtime FROM vtiger_invoice INNER JOIN vtiger_crmentity '
+				. ' ON vtiger_crmentity.crmid = vtiger_invoice.invoiceid '
+				. ' WHERE invoiceid = ? AND vtiger_crmentity.deleted=0', [$invoiceId]);
+			$rowCount = $adb->num_rows($result);
+			$totalValueSum = 0;
+			for ($i = 0; $i < $rowCount; ++$i) {
+				$dataRow = $adb->fetchByAssoc($result, $i);
+				$total = $dataRow['total'];
+				$invoiceConversionRate = $dataRow['conversion_rate'];
+				$invoiceCurrencyId = $dataRow['currency_id'];
+				if ($invoiceCurrencyId === $currencyId) {
+					$totalValue = $total;
+				} else {
+					$totalValue = $total * $conversionRate / $invoiceConversionRate;
+				}
+				$totalInvoiceAmount = $totalValueSum + $totalValue;
+			}
+
+			$getTotalSql = 'SELECT SUM(paymentamount) as paid FROM `vtiger_payments` '
+			. ' INNER JOIN vtiger_crmentity '
+			. 'ON vtiger_crmentity.crmid = vtiger_payments.paymentid'
+			. ' where invoiceid = ? and deleted = ?';
+			$sql = $adb->pquery($getTotalSql, array($invoiceId, 0));
+			$totalPaid = $adb->query_result($sql, 0, 'paid');
+			$invoiceBalance = $totalInvoiceAmount - $totalPaid;
+			$updateQuery = "update `vtiger_invoice` set received=? ,balance=? where invoiceid= ?";
+			$result = $adb->pquery($updateQuery, array($totalPaid, $invoiceBalance, $invoiceId));
+		}
+
+		if (!empty($soId)) {
+				$result = $adb->pquery('SELECT total, conversion_rate, currency_id'
+					. ' FROM vtiger_salesorder INNER JOIN vtiger_crmentity '
+					. ' ON vtiger_crmentity.crmid = vtiger_salesorder.salesorderid '
+					. ' WHERE salesorderid = ? AND vtiger_crmentity.deleted=0', [$soId]);
+				$rowCount = $adb->num_rows($result);
+				$totalValueSum = 0;
+				for ($i = 0; $i < $rowCount; ++$i) {
+					$dataRow = $adb->fetchByAssoc($result, $i);
+					$total = $dataRow['total'];
+					$invoiceConversionRate = $dataRow['conversion_rate'];
+					$invoiceCurrencyId = $dataRow['currency_id'];
+					if ($invoiceCurrencyId === $currencyId) {
+						$totalValue = $total;
+					} else {
+						$totalValue = $total * $conversionRate / $invoiceConversionRate;
+					}
+					$totalSOAmount = $totalValueSum + $totalValue;
+				}
+
+				$getTotalSql = 'SELECT SUM(paymentamount) as paid FROM `vtiger_payments` '
+				. ' INNER JOIN vtiger_crmentity ON '
+				. 'vtiger_crmentity.crmid = vtiger_payments.paymentid'
+				. ' where salesorderid = ? and deleted = ?';
+				$sql = $adb->pquery($getTotalSql, array($soId, 0));
+				$totalPaid = $adb->query_result($sql, 0, 'paid');
+				$soBalance = $totalSOAmount - $totalPaid;
+				$updateQuery = "update `vtiger_salesorder` set received=? ,balance=? where salesorderid=?";
+				$result = $adb->pquery($updateQuery, array($totalPaid, $soBalance, $soId));
+			}
+
+		}
+
 	/**
 	 * Function to check if entry exsist in webservices if not then enter the entry
 	 */
@@ -166,7 +239,7 @@ class Payment extends Vtiger_CRMEntity {
 			{
 				$tabid = $adb->getUniqueID("vtiger_ws_entity");
 				$ws_entitySql = "INSERT INTO vtiger_ws_entity ( id, name, handler_path, handler_class, ismodule ) VALUES".
-						  " (?, 'Payment','include/Webservices/VtigerModuleOperation.php', 'VtigerModuleOperation' , 1)";
+				" (?, 'Payment','include/Webservices/VtigerModuleOperation.php', 'VtigerModuleOperation' , 1)";
 				$res = $adb->pquery($ws_entitySql, array($tabid));
 				$log->debug("Entered Record in vtiger WS entity ");	
 			}
@@ -181,12 +254,12 @@ class Payment extends Vtiger_CRMEntity {
 		global $adb;
 		
 		$sql	=	"CREATE TABLE IF NOT EXISTS `vtiger_".$module."_user_field` (
-  						`recordid` int(19) NOT NULL,
-					  	`userid` int(19) NOT NULL,
-  						`starred` varchar(100) DEFAULT NULL,
-  						 KEY `record_user_idx` (`recordid`,`userid`)
-						) 			
-						ENGINE=InnoDB DEFAULT CHARSET=utf8";
+		`recordid` int(19) NOT NULL,
+		`userid` int(19) NOT NULL,
+		`starred` varchar(100) DEFAULT NULL,
+		KEY `record_user_idx` (`recordid`,`userid`)
+		) 			
+		ENGINE=InnoDB DEFAULT CHARSET=utf8";
 		$result	=	$adb->pquery($sql,array());					
 	}
 	

@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.39, created on 2024-02-05 03:54:01
+/* Smarty version 3.1.39, created on 2024-02-15 07:34:44
   from 'D:\wamp\www\mpsolar\layouts\v7\modules\Vtiger\Footer.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_65c05bd90977a2_15488313',
+  'unifunc' => 'content_65cdbe94f34793_56303165',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65c05bd90977a2_15488313 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65cdbe94f34793_56303165 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <footer class="app-footer">
 	<p>

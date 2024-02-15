@@ -248,6 +248,7 @@ jQuery.Class("Vtiger_Helper_Js",{
 		}
 		AppConnector.request(params).then(
 			function(data) {
+				console.log(data);
 				var response = data['result'];
 				var result = response['success'];
 				if(result == true) {

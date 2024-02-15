@@ -2980,3 +2980,12 @@ if ($blockInstance) {
 } else {
     echo " block does not exits --- LBL_FILE_INFORMATION -- <br>";
 }
+
+$emm = new VTEntityMethodManager($adb);
+$result = $adb->pquery("SELECT function_name FROM com_vtiger_workflowtasks_entitymethod WHERE module_name=? AND method_name=?", array('Payment', 'UpdatePaymentsHandler'));
+if ($adb->num_rows($result) == 0) {
+    $emm->addEntityMethod("Payment", "UpdatePaymentsHandler", "modules/Payment/UpdatePaymentsHandler.php", "UpdatePaymentsHandler");
+} else {
+    print_r("already exits --- workflow function -- UpdatePaymentsHandler in Payment Module <br> ");
+}
+$emm = null;

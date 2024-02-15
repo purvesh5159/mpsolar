@@ -163,7 +163,7 @@ Inventory_Edit_Js("SalesOrder_Edit_Js",{},{
 	hideandshowinstallerblock: function() {
     	var status = jQuery('[name="sostatus').val();
     	console.log(status);
-    	if(status == 'Approved') {
+    	if(status == 'Approved' || status == 'Dispatched' || status == 'Booked' || status == 'Completed') {
     			jQuery('[data-block="Installer Details"]').removeClass('hide');	
     		}
     		else
@@ -175,7 +175,7 @@ Inventory_Edit_Js("SalesOrder_Edit_Js",{},{
     		var currentElement = jQuery(e.currentTarget);
     		var selectedStatus = currentElement.find('option:selected').text();
     		console.log(selectedStatus);
-    		if(selectedStatus == 'Approved') {
+    		if(selectedStatus == 'Approved' || selectedStatus == 'Dispatched' || selectedStatus == 'Booked' || selectedStatus == 'Completed') {
     			jQuery('[data-block="Installer Details"]').removeClass('hide');	
     		}
     		else

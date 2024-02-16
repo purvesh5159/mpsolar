@@ -2890,6 +2890,37 @@ if ($blockInstance) {
     echo "Block Does not exits -- LBL_CONTACT_INFORMATION in SalesOrder -- <br>";
 }
 
+$moduleInstance = null;
+$blockInstance = null;
+$fieldInstance = null;
+$moduleInstance = Vtiger_Module::getInstance('SalesOrder');
+$blockInstance = Vtiger_Block::getInstance('Gross Profit Details', $moduleInstance);
+if ($blockInstance) {
+    $fieldInstance = Vtiger_Field::getInstance('totalsystemcost', $moduleInstance);
+    if (!$fieldInstance) {
+        $field = new Vtiger_Field();
+        $field->name = 'totalsystemcost';
+        $field->column = 'totalsystemcost';
+        $field->uitype = 72;
+        $field->table = $moduleInstance->basetable;
+        $field->label = 'Total System Cost';
+        $field->summaryfield = 1;
+        $field->readonly = 1;
+        $field->presence = 2;
+        $field->typeofdata = 'V~O';
+        $field->columntype = 'VARCHAR(32)';
+        $field->quickcreate = 3;
+        $field->displaytype = 1;
+        $field->masseditable = 1;
+        $field->defaultvalue = 0;
+        $blockInstance->addField($field);
+    } else {
+        echo "field is present -- inventoryamount SalesOrder --- <br>";
+    }
+} else {
+    echo "Block Does not exits -- LBL_CONTACT_INFORMATION in SalesOrder -- <br>";
+}
+
 
 $moduleInstance = null;
 $blockInstance = null;
@@ -2989,3 +3020,34 @@ if ($adb->num_rows($result) == 0) {
     print_r("already exits --- workflow function -- UpdatePaymentsHandler in Payment Module <br> ");
 }
 $emm = null;
+
+$moduleInstance = null;
+$blockInstance = null;
+$fieldInstance = null;
+$moduleInstance = Vtiger_Module::getInstance('Documents');
+$blockInstance = Vtiger_Block::getInstance('LBL_FILE_INFORMATION', $moduleInstance);
+if ($blockInstance) {
+    $fieldInstance = Vtiger_Field::getInstance('sonumber', $moduleInstance);
+    if (!$fieldInstance) {
+        $field = new Vtiger_Field();
+        $field->name = 'sonumber';
+        $field->column = 'sonumber';
+        $field->uitype = 2;
+        $field->table = $moduleInstance->basetable;
+        $field->label = 'Project No';
+        $field->summaryfield = 1;
+        $field->readonly = 1;
+        $field->presence = 2;
+        $field->typeofdata = 'V~O';
+        $field->columntype = 'VARCHAR(32)';
+        $field->quickcreate = 2;
+        $field->displaytype = 1;
+        $field->masseditable = 1;
+        $field->defaultvalue = 0;
+        $blockInstance->addField($field);
+    } else {
+        echo "field is present -- sonumber Documents --- <br>";
+    }
+} else {
+    echo "Block Does not exits -- LBL_FILE_INFORMATION in Documents -- <br>";
+}

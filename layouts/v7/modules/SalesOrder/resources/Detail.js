@@ -23,9 +23,25 @@ Inventory_Detail_Js("SalesOrder_Detail_Js",{},{
       }   
   },
 
+  hideandshowinstallerfields: function() {
+        var status = jQuery('#SalesOrder_detailView_fieldValue_installerinvoicestatus span span').text();
+       status = jQuery.trim(status);
+       console.log(status);
+        if(status == 'Paid') {
+               jQuery("#SalesOrder_detailView_fieldLabel_installerinvoiceno").removeClass('hide');
+                jQuery("#SalesOrder_detailView_fieldLabel_installerinvoiceamount").removeClass('hide');
+            }
+            else
+            {
+                jQuery("#SalesOrder_detailView_fieldLabel_installerinvoiceno").addClass('hide');
+                jQuery("#SalesOrder_detailView_fieldLabel_installerinvoiceamount").addClass('hide');   
+            }
+    },
+
   registerBasicEvents: function(container){
     this._super(container);
     this.hideandshowinstallerblock();
+    this.hideandshowinstallerfields();
 },
 
 });

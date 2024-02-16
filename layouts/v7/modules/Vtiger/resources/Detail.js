@@ -1072,6 +1072,12 @@ Vtiger.Class("Vtiger_Detail_Js",{
 		if (fieldDetailList['field'] == "sostatus" && fieldDetailList['value'] == "Completed") {
 			 jQuery('#CreateMaintance').show(); 
 		}
+		if (fieldDetailList['field'] == "installerinvoicestatus" && fieldDetailList['value'] == "Paid") {
+			window.location.reload();
+		}
+		else{
+			window.location.reload();
+		}
 		if (fieldDetailList['field'] == "quotestage" && fieldDetailList['value'] == "Accepted") {
 			let message = "Do you want to generate Project and Invoice";
 			console.log(fieldDetailList);

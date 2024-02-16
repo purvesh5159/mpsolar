@@ -151,6 +151,24 @@ class SalesOrder extends CRMEntity {
 	$this->db->pquery($update_query, $update_params);
 	}
 
+	$installerinvoice = $_REQUEST['installerinvoiceamount'];
+	$supplierpayment = $_REQUEST['inventoryamount'];
+	$totalsystemcost = $installerinvoice + $supplierpayment;
+	$total = $this->column_fields['hdnGrandTotal'];
+	$grossprofit = $total - $totalsystemcost;
+
+
+
+	if(!empty($installerinvoice) && !empty($supplierpayment))
+	{
+		$this->db->pquery("update vtiger_salesorder set netprofit = '$grossprofit' where salesorderid=".$this->id);
+	}
+
+	if(!empty($total) && !empty($totalsystemcost))
+	{
+		$this->db->pquery("update vtiger_salesorder set totalsystemcost = '$totalsystemcost' where salesorderid=".$this->id);
+	}
+
 }
 
 function createRecurringInvoiceFromSO(){

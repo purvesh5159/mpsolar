@@ -51,20 +51,19 @@ class Inventory_RelationListView_Model extends Vtiger_RelationListView_Model {
 
 			// print_r($parentRecordModel);
 			// exit();
-			$cid=$parentRecordModel->get('contact_id');
-			$iid=$parentRecordModel->getId();
-			$sid=$parentRecordModel->get('salesorder_id');
+			$cid = $parentRecordModel->get('contact_id');
+			$iid = $parentRecordModel->getId();
+			$sid = $parentRecordModel->get('salesorder_id');
 			//$date=date("d-m-Y");
-			$bs=$parentRecordModel->get('bill_street');
-			$bc=$parentRecordModel->get('bill_city');	
-			$bss=$parentRecordModel->get('bill_state');
-			$bcc=$parentRecordModel->get('bill_code');
+			$bs = $parentRecordModel->get('bill_street');
+			$bc = $parentRecordModel->get('bill_city');	
+			$bss = $parentRecordModel->get('bill_state');
+			$bcc = $parentRecordModel->get('bill_code');
 
 			 $createViewUrl = $relatedModel->getCreateRecordUrl().'&sourceModule='.$parentModule->get('name').
 			 '&sourceRecord='.$parentRecordModel->getId().'&relationOperation=true&contact_id='.$cid.'&invoice_id='.$iid.'&bill_street='.$bs.'&bill_city='.$bc.'&bill_state='.$bss.'&bill_code='.$bcc.'&salesorder_id='.$sid;
 		}
-		else
-		{
+		else{
 			return $createViewUrl.'&relatedcontact='.$parentRecordModel->get('contact_id').'&relatedorganization='. $accountId.'&amount='.$amount;
 		}
 		return $createViewUrl;

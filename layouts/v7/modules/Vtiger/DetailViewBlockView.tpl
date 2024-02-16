@@ -18,7 +18,7 @@
 	{assign var=BLOCK value=$BLOCK_LIST[$BLOCK_LABEL_KEY]}
 	{if $BLOCK eq null or $FIELD_MODEL_LIST|@count lte 0}{continue}{/if}
 	{***purvesh***}
-	{if $USER_MODEL->get('roleid') neq 'H5' && $IS_ADMIN neq '1'}
+	{if $USER_MODEL->get('roleid') neq 'H4' && $IS_ADMIN neq '1'}
          {if $BLOCK_LABEL_KEY eq 'Gross Profit Details'}{continue}{/if}
     {/if}
 		
@@ -128,6 +128,7 @@
 												{/if}
 											</span>
 											{if $FIELD_MODEL->get('name') neq 'notifyinstaller' and $FIELD_MODEL->get('name') neq 'inventoryamount' and $FIELD_MODEL->get('name') neq 'installerinvoiceamount' and $FIELD_MODEL->get('name') neq 'netprofit' and
+											$FIELD_MODEL->get('name') neq 'totalsystemcost' and
 											$FIELD_MODEL->get('name') neq 'noofstc'}
 											<span class="action pull-right"><a href="#" onclick="return false;" class="editAction fa fa-pencil"></a></span>
 											{/if}

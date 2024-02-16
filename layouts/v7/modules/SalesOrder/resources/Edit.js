@@ -184,12 +184,53 @@ Inventory_Edit_Js("SalesOrder_Edit_Js",{},{
     		}
     	});
     },
+
+    hideandshowinstallerfields: function() {
+    	var status = jQuery('[name="installerinvoicestatus').val();
+    	console.log(status);
+    	if(status == 'Paid') {
+    		    jQuery("#installerinvoiceno").removeClass('hide');
+    			jQuery("#installerinvoiceamount").removeClass('hide');
+    			jQuery('[name="installerinvoiceno"]').removeClass('hide');
+    			jQuery("#basic-addon1").removeClass('hide');
+    			jQuery('[name ="installerinvoiceamount"]').removeClass('hide');
+    		}
+    		else
+    		{
+    			jQuery("#installerinvoiceno").addClass('hide');
+    			jQuery("#installerinvoiceamount").addClass('hide');
+    			jQuery('[name="installerinvoiceno"]').addClass('hide');
+    			jQuery("#basic-addon1").addClass('hide');
+    			jQuery('[name ="installerinvoiceamount"]').addClass('hide');
+    		}
+
+    	jQuery('[name="installerinvoicestatus').on('change', function(e){
+    		var currentElement = jQuery(e.currentTarget);
+    		var selectedStatus = currentElement.find('option:selected').text();
+    		if(selectedStatus == 'Paid') {
+    			jQuery("#installerinvoiceno").removeClass('hide');
+    			jQuery("#installerinvoiceamount").removeClass('hide');
+    		    jQuery('[name="installerinvoiceno"]').removeClass('hide');	
+    		    jQuery("#basic-addon1").removeClass('hide');
+    			jQuery('[name ="installerinvoiceamount"]').removeClass('hide');
+    		}
+    		else
+    		{
+    			jQuery("#installerinvoiceno").addClass('hide');
+    			jQuery("#installerinvoiceamount").addClass('hide');
+    			jQuery('[name="installerinvoiceno"]').addClass('hide');	
+    			jQuery("#basic-addon1").addClass('hide');
+    			jQuery('[name ="installerinvoiceamount"]').addClass('hide');
+    		}
+    	});
+    },
         registerBasicEvents: function(container){
             this._super(container);
             this.registerEventForEnablingRecurrence();
             this.registerForTogglingBillingandShippingAddress();
             this.registerEventForCopyAddress();
             this.hideandshowinstallerblock();
+            this.hideandshowinstallerfields();
         },
     
 });

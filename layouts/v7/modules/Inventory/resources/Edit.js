@@ -2972,6 +2972,8 @@ Vtiger_Edit_Js("Inventory_Edit_Js", {
         jQuery('#EditView').find('[name="notifyinstaller"]').css('background-color' , '#DEDEDE');
         jQuery('#EditView').find('[name="netprofit"]').parent().css('pointer-events', 'none');
         jQuery('#EditView').find('[name="netprofit"]').css('background-color' , '#DEDEDE');
+        jQuery('#EditView').find('[name="totalsystemcost"]').parent().css('pointer-events', 'none');
+        jQuery('#EditView').find('[name="totalsystemcost"]').css('background-color' , '#DEDEDE');
         this._super(container);
         this.registerAddProductService();
         this.registerProductAndServiceSelector();

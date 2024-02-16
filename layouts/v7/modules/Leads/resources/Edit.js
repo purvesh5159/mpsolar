@@ -76,8 +76,8 @@ Vtiger_Edit_Js("Leads_Edit_Js",{
 			form = this.getForm();
 		}
 			app.event.on(Vtiger_Edit_Js.recordPresaveEvent, function(e, data) {
-			//var lane = document.getElementById("Leads_editView_fieldName_lane").value;
-			var lane = jQuery('input[name="lane"]').val();		
+			var lane = document.getElementById("Leads_editView_fieldName_lane").value;
+			//var lane = jQuery('input[name="lane"]').val();		
 			var recordId = jQuery('input[name="record"]').val();
 			var params = {};
             if(!(lane in thisInstance.duplicateCheckCache)) {
@@ -92,14 +92,15 @@ Vtiger_Edit_Js("Leads_Edit_Js",{
                     },
                     function(data, err){
                         // thisInstance.duplicateCheckCache[accountName] = data['success'];
-                        thisInstance.duplicateCheckCache['message'] = data['message'];
-						var message = app.vtranslate('JS_DUPLICTAE_CREATION_CONFIRMATION');
-						var errorMessage = "The Information you are trying to save already exits";
-						params = {
-							text: message,
-							'type': 'error',
-						};
-						Vtiger_Helper_Js.showMessage(params);
+                     //   thisInstance.duplicateCheckCache['message'] = data['message'];
+						// var message = app.vtranslate('JS_DUPLICTAE_CREATION_CONFIRMATION');
+						 var errorMessage = "The Information you are trying to save already exits";
+						// params = {
+						// 	text: errorMessage,
+						// 	'type': 'undefined',
+						// };
+						// Vtiger_Helper_Js.showMessage(params);
+						app.helper.showErrorNotification({message:errorMessage});
                     }
 				);
             }
@@ -132,12 +133,11 @@ Vtiger_Edit_Js("Leads_Edit_Js",{
 		'module' : moduleName,
 		'action' : "CheckDuplicate",
 		'lane' :  lane,
-		'city' :  jQuery('input[name="city"]').val(),
-		'state' : jQuery('input[name="state"]').val(),
-		'code' :  jQuery('input[name="code"]').val(),
+		'city' :  document.getElementById("Leads_editView_fieldName_city").value,
+		'state' : document.getElementById("Leads_editView_fieldName_state").value,
+		'code' :  document.getElementById("Leads_editView_fieldName_code").value,
 		'record' : recordId
 		}
-		console.log(params);
 		AppConnector.request(params).then(
 			function(data) {
 			console.log(data);

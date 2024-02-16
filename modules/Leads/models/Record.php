@@ -310,7 +310,7 @@ class Leads_Record_Model extends Vtiger_Record_Model {
 					ON vtiger_crmentity.crmid=vtiger_leaddetails.leadid 
 					INNER JOIN vtiger_leadaddress
 					ON vtiger_leadaddress.leadaddressid=vtiger_leaddetails.leadid
-					where lane = ? and city = ? and state = ? and vtiger_leadaddress.code = ? and vtiger_crmentity.deleted = 0";
+					where vtiger_leadaddress.lane = ? and vtiger_leadaddress.city = ? and vtiger_leadaddress.state = ? and vtiger_leadaddress.code = ? and vtiger_crmentity.deleted = 0";
                 $params = array($lane,$city,$state,$code); 
 
 		$record = $this->getId();

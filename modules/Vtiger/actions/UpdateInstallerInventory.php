@@ -59,6 +59,13 @@ class Vtiger_UpdateInstallerInventory_Action extends Vtiger_IndexAjax_View
 					$update_query = "update vtiger_installerinventory set qty= ? where installerinventoryid = ? ";
 					$update_params = array($qty, $invid);
 					$adb->pquery($update_query, $update_params);
+
+					$vs = $adb->pquery("select qtyinstock from vtiger_products where productid=".$productid);
+					$avaqty = $adb->query_result($vs, 0, 'qtyinstock');
+					$balqty = $avaqty + $qty;
+					$update_query = "update vtiger_products set qtyinstock = ? where productid = ?";
+				    $update_params = array($balqty,$productid);
+				    $adb->pquery($update_query, $update_params);
 				}
 			}
 			

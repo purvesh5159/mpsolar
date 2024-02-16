@@ -71,6 +71,12 @@ class Vtiger_GenerateInstallerInventory_Action extends Vtiger_IndexAjax_View
 					$focus->column_fields['model'] = $row['model'];
 					$focus->column_fields['installerid'] = $installername;
 					$focus->column_fields['projectno'] = $projectid;
+					$vs = $adb->pquery("select qtyinstock from vtiger_products where productid=".$productid);
+					$avaqty = $adb->query_result($vs, 0, 'qtyinstock');
+					$balqty = $avaqty - $quantity;
+					$update_query = "update vtiger_products set qtyinstock = ? where productid = ?";
+				    $update_params = array($balqty,$productid);
+				    $adb->pquery($update_query, $update_params);
 				}
 			}
 

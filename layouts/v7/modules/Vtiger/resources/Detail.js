@@ -1118,7 +1118,7 @@ Vtiger.Class("Vtiger_Detail_Js",{
 						}
 					);
 					return aDeferred.promise();
-					window.location.reload();
+					//window.location.reload();
 				}
 			);
 		} 
@@ -1201,7 +1201,7 @@ Vtiger.Class("Vtiger_Detail_Js",{
 						}
 					);
 					return aDeferred.promise();
-					window.location.reload();
+					//window.location.reload();
 				}
 			);
 		}
@@ -1243,7 +1243,7 @@ Vtiger.Class("Vtiger_Detail_Js",{
 						}
 					);
 					return aDeferred.promise();
-					window.location.reload();
+					//window.location.reload();
 				}
 			);
 		}
@@ -1285,7 +1285,7 @@ Vtiger.Class("Vtiger_Detail_Js",{
 						}
 					);
 					return aDeferred.promise();
-					window.location.reload();
+					//window.location.reload();
 				}
 			);
 		}

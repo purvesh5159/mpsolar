@@ -28,6 +28,6 @@
 		{if $FIELD_INFO["mandatory"] eq true} data-rule-required="true" {/if}
 		{if !empty($FIELD_INFO['validator']) && (php7_count($FIELD_INFO['validator']))}
 			data-specific-rules='{ZEND_JSON::encode($FIELD_INFO["validator"])}'
-		{/if}
+		{/if} {if $FIELD_NAME eq 'sonumber'} readonly {/if}
 		   />
 {/strip}

@@ -21,6 +21,9 @@ Vtiger.Class('Documents_Index_Js', {
 		var instance = Documents_Index_Js.getInstance();
 		instance.detectReferenceCreateMode(referenceFieldName);
 		instance.uploadTo(service,parentId,relatedModule);
+		jQuery('[name="sonumber"]').attr('readonly', true);
+        jQuery('[name="sonumber"]').css('background-color' , '#DEDEDE');
+		console.log("SDasdas");
 	},
 
 	createDocument : function(type,parentId,relatedModule,referenceFieldName) {

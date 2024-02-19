@@ -32,6 +32,44 @@ class Documents_QuickCreateAjax_View extends Vtiger_IndexAjax_View {
 			$fields[$documentType] = $this->getFields($documentType);
 		}
 
+		$sourceRecord = $request->get('sourceRecord');
+		$sourceModule = $request->get('sourceModule');
+		if($sourceModule == 'Invoice'){
+			if($sourceRecord){
+				$invoiceRecordModel = Vtiger_Record_Model::getInstanceById($sourceRecord, 'Invoice');
+				$salesorder_id = $invoiceRecordModel->get('salesorder_id');
+
+				if($salesorder_id){
+					$soRecordModel = Vtiger_Record_Model::getInstanceById($salesorder_id, 'SalesOrder');
+					$soNumber = $soRecordModel->get('subject');
+					$recordModel->set('sonumber', $soNumber);
+				}
+			}
+		}else if($sourceModule == 'Maintenance'){
+			if($sourceRecord){
+				$maintenanceRecordModel = Vtiger_Record_Model::getInstanceById($sourceRecord, 'Maintenance');
+				$salesorder_id = $maintenanceRecordModel->get('subject');
+
+				if($salesorder_id){
+					$soRecordModel = Vtiger_Record_Model::getInstanceById($salesorder_id, 'SalesOrder');
+					$soNumber = $soRecordModel->get('subject');
+					$recordModel->set('sonumber', $soNumber);
+				}
+			}
+		}else if($sourceModule == 'Quotes'){
+			if($sourceRecord){
+				$quotesRecordModel = Vtiger_Record_Model::getInstanceById($sourceRecord, 'Quotes');
+				$quote_no = $quotesRecordModel->get('quote_no');
+				$recordModel->set('sonumber', $quote_no);
+			}
+		}else if($sourceModule == 'SalesOrder'){
+			if($sourceRecord){
+				$salesOrderRecordModel = Vtiger_Record_Model::getInstanceById($sourceRecord, 'SalesOrder');
+				$soNumber = $salesOrderRecordModel->get('subject');
+				$recordModel->set('sonumber', $soNumber);
+			}
+		}
+
 		$recordStructureInstance = Vtiger_RecordStructure_Model::getInstanceFromRecordModel($recordModel, Vtiger_RecordStructure_Model::RECORD_STRUCTURE_MODE_QUICKCREATE);
 		$recordStructure = $recordStructureInstance->getStructure();
 		foreach($fields as $docType => $specificFields){

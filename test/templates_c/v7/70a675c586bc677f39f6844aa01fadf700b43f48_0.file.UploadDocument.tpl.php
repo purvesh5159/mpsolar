@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2024-02-15 11:01:07
+/* Smarty version 3.1.39, created on 2024-02-16 14:16:35
   from 'D:\wamp\www\mpsolar\layouts\v7\modules\Documents\UploadDocument.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_65cdeef3831b65_52613455',
+  'unifunc' => 'content_65cf6e43107801_20564718',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '70a675c586bc677f39f6844aa01fadf700b43f48' => 
     array (
       0 => 'D:\\wamp\\www\\mpsolar\\layouts\\v7\\modules\\Documents\\UploadDocument.tpl',
-      1 => 1706510637,
+      1 => 1708092791,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65cdeef3831b65_52613455 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65cf6e43107801_20564718 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <div class="modal-dialog modelContainer"><?php ob_start();
 echo vtranslate('LBL_UPLOAD_TO_VTIGER',$_smarty_tpl->tpl_vars['MODULE']->value);

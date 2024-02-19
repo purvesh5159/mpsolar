@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2024-02-15 08:21:01
+/* Smarty version 3.1.39, created on 2024-02-16 14:19:14
   from 'D:\wamp\www\mpsolar\layouts\v7\modules\Vtiger\uitypes\String.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_65cdc96d931798_61313423',
+  'unifunc' => 'content_65cf6ee2299701_36187979',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd1698a8e7905dd30fef3734c622d69352fb67727' => 
     array (
       0 => 'D:\\wamp\\www\\mpsolar\\layouts\\v7\\modules\\Vtiger\\uitypes\\String.tpl',
-      1 => 1706510637,
+      1 => 1708093124,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65cdc96d931798_61313423 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65cf6ee2299701_36187979 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_assignInScope('FIELD_INFO', $_smarty_tpl->tpl_vars['FIELD_MODEL']->value->getFieldInfo());
 $_smarty_tpl->_assignInScope('SPECIAL_VALIDATOR', $_smarty_tpl->tpl_vars['FIELD_MODEL']->value->getValidator());
 if ((!$_smarty_tpl->tpl_vars['FIELD_NAME']->value)) {
@@ -37,6 +37,6 @@ if (!empty($_smarty_tpl->tpl_vars['SPECIAL_VALIDATOR']->value)) {?>data-validato
 "<?php }
 if ($_smarty_tpl->tpl_vars['FIELD_INFO']->value["mandatory"] == true) {?> data-rule-required="true" <?php }
 if (!empty($_smarty_tpl->tpl_vars['FIELD_INFO']->value['validator']) && (php7_count($_smarty_tpl->tpl_vars['FIELD_INFO']->value['validator']))) {?>data-specific-rules='<?php echo ZEND_JSON::encode($_smarty_tpl->tpl_vars['FIELD_INFO']->value["validator"]);?>
-'<?php }?>/>
+'<?php }?> <?php if ($_smarty_tpl->tpl_vars['FIELD_NAME']->value == 'sonumber') {?>readonly<?php }?>/>}
 <?php }
 }

@@ -1779,8 +1779,8 @@ Vtiger_Edit_Js("Inventory_Edit_Js", {
 				let sizeofsystem = $(".stcTotalVal").val() * parseFloat(element.val());
 				let dpvalue = $(".dpvalue").val();
 				console.log(dpvalue);
-				let noofstc = (sizeofsystem * dpvalue * 1.382  - 1)/1000 ;
-				let noofstc = Math.round(noofstc);
+				let noofstcvalue = (sizeofsystem * dpvalue * 1.382  - 1)/1000 ;
+				let noofstc = Math.round(noofstcvalue);
 				let STCValue = noofstc * 39;
 				
 				$("input[name='noofstc']").val(noofstc);

@@ -9,7 +9,6 @@
 
 Inventory_Edit_Js("SalesOrder_Edit_Js",{},{
     
-    
     /**
 	 * Function to get popup params
 	 */

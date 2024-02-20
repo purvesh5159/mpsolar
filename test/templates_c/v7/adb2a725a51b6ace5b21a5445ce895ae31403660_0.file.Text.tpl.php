@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.39, created on 2024-02-15 11:01:07
+/* Smarty version 3.1.39, created on 2024-02-20 05:52:55
   from 'D:\wamp\www\mpsolar\layouts\v7\modules\Vtiger\uitypes\Text.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_65cdeef3a12ca6_75349097',
+  'unifunc' => 'content_65d43e37dfad43_91052559',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65cdeef3a12ca6_75349097 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65d43e37dfad43_91052559 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'D:\\wamp\\www\\mpsolar\\libraries\\Smarty\\libs\\plugins\\modifier.regex_replace.php','function'=>'smarty_modifier_regex_replace',),));
 $_smarty_tpl->_assignInScope('FIELD_INFO', $_smarty_tpl->tpl_vars['FIELD_MODEL']->value->getFieldInfo());
 $_smarty_tpl->_assignInScope('SPECIAL_VALIDATOR', $_smarty_tpl->tpl_vars['FIELD_MODEL']->value->getValidator());

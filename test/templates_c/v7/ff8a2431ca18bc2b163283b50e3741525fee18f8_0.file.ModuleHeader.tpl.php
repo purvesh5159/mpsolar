@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.39, created on 2024-02-15 11:01:45
+/* Smarty version 3.1.39, created on 2024-02-20 06:07:13
   from 'D:\wamp\www\mpsolar\layouts\v7\modules\Settings\Vtiger\ModuleHeader.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_65cdef196eea86_00769880',
+  'unifunc' => 'content_65d44191d554e3_97399199',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65cdef196eea86_00769880 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65d44191d554e3_97399199 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <div class="col-sm-12 col-xs-12 module-action-bar clearfix coloredBorderTop"><div class="module-action-content clearfix"><div class="col-lg-7 col-md-7"><?php if ($_smarty_tpl->tpl_vars['USER_MODEL']->value->isAdminUser()) {?><a title="<?php echo vtranslate('Home',$_smarty_tpl->tpl_vars['MODULE']->value);?>
 " href='index.php?module=Vtiger&parent=Settings&view=Index'><h4 class="module-title pull-left text-uppercase"><?php echo vtranslate('LBL_HOME',$_smarty_tpl->tpl_vars['MODULE']->value);?>

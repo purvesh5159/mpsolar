@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.39, created on 2024-02-15 07:38:43
+/* Smarty version 3.1.39, created on 2024-02-20 05:00:46
   from 'D:\wamp\www\mpsolar\layouts\v7\modules\Vtiger\PicklistColorMap.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_65cdbf836b4cb7_68439819',
+  'unifunc' => 'content_65d431fea3b193_24489098',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65cdbf836b4cb7_68439819 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65d431fea3b193_24489098 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <style type="text/css">
     <?php

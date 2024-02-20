@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.39, created on 2024-02-16 13:38:23
+/* Smarty version 3.1.39, created on 2024-02-20 06:18:18
   from 'D:\wamp\www\mpsolar\layouts\v7\modules\Settings\Profiles\ListViewRecordActions.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_65cf654ff21c91_04772220',
+  'unifunc' => 'content_65d4442a7a7926_88136290',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65cf654ff21c91_04772220 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65d4442a7a7926_88136290 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!--LIST VIEW RECORD ACTIONS--><div class="table-actions"><?php $_smarty_tpl->_assignInScope('RECORD_LINKS', $_smarty_tpl->tpl_vars['LISTVIEW_ENTRY']->value->getRecordLinks());
 $_smarty_tpl->_assignInScope('RECORD_LINK_URL', array());
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['LISTVIEW_ENTRY']->value->getRecordLinks(), 'RECORD_LINK', false, 'key');

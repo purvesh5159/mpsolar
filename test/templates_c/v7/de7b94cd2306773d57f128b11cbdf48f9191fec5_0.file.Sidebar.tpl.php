@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.39, created on 2024-02-15 11:01:45
+/* Smarty version 3.1.39, created on 2024-02-20 06:07:14
   from 'D:\wamp\www\mpsolar\layouts\v7\modules\Settings\Vtiger\Sidebar.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_65cdef198115f4_82906499',
+  'unifunc' => 'content_65d44192004d09_30230725',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:modules/Users/UsersSidebar.tpl' => 1,
   ),
 ),false)) {
-function content_65cdef198115f4_82906499 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65d44192004d09_30230725 (Smarty_Internal_Template $_smarty_tpl) {
 if ($_smarty_tpl->tpl_vars['USER_MODEL']->value->isAdminUser()) {
 $_smarty_tpl->_assignInScope('SETTINGS_MODULE_MODEL', Settings_Vtiger_Module_Model::getInstance());
 $_smarty_tpl->_assignInScope('SETTINGS_MENUS', $_smarty_tpl->tpl_vars['SETTINGS_MODULE_MODEL']->value->getMenus());?><div class="settingsgroup"><div><input type="text" placeholder="<?php echo vtranslate('LBL_SEARCH_FOR_SETTINGS',$_smarty_tpl->tpl_vars['QUALIFIED_MODULE']->value);?>

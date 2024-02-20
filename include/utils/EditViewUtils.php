@@ -106,7 +106,7 @@ function getConvertSalesOrderToMaintance($focus,$so_focus,$soid)
 			$so_focus->column_fields[$xyz[$i]] = '';
 	}
 	$focus->column_fields['salesorder_id'] = $soid;
-	$focus->column_fields['subject'] = $so_focus->column_fields['subject'];
+	$focus->column_fields['subject'] = $soid;
 	$focus->column_fields['quotename'] = $so_focus->column_fields['quote_id'];
 	$focus->column_fields['projectdate'] = $so_focus->column_fields['projectdate'];
 	$focus->column_fields['duedate'] = $so_focus->column_fields['duedate'];
@@ -115,10 +115,10 @@ function getConvertSalesOrderToMaintance($focus,$so_focus,$soid)
 	$focus->column_fields['primaryemail'] = $so_focus->column_fields['email'];
 	$focus->column_fields['exciseduty'] = $so_focus->column_fields['exciseduty'];
 	$focus->column_fields['salescommission'] = $so_focus->column_fields['salescommission'];
-	$focus->column_fields['address'] = $so_focus->column_fields['bill_street'];
-	$focus->column_fields['city'] = $so_focus->column_fields['bill_city'];
-	$focus->column_fields['state'] = $so_focus->column_fields['bill_state'];
-	$focus->column_fields['postalcode'] = $so_focus->column_fields['bill_code'];
+	$focus->column_fields['bill_street'] = $so_focus->column_fields['bill_street'];
+	$focus->column_fields['bill_city'] = $so_focus->column_fields['bill_city'];
+	$focus->column_fields['bill_state'] = $so_focus->column_fields['bill_state'];
+	$focus->column_fields['bill_code'] = $so_focus->column_fields['bill_code'];
 	$focus->column_fields['description'] = $so_focus->column_fields['description'];
 	$focus->column_fields['modeofpayment'] = $so_focus->column_fields['modeofpayment'];
 	$focus->column_fields['termscondition'] = $so_focus->column_fields['terms_conditions'];

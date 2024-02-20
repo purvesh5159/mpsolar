@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.39, created on 2024-02-16 05:19:48
+/* Smarty version 3.1.39, created on 2024-02-20 04:54:56
   from 'D:\wamp\www\mpsolar\layouts\v7\modules\Quotes\DetailViewHeaderTitle.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_65cef0745bb696_42162457',
+  'unifunc' => 'content_65d430a0046332_60463536',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65cef0745bb696_42162457 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65d430a0046332_60463536 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="col-sm-6"><div class="record-header clearfix"><div class="recordImage bgquotes app-<?php echo $_smarty_tpl->tpl_vars['SELECTED_MENU_CATEGORY']->value;?>
 "><?php $_smarty_tpl->_assignInScope('IMAGE_DETAILS', $_smarty_tpl->tpl_vars['RECORD']->value->getImageDetails());
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['IMAGE_DETAILS']->value, 'IMAGE_INFO', false, 'ITER');

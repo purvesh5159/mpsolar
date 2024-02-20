@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.39, created on 2024-02-15 08:21:02
+/* Smarty version 3.1.39, created on 2024-02-20 05:52:57
   from 'D:\wamp\www\mpsolar\layouts\v7\modules\Inventory\partials\LineItemsContent.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_65cdc96ecb3ee6_62378469',
+  'unifunc' => 'content_65d43e3970ce51_25417286',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65cdc96ecb3ee6_62378469 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65d43e3970ce51_25417286 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_assignInScope('deleted', ("deleted").($_smarty_tpl->tpl_vars['row_no']->value));
 $_smarty_tpl->_assignInScope('image', ("productImage").($_smarty_tpl->tpl_vars['row_no']->value));
 $_smarty_tpl->_assignInScope('purchaseCost', ("purchaseCost").($_smarty_tpl->tpl_vars['row_no']->value));
@@ -63,15 +63,15 @@ if ($_smarty_tpl->tpl_vars['MODULE']->value == 'PurchaseOrder') {
 $_smarty_tpl->_assignInScope('listPriceValues', array());
 ob_start();
 echo $_smarty_tpl->tpl_vars['RECORD_CURRENCY_RATE']->value;
-$_prefixVariable11 = ob_get_clean();
+$_prefixVariable9 = ob_get_clean();
 ob_start();
 if ($_smarty_tpl->tpl_vars['data']->value[$_smarty_tpl->tpl_vars['purchaseCost']->value] && $_smarty_tpl->tpl_vars['RECORD_CURRENCY_RATE']->value) {
-echo (string)(((float)$_smarty_tpl->tpl_vars['data']->value[$_smarty_tpl->tpl_vars['purchaseCost']->value])/((float)$_smarty_tpl->tpl_vars['data']->value[$_smarty_tpl->tpl_vars['qty']->value]*(float)$_prefixVariable11));
+echo (string)(((float)$_smarty_tpl->tpl_vars['data']->value[$_smarty_tpl->tpl_vars['purchaseCost']->value])/((float)$_smarty_tpl->tpl_vars['data']->value[$_smarty_tpl->tpl_vars['qty']->value]*(float)$_prefixVariable9));
 } else {
 echo "0";
 }
-$_prefixVariable12=ob_get_clean();
-$_smarty_tpl->_assignInScope('purchaseCost', $_prefixVariable12);
+$_prefixVariable10=ob_get_clean();
+$_smarty_tpl->_assignInScope('purchaseCost', $_prefixVariable10);
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['CURRENCIES']->value, 'currency_details');
 $_smarty_tpl->tpl_vars['currency_details']->do_else = true;
 if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['currency_details']->value) {
@@ -202,8 +202,8 @@ echo $_smarty_tpl->tpl_vars['data']->value[$_smarty_tpl->tpl_vars['listPrice']->
 echo Zend_Json::encode($_smarty_tpl->tpl_vars['listPriceValues']->value);
 }?>' data-base-currency-id="<?php ob_start();
 echo $_smarty_tpl->tpl_vars['entityType']->value;
-$_prefixVariable13 = ob_get_clean();
-echo getProductBaseCurrency($_smarty_tpl->tpl_vars['productId']->value,$_prefixVariable13);?>
+$_prefixVariable11 = ob_get_clean();
+echo getProductBaseCurrency($_smarty_tpl->tpl_vars['productId']->value,$_prefixVariable11);?>
 " />&nbsp;<?php $_smarty_tpl->_assignInScope('PRICEBOOK_MODULE_MODEL', Vtiger_Module_Model::getInstance('PriceBooks'));
 if ($_smarty_tpl->tpl_vars['PRICEBOOK_MODULE_MODEL']->value->isPermitted('DetailView') && $_smarty_tpl->tpl_vars['MODULE']->value != 'PurchaseOrder') {?><span class="priceBookPopup cursorPointer" data-popup="Popup" title="<?php echo vtranslate('PriceBooks',$_smarty_tpl->tpl_vars['MODULE']->value);?>
 " data-module-name="PriceBooks" style="float:left"><?php echo Vtiger_Module_Model::getModuleIconPath('PriceBooks');?>

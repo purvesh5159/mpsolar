@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.39, created on 2024-02-15 07:34:43
+/* Smarty version 3.1.39, created on 2024-02-20 04:54:56
   from 'D:\wamp\www\mpsolar\layouts\v7\modules\Vtiger\AddTagUI.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_65cdbe9341bee9_71287221',
+  'unifunc' => 'content_65d430a09d30f3_71664361',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65cdbe9341bee9_71287221 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65d430a09d30f3_71664361 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="showAllTagContainer hide"><div class="modal-dialog modal-lg"><div class="modal-content"><form class="detailShowAllModal"><?php ob_start();
 echo vtranslate('LBL_ADD_OR_SELECT_TAG',$_smarty_tpl->tpl_vars['MODULE']->value,$_smarty_tpl->tpl_vars['RECORD_NAME']->value);
 $_prefixVariable9=ob_get_clean();

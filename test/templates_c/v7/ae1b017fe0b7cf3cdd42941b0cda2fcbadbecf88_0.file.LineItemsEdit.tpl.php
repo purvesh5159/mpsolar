@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.39, created on 2024-02-15 08:21:02
+/* Smarty version 3.1.39, created on 2024-02-20 05:52:56
   from 'D:\wamp\www\mpsolar\layouts\v7\modules\Inventory\partials\LineItemsEdit.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_65cdc96e5e03a7_30202055',
+  'unifunc' => 'content_65d43e38ea3a69_28347766',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65cdc96e5e03a7_30202055 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65d43e38ea3a69_28347766 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_assignInScope('LINEITEM_FIELDS', $_smarty_tpl->tpl_vars['RECORD_STRUCTURE']->value['LBL_ITEM_DETAILS']);
 $_smarty_tpl->_assignInScope('COL_SPAN1', 1);
 $_smarty_tpl->_assignInScope('COL_SPAN2', 2);
@@ -142,30 +142,30 @@ $_smarty_tpl->_assignInScope('RECORD_CURRENCY_RATE', $_smarty_tpl->tpl_vars['SEL
 </strong></td><td><b>Payment Type </b></td><td><b>Payment no</b></td><td><b>Bank Name</b></td><td><b>Payment Date</b></td><td><b>Payment Total</b></td><td><b>Total</b></td></tr>--><?php } else { ?><tr><td><strong><?php echo vtranslate('LBL_TOOLS',$_smarty_tpl->tpl_vars['MODULE']->value);?>
 </strong></td><?php if ((isset($_smarty_tpl->tpl_vars['IMAGE_EDITABLE']->value))) {?><td><strong><?php ob_start();
 echo $_smarty_tpl->tpl_vars['LINEITEM_FIELDS']->value['image']->get('label');
-$_prefixVariable6 = ob_get_clean();
-echo vtranslate($_prefixVariable6,$_smarty_tpl->tpl_vars['MODULE']->value);?>
+$_prefixVariable4 = ob_get_clean();
+echo vtranslate($_prefixVariable4,$_smarty_tpl->tpl_vars['MODULE']->value);?>
 </strong></td><?php }
 if ((isset($_smarty_tpl->tpl_vars['PRODUCT_EDITABLE']->value))) {?><td><span class="redColor">*</span><strong><?php ob_start();
 echo $_smarty_tpl->tpl_vars['LINEITEM_FIELDS']->value['productid']->get('label');
-$_prefixVariable7 = ob_get_clean();
-echo vtranslate($_prefixVariable7,$_smarty_tpl->tpl_vars['MODULE']->value);?>
+$_prefixVariable5 = ob_get_clean();
+echo vtranslate($_prefixVariable5,$_smarty_tpl->tpl_vars['MODULE']->value);?>
 </strong></td><?php }?><td><strong><?php echo vtranslate('LBL_QTY',$_smarty_tpl->tpl_vars['MODULE']->value);?>
 </strong></td><?php if ($_smarty_tpl->tpl_vars['MODULE']->value == 'SalesOrder') {?><td><strong><?php echo vtranslate('LBL_ASSIGNQTY',$_smarty_tpl->tpl_vars['MODULE']->value);?>
 </strong></td><?php }
 if ((isset($_smarty_tpl->tpl_vars['PURCHASE_COST_EDITABLE']->value))) {?><td><strong class="pull-right"><?php ob_start();
 echo $_smarty_tpl->tpl_vars['LINEITEM_FIELDS']->value['purchase_cost']->get('label');
-$_prefixVariable8 = ob_get_clean();
-echo vtranslate($_prefixVariable8,$_smarty_tpl->tpl_vars['MODULE']->value);?>
+$_prefixVariable6 = ob_get_clean();
+echo vtranslate($_prefixVariable6,$_smarty_tpl->tpl_vars['MODULE']->value);?>
 </strong></td><?php }
 if ((isset($_smarty_tpl->tpl_vars['LIST_PRICE_EDITABLE']->value))) {?><td><strong><?php ob_start();
 echo $_smarty_tpl->tpl_vars['LINEITEM_FIELDS']->value['listprice']->get('label');
-$_prefixVariable9 = ob_get_clean();
-echo vtranslate($_prefixVariable9,$_smarty_tpl->tpl_vars['MODULE']->value);?>
+$_prefixVariable7 = ob_get_clean();
+echo vtranslate($_prefixVariable7,$_smarty_tpl->tpl_vars['MODULE']->value);?>
 </strong></td><?php }?><td><strong class="pull-right"><?php echo vtranslate('LBL_TOTAL',$_smarty_tpl->tpl_vars['MODULE']->value);?>
 </strong></td><?php if ((isset($_smarty_tpl->tpl_vars['MARGIN_EDITABLE']->value)) && (isset($_smarty_tpl->tpl_vars['PURCHASE_COST_EDITABLE']->value))) {?><td><strong class="pull-right"><?php ob_start();
 echo $_smarty_tpl->tpl_vars['LINEITEM_FIELDS']->value['margin']->get('label');
-$_prefixVariable10 = ob_get_clean();
-echo vtranslate($_prefixVariable10,$_smarty_tpl->tpl_vars['MODULE']->value);?>
+$_prefixVariable8 = ob_get_clean();
+echo vtranslate($_prefixVariable8,$_smarty_tpl->tpl_vars['MODULE']->value);?>
 </strong></td><?php }?><td><strong class="pull-right"><?php echo vtranslate('LBL_NET_PRICE',$_smarty_tpl->tpl_vars['MODULE']->value);?>
 </strong></td></tr><?php }?><tr id="row0" class="hide lineItemCloneCopy" data-row-num="0"><?php $_smarty_tpl->_subTemplateRender(vtemplate_path("partials/LineItemsContent.tpl",'Inventory'), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('row_no'=>0,'data'=>array(),'IGNORE_UI_REGISTRATION'=>true), 0, true);
 ?></tr><?php

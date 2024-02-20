@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.39, created on 2024-02-15 07:34:43
+/* Smarty version 3.1.39, created on 2024-02-20 04:54:57
   from 'D:\wamp\www\mpsolar\layouts\v7\modules\Vtiger\ModuleRelatedTabs.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_65cdbe939b66e8_24620881',
+  'unifunc' => 'content_65d430a10c8f30_32014831',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65cdbe939b66e8_24620881 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65d430a10c8f30_32014831 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <div class='related-tabs row'><nav class="navbar margin0" role="navigation"><div class="navbar-header"><button type="button" class="navbar-toggle btn-group-justified collapsed border0" data-toggle="collapse" data-target="#nav-tabs" aria-expanded="false"><i class="fa fa-ellipsis-h"></i></button></div><div class="collapse navbar-collapse" id="nav-tabs"><ul class="nav nav-tabs"><?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['DETAILVIEW_LINKS']->value['DETAILVIEWTAB'], 'RELATED_LINK');

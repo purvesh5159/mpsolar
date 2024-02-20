@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.39, created on 2024-02-15 08:21:01
+/* Smarty version 3.1.39, created on 2024-02-20 05:52:55
   from 'D:\wamp\www\mpsolar\layouts\v7\modules\Inventory\EditView.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_65cdc96d0097e5_36435956',
+  'unifunc' => 'content_65d43e37654362_41297723',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:modules/Vtiger/partials/Menubar.tpl' => 1,
   ),
 ),false)) {
-function content_65cdc96d0097e5_36435956 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65d43e37654362_41297723 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <div class="main-container clearfix">
         <div id="modnavigator" class="module-nav editViewModNavigator">

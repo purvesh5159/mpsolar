@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.39, created on 2024-02-15 11:01:45
+/* Smarty version 3.1.39, created on 2024-02-20 06:20:12
   from 'D:\wamp\www\mpsolar\layouts\v7\modules\Settings\LayoutEditor\Index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_65cdef19f2c1c6_88712152',
+  'unifunc' => 'content_65d4449c02d2b4_36068526',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65cdef19f2c1c6_88712152 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65d4449c02d2b4_36068526 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <div class="container-fluid main-scroll paddingTop15" id="layoutEditorContainer"><input id="selectedModuleName" type="hidden" value="<?php echo $_smarty_tpl->tpl_vars['SELECTED_MODULE_NAME']->value;?>
 " /><input class="selectedTab" type="hidden" value="<?php echo $_smarty_tpl->tpl_vars['SELECTED_TAB']->value;?>

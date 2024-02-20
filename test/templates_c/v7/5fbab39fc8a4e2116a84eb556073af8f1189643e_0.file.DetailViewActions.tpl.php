@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.39, created on 2024-02-15 07:34:43
+/* Smarty version 3.1.39, created on 2024-02-20 04:54:56
   from 'D:\wamp\www\mpsolar\layouts\v7\modules\Vtiger\DetailViewActions.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_65cdbe932567b6_34586008',
+  'unifunc' => 'content_65d430a06cb381_68279002',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65cdbe932567b6_34586008 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65d430a06cb381_68279002 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="col-lg-6 detailViewButtoncontainer"><div class="pull-right btn-toolbar"><div class="btn-group"><?php $_smarty_tpl->_assignInScope('STARRED', $_smarty_tpl->tpl_vars['RECORD']->value->get('starred'));
 $_smarty_tpl->_assignInScope('SOSTATUS', $_smarty_tpl->tpl_vars['RECORD']->value->get('sostatus'));
 if ($_smarty_tpl->tpl_vars['MODULE']->value == 'SalesOrder') {?><button class="btn btn-default" id="CreateMaintance" style="width:135px;"><?php echo vtranslate('LBL_MAINTANCE',$_smarty_tpl->tpl_vars['MODULE']->value);?>

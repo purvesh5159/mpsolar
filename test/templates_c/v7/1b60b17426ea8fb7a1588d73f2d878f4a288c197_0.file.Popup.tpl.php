@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.39, created on 2024-02-15 08:21:08
+/* Smarty version 3.1.39, created on 2024-02-20 05:31:51
   from 'D:\wamp\www\mpsolar\layouts\v7\modules\Vtiger\Popup.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_65cdc9744ea8b8_09001538',
+  'unifunc' => 'content_65d43947ab5850_62800212',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65cdc9744ea8b8_09001538 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65d43947ab5850_62800212 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <div class="modal-dialog modal-lg"><div class="modal-content"><?php ob_start();
 echo vtranslate($_smarty_tpl->tpl_vars['MODULE']->value,$_smarty_tpl->tpl_vars['MODULE']->value);

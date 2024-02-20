@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.39, created on 2024-02-16 05:18:07
+/* Smarty version 3.1.39, created on 2024-02-20 04:54:57
   from 'D:\wamp\www\mpsolar\layouts\v7\modules\Vtiger\DetailViewBlockView.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_65cef00f907cd6_29445560',
+  'unifunc' => 'content_65d430a19bc644_67322402',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65cef00f907cd6_29445560 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65d430a19bc644_67322402 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <input type="hidden" name="assingeid" id="assingeid" class="assingeid" value='<?php echo $_smarty_tpl->tpl_vars['ASSIGNEDID']->value;?>
 ' /><input type="hidden" name="currentedid" id="currentedid" class="currentedid" value='<?php echo $_smarty_tpl->tpl_vars['CURRENTID']->value;?>
@@ -49,11 +49,11 @@ $_smarty_tpl->_assignInScope('WIDTHTYPE', $_smarty_tpl->tpl_vars['USER_MODEL']->
 " data-mode="show" data-id=<?php echo $_smarty_tpl->tpl_vars['BLOCK_LIST']->value[$_smarty_tpl->tpl_vars['BLOCK_LABEL_KEY']->value]->get('id');?>
 >&nbsp;<?php ob_start();
 echo $_smarty_tpl->tpl_vars['BLOCK_LABEL_KEY']->value;
-$_prefixVariable1 = ob_get_clean();
+$_prefixVariable15 = ob_get_clean();
 ob_start();
 echo $_smarty_tpl->tpl_vars['MODULE_NAME']->value;
-$_prefixVariable2 = ob_get_clean();
-echo vtranslate($_prefixVariable1,$_prefixVariable2);?>
+$_prefixVariable16 = ob_get_clean();
+echo vtranslate($_prefixVariable15,$_prefixVariable16);?>
 </h4></div><hr><div class="blockData"><table class="table detailview-table no-border"><tbody <?php if ($_smarty_tpl->tpl_vars['IS_HIDDEN']->value) {?> class="hide" <?php }?>><?php $_smarty_tpl->_assignInScope('COUNTER', 0);?><tr><?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['FIELD_MODEL_LIST']->value, 'FIELD_MODEL', false, 'FIELD_NAME');
 $_smarty_tpl->tpl_vars['FIELD_MODEL']->do_else = true;
@@ -87,11 +87,11 @@ if ($_smarty_tpl->tpl_vars['COUNTER']->value == 2) {?></tr><tr><?php $_smarty_tp
 }?><td class="fieldLabel <?php echo $_smarty_tpl->tpl_vars['WIDTHTYPE']->value;?>
 "><span class="muted"><?php ob_start();
 echo $_smarty_tpl->tpl_vars['FIELD_MODEL']->value->get('label');
-$_prefixVariable3 = ob_get_clean();
+$_prefixVariable17 = ob_get_clean();
 ob_start();
 echo $_smarty_tpl->tpl_vars['MODULE_NAME']->value;
-$_prefixVariable4 = ob_get_clean();
-echo vtranslate($_prefixVariable3,$_prefixVariable4);?>
+$_prefixVariable18 = ob_get_clean();
+echo vtranslate($_prefixVariable17,$_prefixVariable18);?>
 </span></td><td class="fieldValue <?php echo $_smarty_tpl->tpl_vars['WIDTHTYPE']->value;?>
 "><ul id="imageContainer"><?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['IMAGE_DETAILS']->value, 'IMAGE_INFO', false, 'ITER');
@@ -100,8 +100,8 @@ if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['ITER']->value =>
 $_smarty_tpl->tpl_vars['IMAGE_INFO']->do_else = false;
 ob_start();
 echo $_smarty_tpl->tpl_vars['IMAGE_INFO']->value['orgname'];
-$_prefixVariable5 = ob_get_clean();
-if (!empty($_smarty_tpl->tpl_vars['IMAGE_INFO']->value['url']) && !empty($_prefixVariable5)) {?><li><img src="<?php echo $_smarty_tpl->tpl_vars['IMAGE_INFO']->value['url'];?>
+$_prefixVariable19 = ob_get_clean();
+if (!empty($_smarty_tpl->tpl_vars['IMAGE_INFO']->value['url']) && !empty($_prefixVariable19)) {?><li><img src="<?php echo $_smarty_tpl->tpl_vars['IMAGE_INFO']->value['url'];?>
 " title="<?php echo $_smarty_tpl->tpl_vars['IMAGE_INFO']->value['orgname'];?>
 " width="400" height="300" /></li><?php }
 }
@@ -122,16 +122,16 @@ _detailView_fieldLabel_<?php echo $_smarty_tpl->tpl_vars['FIELD_MODEL']->value->
 " <?php if ($_smarty_tpl->tpl_vars['FIELD_MODEL']->value->getName() == 'description' || $_smarty_tpl->tpl_vars['FIELD_MODEL']->value->get('uitype') == '69') {?> style='width:8%'<?php }?>><span class="muted"><?php if ($_smarty_tpl->tpl_vars['MODULE_NAME']->value == 'Documents' && $_smarty_tpl->tpl_vars['FIELD_MODEL']->value->get('label') == "File Name" && $_smarty_tpl->tpl_vars['RECORD']->value->get('filelocationtype') == 'E') {
 ob_start();
 echo $_smarty_tpl->tpl_vars['MODULE_NAME']->value;
-$_prefixVariable6 = ob_get_clean();
-echo vtranslate("LBL_FILE_URL",$_prefixVariable6);
+$_prefixVariable20 = ob_get_clean();
+echo vtranslate("LBL_FILE_URL",$_prefixVariable20);
 } else {
 ob_start();
 echo $_smarty_tpl->tpl_vars['FIELD_MODEL']->value->get('label');
-$_prefixVariable7 = ob_get_clean();
+$_prefixVariable21 = ob_get_clean();
 ob_start();
 echo $_smarty_tpl->tpl_vars['MODULE_NAME']->value;
-$_prefixVariable8 = ob_get_clean();
-echo vtranslate($_prefixVariable7,$_prefixVariable8);
+$_prefixVariable22 = ob_get_clean();
+echo vtranslate($_prefixVariable21,$_prefixVariable22);
 }
 if (($_smarty_tpl->tpl_vars['FIELD_MODEL']->value->get('uitype') == '72') && ($_smarty_tpl->tpl_vars['FIELD_MODEL']->value->getName() == 'unit_price')) {?>(<?php echo $_smarty_tpl->tpl_vars['BASE_CURRENCY_SYMBOL']->value;?>
 )<?php }?></span></td><td class="fieldValue <?php echo $_smarty_tpl->tpl_vars['WIDTHTYPE']->value;?>

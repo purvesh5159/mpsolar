@@ -70,17 +70,17 @@ $Campaigns_share_read_permission=array('ROLE'=>array(),'GROUP'=>array());
 
 $Campaigns_share_write_permission=array('ROLE'=>array(),'GROUP'=>array());
 
-$Quotes_share_read_permission=array('ROLE'=>array('H2'=>array(1,5,25,),'H4'=>array(10,13,14,15,17,18,19,20,22,23,26,),'H5'=>array(7,12,),'H6'=>array(16,21,24,),'H7'=>array(6,8,9,11,),),'GROUP'=>array());
+$Quotes_share_read_permission=array('ROLE'=>array(),'GROUP'=>array());
 
-$Quotes_share_write_permission=array('ROLE'=>array('H2'=>array(1,5,25,),'H4'=>array(10,13,14,15,17,18,19,20,22,23,26,),'H5'=>array(7,12,),'H6'=>array(16,21,24,),'H7'=>array(6,8,9,11,),),'GROUP'=>array());
+$Quotes_share_write_permission=array('ROLE'=>array(),'GROUP'=>array());
 
-$Quotes_SalesOrder_share_read_permission=array('ROLE'=>array('H2'=>array(1,5,25,),'H4'=>array(10,13,14,15,17,18,19,20,22,23,26,),'H5'=>array(7,12,),'H6'=>array(16,21,24,),'H7'=>array(6,8,9,11,),),'GROUP'=>array());
+$Quotes_SalesOrder_share_read_permission=array('ROLE'=>array(),'GROUP'=>array());
 
 $Quotes_SalesOrder_share_write_permission=array('ROLE'=>array(),'GROUP'=>array());
 
-$PurchaseOrder_share_read_permission=array('ROLE'=>array('H2'=>array(1,5,25,),'H4'=>array(10,13,14,15,17,18,19,20,22,23,26,),'H5'=>array(7,12,),'H6'=>array(16,21,24,),'H7'=>array(6,8,9,11,),),'GROUP'=>array());
+$PurchaseOrder_share_read_permission=array('ROLE'=>array('H2'=>array(1,5,25,),'H4'=>array(10,26,),'H5'=>array(7,12,21,),'H6'=>array(16,24,),'H7'=>array(6,8,9,11,13,14,15,17,18,19,20,22,23,),),'GROUP'=>array());
 
-$PurchaseOrder_share_write_permission=array('ROLE'=>array('H2'=>array(1,5,25,),'H4'=>array(10,13,14,15,17,18,19,20,22,23,26,),'H5'=>array(7,12,),'H6'=>array(16,21,24,),'H7'=>array(6,8,9,11,),),'GROUP'=>array());
+$PurchaseOrder_share_write_permission=array('ROLE'=>array('H2'=>array(1,5,25,),'H4'=>array(10,26,),'H5'=>array(7,12,21,),'H6'=>array(16,24,),'H7'=>array(6,8,9,11,13,14,15,17,18,19,20,22,23,),),'GROUP'=>array());
 
 $SalesOrder_share_read_permission=array('ROLE'=>array(),'GROUP'=>array());
 
@@ -90,9 +90,9 @@ $SalesOrder_Invoice_share_read_permission=array('ROLE'=>array(),'GROUP'=>array()
 
 $SalesOrder_Invoice_share_write_permission=array('ROLE'=>array(),'GROUP'=>array());
 
-$Invoice_share_read_permission=array('ROLE'=>array('H2'=>array(1,5,25,),'H4'=>array(10,13,14,15,17,18,19,20,22,23,26,),'H5'=>array(7,12,),'H6'=>array(16,21,24,),'H7'=>array(6,8,9,11,),),'GROUP'=>array());
+$Invoice_share_read_permission=array('ROLE'=>array(),'GROUP'=>array());
 
-$Invoice_share_write_permission=array('ROLE'=>array('H2'=>array(1,5,25,),'H4'=>array(10,13,14,15,17,18,19,20,22,23,26,),'H5'=>array(7,12,),'H6'=>array(16,21,24,),'H7'=>array(6,8,9,11,),),'GROUP'=>array());
+$Invoice_share_write_permission=array('ROLE'=>array(),'GROUP'=>array());
 
 $Documents_share_read_permission=array('ROLE'=>array(),'GROUP'=>array());
 
@@ -102,9 +102,9 @@ $Products_share_read_permission=array('ROLE'=>array(),'GROUP'=>array());
 
 $Products_share_write_permission=array('ROLE'=>array(),'GROUP'=>array());
 
-$Vendors_share_read_permission=array('ROLE'=>array('H2'=>array(1,5,25,),'H4'=>array(10,13,14,15,17,18,19,20,22,23,26,),'H5'=>array(7,12,),'H6'=>array(16,21,24,),'H7'=>array(6,8,9,11,),),'GROUP'=>array());
+$Vendors_share_read_permission=array('ROLE'=>array('H2'=>array(1,5,25,),'H4'=>array(10,26,),'H5'=>array(7,12,21,),'H6'=>array(16,24,),'H7'=>array(6,8,9,11,13,14,15,17,18,19,20,22,23,),),'GROUP'=>array());
 
-$Vendors_share_write_permission=array('ROLE'=>array('H2'=>array(1,5,25,),'H4'=>array(10,13,14,15,17,18,19,20,22,23,26,),'H5'=>array(7,12,),'H6'=>array(16,21,24,),'H7'=>array(6,8,9,11,),),'GROUP'=>array());
+$Vendors_share_write_permission=array('ROLE'=>array('H2'=>array(1,5,25,),'H4'=>array(10,26,),'H5'=>array(7,12,21,),'H6'=>array(16,24,),'H7'=>array(6,8,9,11,13,14,15,17,18,19,20,22,23,),),'GROUP'=>array());
 
 $ModComments_share_read_permission=array('ROLE'=>array(),'GROUP'=>array());
 
@@ -114,9 +114,9 @@ $SMSNotifier_share_read_permission=array('ROLE'=>array(),'GROUP'=>array());
 
 $SMSNotifier_share_write_permission=array('ROLE'=>array(),'GROUP'=>array());
 
-$Payment_share_read_permission=array('ROLE'=>array('H2'=>array(1,5,25,),'H4'=>array(10,13,14,15,17,18,19,20,22,23,26,),'H5'=>array(7,12,),'H6'=>array(16,21,24,),'H7'=>array(6,8,9,11,),),'GROUP'=>array());
+$Payment_share_read_permission=array('ROLE'=>array(),'GROUP'=>array());
 
-$Payment_share_write_permission=array('ROLE'=>array('H2'=>array(1,5,25,),'H4'=>array(10,13,14,15,17,18,19,20,22,23,26,),'H5'=>array(7,12,),'H6'=>array(16,21,24,),'H7'=>array(6,8,9,11,),),'GROUP'=>array());
+$Payment_share_write_permission=array('ROLE'=>array(),'GROUP'=>array());
 
 $Installteam_share_read_permission=array('ROLE'=>array(),'GROUP'=>array());
 

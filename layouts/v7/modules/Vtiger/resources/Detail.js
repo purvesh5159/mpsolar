@@ -1075,7 +1075,7 @@ Vtiger.Class("Vtiger_Detail_Js",{
 		if (fieldDetailList['field'] == "installerinvoicestatus" && fieldDetailList['value'] == "Paid") {
 			window.location.reload();
 		}
-		else{
+		else if (fieldDetailList['field'] == "installerinvoicestatus" && fieldDetailList['value'] == "Received"){
 			window.location.reload();
 		}
 		if (fieldDetailList['field'] == "quotestage" && fieldDetailList['value'] == "Accepted") {
@@ -1118,7 +1118,6 @@ Vtiger.Class("Vtiger_Detail_Js",{
 						}
 					);
 					return aDeferred.promise();
-					//window.location.reload();
 				}
 			);
 		} 

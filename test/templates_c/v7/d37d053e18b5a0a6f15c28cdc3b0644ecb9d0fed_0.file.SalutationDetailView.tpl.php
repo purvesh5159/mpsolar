@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.39, created on 2024-02-15 11:02:27
+/* Smarty version 3.1.39, created on 2024-02-20 05:01:53
   from 'D:\wamp\www\mpsolar\layouts\v7\modules\Vtiger\uitypes\SalutationDetailView.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_65cdef4338dee9_13565509',
+  'unifunc' => 'content_65d432414f56e1_43905055',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65cdef4338dee9_13565509 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65d432414f56e1_43905055 (Smarty_Internal_Template $_smarty_tpl) {
 echo $_smarty_tpl->tpl_vars['RECORD']->value->getDisplayValue('salutationtype');?>
 
 

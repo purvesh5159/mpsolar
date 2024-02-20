@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.39, created on 2024-02-15 11:01:47
+/* Smarty version 3.1.39, created on 2024-02-20 06:20:13
   from 'D:\wamp\www\mpsolar\layouts\v7\modules\Settings\LayoutEditor\DefaultValueUi.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_65cdef1b8b7ae5_12714337',
+  'unifunc' => 'content_65d4449d948e27_97752566',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65cdef1b8b7ae5_12714337 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65d4449d948e27_97752566 (Smarty_Internal_Template $_smarty_tpl) {
 if ($_smarty_tpl->tpl_vars['FIELD_MODEL']->value->isDefaultValueOptionDisabled() != "true") {?><div class="form-group"><label class="control-label fieldLabel col-sm-5"><img src="<?php echo vimage_path('DefaultValue.png');?>
 " height=14 width=14/> &nbsp; <?php echo vtranslate('LBL_DEFAULT_VALUE',$_smarty_tpl->tpl_vars['QUALIFIED_MODULE']->value);?>
 </label><div class="controls col-sm-7"><div class="defaultValueUi"><?php if (!$_smarty_tpl->tpl_vars['NAME_ATTR']->value) {
@@ -38,8 +38,8 @@ $_smarty_tpl->_assignInScope('DEFAULT_VALUE', $_smarty_tpl->tpl_vars['FIELD_MODE
 }
 ob_start();
 echo decode_html($_smarty_tpl->tpl_vars['DEFAULT_VALUE']->value);
-$_prefixVariable23 = ob_get_clean();
-$_smarty_tpl->_assignInScope('DEFAULT_VALUE', $_prefixVariable23);?><select class="col-sm-9 select2" name="<?php echo $_smarty_tpl->tpl_vars['NAME_ATTR']->value;?>
+$_prefixVariable14 = ob_get_clean();
+$_smarty_tpl->_assignInScope('DEFAULT_VALUE', $_prefixVariable14);?><select class="col-sm-9 select2" name="<?php echo $_smarty_tpl->tpl_vars['NAME_ATTR']->value;?>
 "><?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['PICKLIST_VALUES']->value, 'PICKLIST_VALUE', false, 'PICKLIST_NAME');
 $_smarty_tpl->tpl_vars['PICKLIST_VALUE']->do_else = true;

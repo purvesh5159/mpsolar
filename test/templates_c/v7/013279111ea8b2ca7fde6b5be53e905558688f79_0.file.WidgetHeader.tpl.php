@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.39, created on 2024-02-15 07:38:22
+/* Smarty version 3.1.39, created on 2024-02-20 05:32:20
   from 'D:\wamp\www\mpsolar\layouts\v7\modules\Vtiger\dashboards\WidgetHeader.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_65cdbf6e47c3a9_09143766',
+  'unifunc' => 'content_65d43964aec610_80016661',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65cdbf6e47c3a9_09143766 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65d43964aec610_80016661 (Smarty_Internal_Template $_smarty_tpl) {
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['STYLES']->value, 'cssModel', false, 'index');
 $_smarty_tpl->tpl_vars['cssModel']->do_else = true;
 if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['index']->value => $_smarty_tpl->tpl_vars['cssModel']->value) {

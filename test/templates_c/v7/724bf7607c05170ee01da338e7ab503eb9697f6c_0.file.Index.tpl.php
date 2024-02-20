@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.39, created on 2024-02-15 11:43:28
+/* Smarty version 3.1.39, created on 2024-02-20 06:07:20
   from 'D:\wamp\www\mpsolar\layouts\v7\modules\Settings\Roles\Index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_65cdf8e0c93cf7_58283352',
+  'unifunc' => 'content_65d441985f3958_12998063',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65cdf8e0c93cf7_58283352 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65d441985f3958_12998063 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <div class="listViewPageDiv " id="listViewContent"><div class="col-sm-12 col-xs-12 "><br><div class="clearfix treeView"><ul><li data-role="<?php echo $_smarty_tpl->tpl_vars['ROOT_ROLE']->value->getParentRoleString();?>
 " data-roleid="<?php echo $_smarty_tpl->tpl_vars['ROOT_ROLE']->value->getId();?>

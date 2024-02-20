@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.39, created on 2024-02-15 11:01:47
+/* Smarty version 3.1.39, created on 2024-02-20 06:20:13
   from 'D:\wamp\www\mpsolar\layouts\v7\modules\Settings\LayoutEditor\FieldCreate.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_65cdef1b6b98d0_91434037',
+  'unifunc' => 'content_65d4449d79f837_95262261',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,18 +20,18 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65cdef1b6b98d0_91434037 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65d4449d79f837_95262261 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <div class="modal-dialog createFieldModal modelContainer <?php if (!$_smarty_tpl->tpl_vars['IS_FIELD_EDIT_MODE']->value) {?>hide<?php }?>"><?php if (!$_smarty_tpl->tpl_vars['IS_FIELD_EDIT_MODE']->value) {
 ob_start();
 echo vtranslate('LBL_CREATE_CUSTOM_FIELD',$_smarty_tpl->tpl_vars['QUALIFIED_MODULE']->value);
-$_prefixVariable21 = ob_get_clean();
-$_smarty_tpl->_assignInScope('TITLE', $_prefixVariable21);
+$_prefixVariable12 = ob_get_clean();
+$_smarty_tpl->_assignInScope('TITLE', $_prefixVariable12);
 } else {
 ob_start();
 echo vtranslate('LBL_EDIT_FIELD',$_smarty_tpl->tpl_vars['QUALIFIED_MODULE']->value,vtranslate($_smarty_tpl->tpl_vars['FIELD_MODEL']->value->get('label'),$_smarty_tpl->tpl_vars['SELECTED_MODULE_NAME']->value));
-$_prefixVariable22 = ob_get_clean();
-$_smarty_tpl->_assignInScope('TITLE', $_prefixVariable22);
+$_prefixVariable13 = ob_get_clean();
+$_smarty_tpl->_assignInScope('TITLE', $_prefixVariable13);
 }
 $_smarty_tpl->_subTemplateRender(vtemplate_path("ModalHeader.tpl",$_smarty_tpl->tpl_vars['MODULE']->value), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('TITLE'=>$_smarty_tpl->tpl_vars['TITLE']->value), 0, true);
 ?><div class="modal-content"><form class="form-horizontal createCustomFieldForm"><input type="hidden" name="fieldid" value="<?php echo $_smarty_tpl->tpl_vars['FIELD_MODEL']->value->getId();?>

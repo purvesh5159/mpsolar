@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.39, created on 2024-02-15 08:20:09
+/* Smarty version 3.1.39, created on 2024-02-20 05:01:01
   from 'D:\wamp\www\mpsolar\layouts\v7\modules\Vtiger\RelatedList.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_65cdc93986ced4_44784915',
+  'unifunc' => 'content_65d4320d311763_13513422',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65cdc93986ced4_44784915 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65d4320d311763_13513422 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_assignInScope('RELATED_MODULE_NAME', $_smarty_tpl->tpl_vars['RELATED_MODULE']->value->get('name'));
 $_smarty_tpl->_subTemplateRender(vtemplate_path("PicklistColorMap.tpl",$_smarty_tpl->tpl_vars['MODULE']->value), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('LISTVIEW_HEADERS'=>$_smarty_tpl->tpl_vars['RELATED_HEADERS']->value), 0, true);
 ?><div class="relatedContainer"><?php ob_start();

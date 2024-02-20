@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.39, created on 2024-02-16 05:22:31
+/* Smarty version 3.1.39, created on 2024-02-20 06:16:09
   from 'D:\wamp\www\mpsolar\layouts\v7\modules\Invoice\DetailViewHeaderTitle.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_65cef117aaf450_64109116',
+  'unifunc' => 'content_65d443a9f04680_03750665',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65cef117aaf450_64109116 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65d443a9f04680_03750665 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="col-sm-6"><div class="record-header clearfix"><div class="recordImage bginvoice app-<?php echo $_smarty_tpl->tpl_vars['SELECTED_MENU_CATEGORY']->value;?>
 "><?php $_smarty_tpl->_assignInScope('IMAGE_DETAILS', $_smarty_tpl->tpl_vars['RECORD']->value->getImageDetails());
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['IMAGE_DETAILS']->value, 'IMAGE_INFO', false, 'ITER');

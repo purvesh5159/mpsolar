@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.39, created on 2024-02-15 07:34:44
+/* Smarty version 3.1.39, created on 2024-02-20 04:54:58
   from 'D:\wamp\www\mpsolar\layouts\v7\modules\Inventory\LineItemsDetail.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_65cdbe94e00a20_61799176',
+  'unifunc' => 'content_65d430a2d374b4_41171352',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65cdbe94e00a20_61799176 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65d430a2d374b4_41171352 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_assignInScope('ITEM_DETAILS_BLOCK', $_smarty_tpl->tpl_vars['BLOCK_LIST']->value['LBL_ITEM_DETAILS']);
 $_smarty_tpl->_assignInScope('LINEITEM_FIELDS', $_smarty_tpl->tpl_vars['ITEM_DETAILS_BLOCK']->value->getFields());?>
 
